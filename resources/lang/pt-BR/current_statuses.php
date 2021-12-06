@@ -3,7 +3,6 @@
 use App\Enums\CurrentStatus;
 
 return [
-    CurrentStatus::YES => 'Active',
-    CurrentStatus::NO  => 'Inactive',
-
+    CurrentStatus::YES => 'Ativo',
+    CurrentStatus::NO  => 'Inativo',
 ];

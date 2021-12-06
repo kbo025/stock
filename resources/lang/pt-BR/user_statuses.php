@@ -3,6 +3,6 @@
 use App\Enums\UserStatus;
 
 return [
-    UserStatus::ACTIVE   => 'Active',
-    UserStatus::INACTIVE => 'Inactive',
+    UserStatus::ACTIVE   => 'Ativo',
+    UserStatus::INACTIVE => 'Inativo',
 ];

@@ -3,6 +3,6 @@
 use App\Enums\TaxType;
 
 return [
-    TaxType::FIXED   => 'Fixed',
-    TaxType::PERCENTAGE => 'Percentage',
+    TaxType::FIXED   => 'Fixo',
+    TaxType::PERCENTAGE => 'Porcentagem',
 ];
