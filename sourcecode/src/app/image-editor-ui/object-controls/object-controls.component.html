@@ -1,0 +1,13 @@
+<ng-container *ngIf="objectControls.userConfig$ | async as config">
+    <div class="bounding-box" #boundingBox>
+        <corner-handle position="top-left" [class.hidden]="config.hideTopLeft"></corner-handle>
+        <corner-handle position="top-right" [class.hidden]="config.hideTopRight"></corner-handle>
+        <corner-handle position="bottom-left" [class.hidden]="config.hideBottomLeft"></corner-handle>
+        <corner-handle  position="bottom-right" [class.hidden]="config.hideBottomRight"></corner-handle>
+        <div class="rotation-handle-container" [class.hidden]="config.hideRotatingPoint">
+            <div class="rotation-handle"></div>
+        </div>
+    </div>
+
+    <floating-object-controls [class.hidden]="config.hideFloatingControls" #floatingControls [class.visible]="!(objectControls.objectIsBeingTransformed$ | async)"></floating-object-controls>
+</ng-container>

@@ -1,0 +1,41 @@
+$handle-thickness: 4px;
+
+:host {
+  display: none;
+  z-index: 5;
+  cursor: move;
+
+  &.visible {
+    display: block;
+  }
+}
+
+.bounding-box {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border: 2px solid #fff;
+  will-change: tranform;
+  box-shadow: rgb(0 0 0 / 20%) 0 2px 6px 0, rgb(0 0 0 / 20%) 0 2px 6px 0 inset;
+}
+
+.rotation-handle-container {
+  position: absolute;
+  bottom: -20px;
+  left: 50%;
+  height: 20px;
+  width: 2px;
+  background: #fff;
+  transform: translateX(-50%);
+}
+
+.rotation-handle {
+  position: absolute;
+  bottom: -10px;
+  left: -8px;
+  width: 18px;
+  height: 18px;
+  background: #fff;
+  border-radius: 50%;
+  cursor: move;
+}

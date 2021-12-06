@@ -1,0 +1,88 @@
+@import "../../../../../scss/variables";
+
+:host {
+  display: block;
+
+  @media only screen and (max-width: $small) {
+    &.controls-drawer .content {
+      justify-content: center;
+
+      > :first-child, > :last-child {
+        margin: 0;
+      }
+    }
+
+    .buttons-container {
+      margin: 0;
+    }
+
+    .mat-slider {
+      display: none;
+    }
+  }
+}
+
+.transform-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+  flex-direction: column;
+  padding: 15px 0 5px;
+}
+
+.angle-slider-container {
+  position: relative;
+  width: 280px;
+  overflow: hidden;
+  height: 40px;
+}
+
+svg {
+  position: absolute;
+  left: -80%;
+
+  &:not(&.moving) {
+    transition: translateX 0.3s ease-in-out 0s;
+  }
+}
+
+circle {
+  fill: mat-color($app-foreground, text);
+}
+
+.current-angle {
+  display: block;
+  position: absolute;
+  width: 27px;
+  left: calc(50% - 13px);
+  top: 11px;
+  margin: 0 auto;
+  background: mat-color($app-background, card);
+  text-align: center;
+  z-index: 2;
+  padding: 0 4px 0 6px;
+  pointer-events: none;
+}
+
+.angle-slider {
+  cursor: pointer;
+}
+
+.preset-buttons {
+  display: flex;
+}
+
+.buttons-container {
+  margin: 0 20px;
+}
+
+.button-with-image.small {
+  width: 45px;
+  height: 45px;
+
+  mat-icon, img {
+    width: 25px;
+    height: 25px;
+  }
+}

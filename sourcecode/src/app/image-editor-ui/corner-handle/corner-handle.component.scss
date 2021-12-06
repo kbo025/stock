@@ -1,0 +1,61 @@
+$handle-thickness: 4px;
+$handle-offset: $handle-thickness + 1;
+
+:host {
+  touch-action: none;
+  position: absolute;
+  width: 18px;
+  height: 18px;
+}
+
+:host-context(.top-left) {
+  top: -$handle-offset;
+  left: -$handle-offset;
+  border-top: $handle-thickness solid #fff;
+  border-left: $handle-thickness solid #fff;
+  cursor: nwse-resize;
+
+  &.handle-inside {
+    top: 0;
+    left: 0;
+  }
+}
+
+:host-context(.top-right) {
+  top: -$handle-offset;
+  right: -$handle-offset;
+  border-top: $handle-thickness solid #fff;
+  border-right: $handle-thickness solid #fff;
+  cursor: nesw-resize;
+
+  &.handle-inside {
+    top: 0;
+    right: 0;
+  }
+}
+
+:host-context(.bottom-right) {
+  bottom: -$handle-offset;
+  right: -$handle-offset;
+  border-bottom: $handle-thickness solid #fff;
+  border-right: $handle-thickness solid #fff;
+  cursor: se-resize;
+
+  &.handle-inside {
+    bottom: 0;
+    right: 0;
+  }
+}
+
+:host-context(.bottom-left) {
+  bottom: -$handle-offset;
+  left: -$handle-offset;
+  border-bottom: $handle-thickness solid #fff;
+  border-left: $handle-thickness solid #fff;
+  cursor: sw-resize;
+
+  &.handle-inside {
+    bottom: 0;
+    left: 0;
+  }
+}

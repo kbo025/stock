@@ -1,0 +1,15 @@
+<button type="button" mat-icon-button (click)="activeObject.duplicate()" [matTooltip]="'Duplicate' | trans">
+    <mat-icon svgIcon="duplicate-filled"></mat-icon>
+</button>
+
+<button type="button" mat-icon-button (click)="activeObject.flipHorizontal()" [matTooltip]="'Flip' | trans">
+    <mat-icon svgIcon="flip-filled" class="front-sorting-filled-icon"></mat-icon>
+</button>
+
+<button type="button" mat-icon-button (click)="bringActiveObjectToFront()" [matTooltip]="'Bring to front' | trans">
+    <mat-icon svgIcon="front-sorting-filled" class="front-sorting-filled-icon"></mat-icon>
+</button>
+
+<button type="button" mat-icon-button (click)="deleteObject()" [matTooltip]="'Delete' | trans">
+    <mat-icon svgIcon="remove-filled"></mat-icon>
+</button>

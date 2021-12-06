@@ -1,0 +1,23 @@
+@import "../../../../../scss/variables";
+
+text-controls-drawer {
+  .mat-button-toggle-group {
+    margin-right: 15px;
+    flex-shrink: 0;
+  }
+
+  text-font-selector {
+    line-height: 48px;
+    flex-shrink: 0;
+  }
+
+  .font-size-container {
+    width: auto;
+    margin-left: 15px;
+    flex-shrink: 0;
+
+    input {
+      height: 48px;
+    }
+  }
+}
