@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" name="viewport">
-    <title>{{ setting('site_name'). ' - ' . __('Login') }}</title>
+    <title>{{ setting('site_name'). ' - ' . __('levels.Login') }}</title>
     <!-- General CSS Files -->
     <link rel="stylesheet" href="{{ asset('assets/modules/bootstrap/dist/css/bootstrap.min.css') }}">
     <!-- CSS Libraries -->
@@ -29,14 +29,14 @@
 
                     <div class="card card-primary">
                         <div class="card-header">
-                            <h4>{{ __('Login') }}</h4>
+                            <h4>{{ __('levels.Login') }}</h4>
                         </div>
 
                         <div class="card-body">
                             <form method="POST" action="{{ route('login') }}">
                                 @csrf
                                 <div class="form-group">
-                                    <label for="demoemail">{{ __('Email') }}</label><span class="text-danger"> *</span>
+                                    <label for="demoemail">{{ __('levels.email') }}</label><span class="text-danger"> *</span>
                                     <input id="demoemail" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" />
                                     @error('email')
                                     <div class="invalid-feedback">
@@ -47,7 +47,7 @@
 
                                 <div class="form-group">
                                     <div class="d-block">
-                                        <label for="demopassword" class="control-label">{{ __('Password') }}</label><span class="text-danger"> *</span>
+                                        <label for="demopassword" class="control-label">{{ __('levels.Password') }}</label><span class="text-danger"> *</span>
                                     </div>
                                     <input id="demopassword" type="password" class="form-control @error('password') is-invalid @enderror" name="password"/>
                                     @error('password')
@@ -62,14 +62,14 @@
                                         <input class="custom-control-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
 
                                         <label class="custom-control-label" for="remember">
-                                            {{ __('Remember Me') }}
+                                            {{ __('levels.Remember Me') }}
                                         </label>
                                     </div>
                                 </div>
 
                                 <div class="form-group">
                                     <button type="submit" class="btn btn-primary btn-lg btn-block" tabindex="4">
-                                        {{ __('Login') }}
+                                        {{ __('levels.Login') }}
                                     </button>
                                 </div>
                             </form>
@@ -80,13 +80,13 @@
             @if(env('DEMO'))
                 <div class="card mx-auto text-center col-md-6">
                     <div class="card-header">
-                        <h4 class="mb-0">{{ __('For Quick Demo Login Click Below...') }}</h4>
+                        <h4 class="mb-0">{{ __('levels.For Quick Demo Login Click Below...') }}</h4>
                     </div>
                     <div class="card-body">
                         <div class="buttons">
-                            <button id="demoadmin" class="btn btn-primary">{{ __('Admin') }}</button>
-                            <button id="demoshopowner" class="btn btn-success">{{ __('Shop Owner') }}</button>
-                            <button id="demoshopowner2" class="btn btn-info">{{ __('Shop Owner Two') }}</button>
+                            <button id="demoadmin" class="btn btn-primary">{{ __('levels.Admin') }}</button>
+                            <button id="demoshopowner" class="btn btn-success">{{ __('levels.shop Owner') }}</button>
+                            <button id="demoshopowner2" class="btn btn-info">{{ __('levels.shop Owner Two') }}</button>
                         </div>
                     </div>
                 </div>

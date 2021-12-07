@@ -13,9 +13,6 @@ use App\Http\Controllers\Admin\DashboardController;
 |
 */
 
-
-
-
 Route::group(['middleware' => ['installed']], function () {
     require __DIR__.'/auth.php';
 });

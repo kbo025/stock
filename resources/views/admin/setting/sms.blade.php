@@ -11,11 +11,11 @@
                 <form class="form-horizontal" role="form" method="POST" action="{{ route('admin.setting.sms-update') }}">
                     @csrf
                     <fieldset class="setting-fieldset">
-                        <legend class="setting-legend">{{ __('SMS Setting') }}</legend>
+                        <legend class="setting-legend">{{ __('levels.SMS Setting') }}</legend>
                         <div class="row">
                             <div class="col-sm-6">
                                 <div class="form-group">
-                                    <label for="twilio_auth_token">{{ __('Twilio Auth Token') }}</label> <span
+                                    <label for="twilio_auth_token">{{ __('levels.Twilio Auth Token') }}</label> <span
                                         class="text-danger">*</span>
                                     <input name="twilio_auth_token" id="twilio_auth_token" type="text"
                                         class="form-control {{ $errors->has('twilio_auth_token') ? ' is-invalid ' : '' }}"
@@ -28,7 +28,7 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="twilio_from">{{ __('levels.twilio_from') }}</label> <span
-                                        class="text-danger">* {{__('(Your Twilio WhatsApp number )')}}</span>
+                                        class="text-danger">* {{__('levels.(Your Twilio WhatsApp number )')}}</span>
                                     <input name="twilio_from" id="twilio_from" type="text"
                                         class="form-control {{ $errors->has('twilio_from') ? ' is-invalid ' : '' }}"
                                         value="{{ old('twilio_from', setting('twilio_from')) }}">
@@ -57,8 +57,8 @@
                                     <label>{{ __('levels.status') }}</label> <span class="text-danger">*</span>
                                     <select name="twilio_disabled" id="twilio_disabled"
                                         class="form-control @error('twilio_disabled') is-invalid @enderror">
-                                        <option value="1" {{ (old('twilio_disabled', setting('twilio_disabled')) == 1) ? 'selected' : '' }}> {{ __('Enable') }}</option>
-                                        <option value="0" {{ (old('twilio_disabled', setting('twilio_disabled')) == 0) ? 'selected' : '' }}> {{ __('Disable') }}</option>
+                                        <option value="1" {{ (old('twilio_disabled', setting('twilio_disabled')) == 1) ? 'selected' : '' }}> {{ __('levels.Enable') }}</option>
+                                        <option value="0" {{ (old('twilio_disabled', setting('twilio_disabled')) == 0) ? 'selected' : '' }}> {{ __('levels.Disable') }}</option>
                                     </select>
                                     @error('twilio_disabled')
                                         <div class="invalid-feedback">
@@ -72,7 +72,7 @@
                     <div class="row">
                         <div class="form-group col-md-6">
                             <button class="btn btn-primary">
-                                <span>{{ __('Update Sms Setting') }}</span>
+                                <span>{{ __('levels.Update Sms Setting') }}</span>
                             </button>
                         </div>
                     </div>

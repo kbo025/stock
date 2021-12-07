@@ -4,7 +4,7 @@
 
     <section class="section">
         <div class="section-header">
-            <h1>{{ __('Sales') }}</h1>
+            <h1>{{ __('levels.Sales') }}</h1>
             {{ Breadcrumbs::render('sales') }}
         </div>
 
@@ -14,7 +14,7 @@
                     <div class="card">
                         @if(auth()->user()->can('pos'))
                             <div class="card-header">
-                                <a href="{{ route('admin.pos') }}" class="btn btn-icon icon-left btn-primary"><i class="fas fa-plus"></i> {{ __('Add POS') }}
+                                <a href="{{ route('admin.pos') }}" class="btn btn-icon icon-left btn-primary"><i class="fas fa-plus"></i> {{ __('levels.Add POS') }}
                                 </a>
                             </div>
                         @endif
@@ -23,13 +23,13 @@
                                 <table class="table table-striped" id="maintable" data-url="{{ route('admin.sale.get-sale') }}" data-status="{{ \App\Enums\Status::ACTIVE }}">
                                     <thead>
                                     <tr>
-                                        <th>{{ __('ID') }}</th>
-                                        <th>{{ __('SaleNo') }}</th>
-                                        <th>{{ __('Customer') }}</th>
-                                        <th>{{ __('Date') }}</th>
-                                        <th>{{ __('Subtotal') }}</th>
-                                        <th>{{ __('Paid') }}</th>
-                                        <th>{{ __('Actions') }}</th>
+                                        <th>{{ __('levels.ID') }}</th>
+                                        <th>{{ __('levels.SaleNo') }}</th>
+                                        <th>{{ __('levels.customer') }}</th>
+                                        <th>{{ __('levels.date') }}</th>
+                                        <th>{{ __('levels.Subtotal') }}</th>
+                                        <th>{{ __('levels.Paid') }}</th>
+                                        <th>{{ __('levels.actions') }}</th>
                                     </tr>
                                     </thead>
                                 </table>

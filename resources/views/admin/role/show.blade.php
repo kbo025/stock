@@ -4,7 +4,7 @@
 
 	<section class="section">
         <div class="section-header">
-            <h1>{{ __('Roles') }}</h1>
+            <h1>{{ __('levels.Roles') }}</h1>
             {{ Breadcrumbs::render('role/view') }}
         </div>
 
@@ -15,31 +15,31 @@
 				    	<form action="{{ route('admin.role.save-permission', $role) }}" method="POST">
 				    		@csrf
 				    		<div class="card-header">
-						        <h3>{{ __('Permission') }} - <span class="text-danger">( {{ $role->name }} )</span></h3>
+						        <h3>{{ __('levels.Permission') }} - <span class="text-danger">( {{ $role->name }} )</span></h3>
 						    </div>
 
 						    <div class="card-body">
 						        <table class="table table-bordered table-striped">
                                     <thead>
                                         <tr>
-                                            <th>{{ __('#') }}</th>
-                                            <th>{{ __('Module Name') }}</th>
-                                            <th>{{ __('Create') }}</th>
-                                            <th>{{ __('Edit') }}</th>
-                                            <th>{{ __('Delete') }}</th>
-                                            <th>{{ __('Show') }}</th>
+                                            <th>{{ __('levels.#') }}</th>
+                                            <th>{{ __('levels.Module Name') }}</th>
+                                            <th>{{ __('levels.Create') }}</th>
+                                            <th>{{ __('levels.Edit') }}</th>
+                                            <th>{{ __('levels.Delete') }}</th>
+                                            <th>{{ __('levels.Show') }}</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         <?php if(count($permissionList)) { foreach($permissionList as $permission) { ?>
                                             <tr>
-                                                <td data-title="{{ __('#') }}">
+                                                <td data-title="{{ __('levels.#') }}">
                                                     <input type="checkbox" id="<?=$permission->name?>" name="<?=$permission->name?>" value="<?=$permission->id?>"  <?=isset($permissions[$permission->id]) ? 'checked' : ''?> onclick="processCheck(this);" class="mainmodule"/>
                                                 </td>
-                                                <td data-title="{{ __('Module Name') }}">
+                                                <td data-title="{{ __('levels.Module Name') }}">
                                                 	<?=str_replace('-', ' ', ucfirst($permission->name))?>
                                                 </td>
-                                                <td data-title="{{ __('Create') }}">
+                                                <td data-title="{{ __('levels.Create') }}">
 	                                                <?php
 	                                                    $permissionCreate = $permission->name.'_create';
 	                                                    if(isset($permissionArray[$permissionCreate])) { ?>
@@ -48,7 +48,7 @@
 	                                                    echo "&nbsp;";
 	                                                } ?>
                                                 </td>
-                                                <td data-title="{{ __('Edit') }}">
+                                                <td data-title="{{ __('levels.Edit') }}">
 	                                                <?php
 	                                                    $permissionEdit = $permission->name.'_edit';
 	                                                    if(isset($permissionArray[$permissionEdit])) { ?>
@@ -57,7 +57,7 @@
 	                                                    echo "&nbsp;";
 	                                                } ?>
                                                 </td>
-                                                <td data-title="{{ __('Delete') }}">
+                                                <td data-title="{{ __('levels.Delete') }}">
 	                                                <?php
 	                                                    $permissionDelete = $permission->name.'_delete';
 	                                                    if(isset($permissionArray[$permissionDelete])) { ?>
@@ -66,7 +66,7 @@
 	                                                    echo "&nbsp;";
 	                                                } ?>
                                                 </td>
-                                                <td data-title="{{ __('Show') }}">
+                                                <td data-title="{{ __('levels.Show') }}">
 	                                                <?php
 	                                                    $permissionShow = $permission->name.'_show';
 	                                                    if(isset($permissionArray[$permissionShow])) { ?>
@@ -82,7 +82,7 @@
 						    </div>
 
 					        <div class="card-footer">
-		                    	<button class="btn btn-primary mr-1" type="submit">{{ __('Submit') }}</button>
+		                    	<button class="btn btn-primary mr-1" type="submit">{{ __('levels.submit') }}</button>
 		                  	</div>
 		                </form>
 					</div>

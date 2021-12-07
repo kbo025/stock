@@ -4,7 +4,7 @@
 
   <section class="section">
         <div class="section-header">
-            <h1>{{ __('Administrators') }}</h1>
+            <h1>{{ __('levels.administrators') }}</h1>
             {{ Breadcrumbs::render('administrators') }}
         </div>
 
@@ -14,7 +14,7 @@
                     <div class="card">
                         @can('administrators_create')
                             <div class="card-header">
-                                <a href="{{ route('admin.administrators.create') }}" class="btn btn-icon icon-left btn-primary"><i class="fas fa-plus"></i> {{ __('Add Administrator') }}</a>
+                                <a href="{{ route('admin.administrators.create') }}" class="btn btn-icon icon-left btn-primary"><i class="fas fa-plus"></i> {{ __('levels.add_administrator') }}</a>
                             </div>
                         @endcan
                         <div class="card-body">
@@ -22,13 +22,13 @@
                                 <table class="table table-striped" id="maintable" data-url="{{ route('admin.administrators.get-administrators') }}" data-hidecolumn="{{ auth()->user()->can('administrators_show') || auth()->user()->can('administrators_edit') || auth()->user()->can('administrators_delete') }}">
                                     <thead>
                                         <tr>
-                                            <th>{{ __('ID') }}</th>
-                                            <th>{{ __('Image') }}</th>
-                                            <th>{{ __('Name') }}</th>
-                                            <th>{{ __('Role') }}</th>
-                                            <th>{{ __('Email') }}</th>
-                                            <th>{{ __('Phone') }}</th>
-                                            <th>{{ __('Actions') }}</th>
+                                            <th>{{ __('levels.ID') }}</th>
+                                            <th>{{ __('levels.image') }}</th>
+                                            <th>{{ __('levels.name') }}</th>
+                                            <th>{{ __('levels.role') }}</th>
+                                            <th>{{ __('levels.email') }}</th>
+                                            <th>{{ __('levels.phone') }}</th>
+                                            <th>{{ __('levels.actions') }}</th>
                                         </tr>
                                     </thead>
                                 </table>

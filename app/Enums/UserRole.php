@@ -10,8 +10,9 @@ namespace App\Enums;
 
 interface UserRole
 {
-    const ADMIN       = 1;
-    const CUSTOMER    = 2;
-    const SHOPOWNER   = 3;
+    const ADMIN        = 1;
+    const CUSTOMER     = 2;
+    const SHOPOWNER    = 3;
     const RECEPTIONIST = 4;
+    const DELIVERYBOY  = 5;
 }

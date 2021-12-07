@@ -4,7 +4,7 @@
 
 	<section class="section">
         <div class="section-header">
-            <h1>{{ __('Customers') }}</h1>
+            <h1>{{ __('levels.customers') }}</h1>
             {{ Breadcrumbs::render('customers/view') }}
         </div>
 
@@ -27,16 +27,16 @@
 			    		<div class="card-body">
 			    			<div class="profile-desc">
 			    				<div class="single-profile">
-			    					<p><b>{{ __('First Name') }}: </b> {{ $user->first_name}}</p>
+			    					<p><b>{{ __('levels.first_name') }}: </b> {{ $user->first_name}}</p>
 			    				</div>
 			    				<div class="single-profile">
-			    					<p><b>{{ __('Last Name') }}: </b> {{ $user->last_name}}</p>
+			    					<p><b>{{ __('levels.last_name') }}: </b> {{ $user->last_name}}</p>
 			    				</div>
 			    				<div class="single-profile">
-			    					<p><b>{{ __('Phone') }}: </b> {{ $user->phone}}</p>
+			    					<p><b>{{ __('levels.phone') }}: </b> {{ $user->phone}}</p>
 			    				</div>
 			    				<div class="single-profile">
-			    					<p><b>{{ __('Credit') }}: </b> {{ currencyFormat($user->balance->balance > 0 ? $user->balance->balance : 0 ) }}</p>
+			    					<p><b>{{ __('levels.credit') }}: </b> {{ currencyFormat($user->balance->balance > 0 ? $user->balance->balance : 0 ) }}</p>
 			    				</div>
                                 <div class="single-profile">
                                     <img alt="image"  src="{{ $user->qrcode }}" class=" profile-picture single-profile-css">

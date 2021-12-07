@@ -10,7 +10,7 @@
 
 <section class="section">
     <div class="section-header">
-        <h1>{{ __('Categories') }}</h1>
+        <h1>{{ __('levels.categories') }}</h1>
         {{ Breadcrumbs::render('categories/edit') }}
     </div>
 
@@ -26,10 +26,10 @@
                             <div class="form-row">
                                     @if(auth()->user()->myrole == 1)
                                         <div class="form-group col">
-                                            <label for="shop_id">{{ __('Shop') }}</label> <span class="text-danger">*</span>
+                                            <label for="shop_id">{{ __('levels.shop') }}</label> <span class="text-danger">*</span>
                                             <select name="shop_id" id="shop_id"
                                                     class="select2 form-control @error('shop_id') is-invalid red-border @enderror">
-                                                <option value="">{{ __('Select Shop') }}</option>
+                                                <option value="">{{ __('levels.select_shop') }}</option>
                                                 @if(!blank($shops))
                                                     @foreach($shops as $shop)
                                                         <option value="{{ $shop->id }}"
@@ -84,7 +84,7 @@
                                             class="custom-file-input @error('image') is-invalid @enderror"
                                             id="customFile" onchange="readURL(this);">
                                         <label class="custom-file-label"
-                                            for="customFile">{{ __('Choose file') }}</label>
+                                            for="customFile">{{ __('levels.choose_file') }}</label>
                                     </div>
                                     @if ($errors->has('image'))
                                     <div class="help-block text-danger">
@@ -96,7 +96,7 @@
                                         src="{{ asset($category->getFirstMediaUrl('categories')) }}" alt="your image" />
                                     @else
                                     <img class="img-thumbnail image-width mt-4 mb-3" id="previewImage"
-                                        src="{{ asset('assets/img/default/category.png') }}" alt="{{ __('your image') }}" />
+                                        src="{{ asset('assets/img/default/category.png') }}" alt="{{ __('levels.your_image') }}" />
                                     @endif
                                 </div>
 
@@ -116,7 +116,7 @@
                         </div>
 
                         <div class="card-footer">
-                            <button class="btn btn-primary mr-1" type="submit">{{ __('Submit') }}</button>
+                            <button class="btn btn-primary mr-1" type="submit">{{ __('levels.submit') }}</button>
                         </div>
                     </form>
                 </div>

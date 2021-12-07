@@ -32,11 +32,11 @@
                                     </li>
                                     @if(auth()->user())
                                         <li class="nav-item">
-                                            <a class="nav-link" href="{{ route('admin.dashboard.index') }}">{{__('Dashboard')}}</a>
+                                            <a class="nav-link" href="{{ route('admin.dashboard.index') }}">{{__('levels.Dashboard')}}</a>
                                         </li>
                                         <li class="nav-item">
                                             <a class="nav-link" href="{{ route('logout') }}"
-                                               onclick="event.preventDefault();document.getElementById('logout-form').submit();">{{ __('Logout') }}
+                                               onclick="event.preventDefault();document.getElementById('logout-form').submit();">{{ __('levels.logout') }}
                                                 <i class="fas fa-sign-out-alt"></i>
                                             </a>
                                             <form id="logout-form" action="{{ route('logout') }}" method="POST" class="display-none">

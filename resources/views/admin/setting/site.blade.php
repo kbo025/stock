@@ -12,7 +12,7 @@
                 enctype="multipart/form-data">
                 @csrf
                 <fieldset class="setting-fieldset">
-                    <legend class="setting-legend">{{ __('General Setting') }}</legend>
+                    <legend class="setting-legend">{{ __('levels.General Setting') }}</legend>
                     <div class="row">
                         <div class="col-sm-6">
                             <div class="form-group">
@@ -30,7 +30,7 @@
 
                             <div class="form-group">
                                 <label
-                                    for="site_phone_number">{{ __('Site Phone Number') }}</label>
+                                    for="site_phone_number">{{ __('levels.Site Phone Number') }}</label>
                                 <span class="text-danger">*</span>
                                 <input name="site_phone_number" id="site_phone_number" type="number" pattern="+[7-9]{2}-[0-9]{3}-[0-9]{4}"
                                     class="form-control @error('site_phone_number') is-invalid @enderror"
@@ -74,7 +74,7 @@
                                     <input name="site_logo" type="file"
                                         class="file-upload-input custom-file-input @error('site_logo') is-invalid @enderror"
                                         id="customFile" onchange="readURL(this);">
-                                    <label class="custom-file-label" for="customFile">{{ __('Choose
+                                    <label class="custom-file-label" for="customFile">{{ __('levels.Choose
                                                                     file') }}</label>
                                 </div>
                                 @error('site_logo')
@@ -86,10 +86,10 @@
                                 @if(setting('site_logo'))
                                 <img class="img-thumbnail image-width mt-4 mb-3" id="previewImage"
                                     src="{{ asset('images/'.setting('site_logo')) }}"
-                                    alt="{{ __('Food Express Logo') }}" />
+                                    alt="{{ __('levels.Food Express Logo') }}" />
                                 @else
                                 <img class="img-thumbnail image-width mt-4 mb-3" id="previewImage"
-                                    src="{{ asset('images/logo.png') }}" alt="{{ __('Food Express Logo') }}" />
+                                    src="{{ asset('images/logo.png') }}" alt="{{ __('levels.Food Express Logo') }}" />
                                 @endif
                             </div>
 
@@ -166,7 +166,7 @@
                 <div class="row">
                     <div class="form-group col-md-6">
                         <button class="btn btn-primary">
-                            <span>{{ __('Update Site Setting') }}</span>
+                            <span>{{ __('levels.Update Site Setting') }}</span>
                         </button>
                     </div>
                 </div>

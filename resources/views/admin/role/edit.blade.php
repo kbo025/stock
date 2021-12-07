@@ -4,7 +4,7 @@
 	
 	<section class="section">
         <div class="section-header">
-            <h1>{{ __('Roles') }}</h1>
+            <h1>{{ __('levels.Roles') }}</h1>
             {{ Breadcrumbs::render('role/edit') }}
         </div>
 
@@ -28,7 +28,7 @@
 						    </div>
 						    
 					        <div class="card-footer">
-		                    	<button class="btn btn-primary mr-1" type="submit">{{ __('Submit') }}</button>
+		                    	<button class="btn btn-primary mr-1" type="submit">{{ __('levels.submit') }}</button>
 		                  	</div>
 		                </form>
 					</div>

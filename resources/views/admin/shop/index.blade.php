@@ -4,7 +4,7 @@
 
 <section class="section">
     <div class="section-header">
-        <h1>{{ __('Shops') }}</h1>
+        <h1>{{ __('levels.shops') }}</h1>
         {{ Breadcrumbs::render('shops') }}
     </div>
 
@@ -16,7 +16,7 @@
                     @can('shop_create')
                         <div class="card-header">
                             <a href="{{ route('admin.shop.create') }}" class="btn btn-icon icon-left btn-primary"><i
-                                    class="fas fa-plus"></i> {{ __('Add Shop') }}</a>
+                                    class="fas fa-plus"></i> {{ __('levels.Add Shop') }}</a>
                         </div>
                     @endcan
 
@@ -31,11 +31,11 @@
                                     </select>
                                     <div class="input-group-append">
                                         <button class="btn btn-outline-secondary" type="button" id="refresh">
-                                            {{ __('Refresh') }}</button>
+                                            {{ __('levels.refresh') }}</button>
                                     </div>
                                     <div class="input-group-append">
                                         <button class="btn btn-outline-secondary" type="button"
-                                            id="date-search">{{ __('Search') }}</button>
+                                            id="date-search">{{ __('levels.search') }}</button>
                                     </div>
                                 </div>
                             </div>

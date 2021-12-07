@@ -15,7 +15,7 @@
                         <style>.bb td, .bb th { border-bottom: 1px solid #DDD;border-top: 1px solid #DDD; }</style>
                         <span class="text-center">
                             <h3>@if(auth()->user()->shop) {{auth()->user()->shop->name}}@endif</h3>
-                            <h4>{{__('Order')}}</h4>
+                            <h4>{{__('levels.Order')}}</h4>
                           </span>
                         <h6>C: @if(!blank($customer)){{$customer->name}}@endif</h6>
                         <h6>R: @if(!blank($reference)){{$reference}}@endif</h6>
@@ -56,7 +56,7 @@
                         <style>.bb td, .bb th { border-bottom: 1px solid #DDD; }</style>
                         <span class="text-center">
                         <h3>@if(auth()->user()->shop) {{auth()->user()->shop->name}}@endif</h3>
-                        <h4>{{__('Bill')}}</h4>
+                        <h4>{{__('levels.Bill')}}</h4>
                         </span>
                         <h6>C: @if(!blank($customer)){{$customer->name}}@endif</h6>
                         <h6>R: @if(!blank($reference)){{$reference}}@endif</h6>
@@ -76,19 +76,19 @@
                         <table id="bill-total-table" class="table table-condensed">
                             <tbody>
                             <tr class="bb">
-                                <td>{{__('Total Items')}}</td>
+                                <td>{{__('levels.Total Items')}}</td>
                                 <td class="text-right">{{$totalItem}} ({{$totalQty}})</td>
                             </tr>
                             <tr class="bb">
-                                <td>{{__('Total')}}</td>
+                                <td>{{__('levels.Total')}}</td>
                                 <td class="text-right">{{currencyFormat($totalAmount)}}</td>
                             </tr>
 
                             <tr>
-                                <td>{{__('Total Payable')}}</td>
+                                <td>{{__('levels.Total Payable')}}</td>
                                 <td class="text-right">{{currencyFormat($totalAmount)}}</td>
                             </tr>
-                            <tr><td colspan="2" class="text-center">{{__('Merchant Copy')}}</td></tr>
+                            <tr><td colspan="2" class="text-center">{{__('levels.Merchant Copy')}}</td></tr>
                             </tbody>
                         </table>
                     </div>

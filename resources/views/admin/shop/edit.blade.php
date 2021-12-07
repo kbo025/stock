@@ -11,7 +11,7 @@
 
 	<section class="section">
         <div class="section-header">
-            <h1>{{ __('Shops') }}</h1>
+            <h1>{{ __('levels.shops') }}</h1>
             {{ Breadcrumbs::render('shop/edit') }}
         </div>
 
@@ -24,7 +24,7 @@
                         <div class="row">
                             <div class="col-lg-6">
                                 <div class="article-header">
-                                    <h5>{{ __('General') }}</h5>
+                                    <h5>{{ __('levels.General') }}</h5>
                                 </div>
                                 <div class="form-row">
                                     <div class="form-group col">
@@ -81,12 +81,12 @@
                                             {{ $errors->first('image') }}
                                         </div>
                                     @endif
-                                    <img class="img-thumbnail image-width mt-4 mb-3" id="previewImage" src="{{ $shop->images }}" alt="{{ __('your image') }}"/>
+                                    <img class="img-thumbnail image-width mt-4 mb-3" id="previewImage" src="{{ $shop->images }}" alt="{{ __('levels.your_image') }}"/>
                                 </div>
                             </div>
                             <div class="col-lg-6">
                                 <div class="article-header">
-                                    <h5>{{ __('Shop Owner') }}</h5>
+                                    <h5>{{ __('levels.shop Owner') }}</h5>
                                 </div>
                                 <div class="form-row">
                                     <div class="form-group col">
@@ -184,7 +184,7 @@
                     </div>
 
                     <div class="card-footer">
-                        <button class="btn btn-primary mr-1" type="submit">{{ __('Submit') }}</button>
+                        <button class="btn btn-primary mr-1" type="submit">{{ __('levels.submit') }}</button>
                     </div>
                 </div>
 			</form>

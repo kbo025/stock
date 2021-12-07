@@ -4,7 +4,7 @@
 
 	<section class="section">
         <div class="section-header">
-            <h1>{{ __('Tax Rates') }}</h1>
+            <h1>{{ __('levels.Tax Rates') }}</h1>
             {{ Breadcrumbs::render('tax/edit') }}
         </div>
 
@@ -19,10 +19,10 @@
                                 <div class="form-group">
                                     @if(auth()->user()->myrole == 1)
                                         <div class="form-group">
-                                            <label for="shop_id">{{ __('Shop') }}</label> <span class="text-danger">*</span>
+                                            <label for="shop_id">{{ __('levels.shop') }}</label> <span class="text-danger">*</span>
                                             <select name="shop_id" id="shop_id"
                                                     class="select2 form-control @error('shop_id') is-invalid red-border @enderror">
-                                                <option value="">{{ __('Select Shop') }}</option>
+                                                <option value="">{{ __('levels.select_shop') }}</option>
                                                 @if(!blank($shops))
                                                     @foreach($shops as $shop)
                                                         <option value="{{ $shop->id }}"
@@ -42,7 +42,7 @@
                                     @endif
                                 </div>
 						        <div class="form-group">
-			                        <label>{{ __('Name') }}</label> <span class="text-danger">*</span>
+			                        <label>{{ __('levels.name') }}</label> <span class="text-danger">*</span>
 			                        <input type="text" name="name" class="form-control @error('name') is-invalid @enderror" value="{{ old('name', $tax->name ) }}">
 			                        @error('name')
 				                        <div class="invalid-feedback">
@@ -52,7 +52,7 @@
 			                    </div>
 
                                 <div class="form-group">
-                                    <label>{{ __('Code') }}</label> <span class="text-danger">*</span>
+                                    <label>{{ __('levels.Code') }}</label> <span class="text-danger">*</span>
                                     <input type="text" name="code" class="form-control @error('code') is-invalid @enderror" value="{{ old('code',$tax->code) }}">
                                     @error('code')
                                     <div class="invalid-feedback">
@@ -62,7 +62,7 @@
                                 </div>
 
                                 <div class="form-group">
-                                    <label for="tax_rate">{{ __('Tax Rate') }}</label> <span class="text-danger">*</span>
+                                    <label for="tax_rate">{{ __('levels.Tax Rate') }}</label> <span class="text-danger">*</span>
                                     <input id="tax_rate" type="number" step="0.01"  name="tax_rate" class="form-control {{ $errors->has('tax_rate') ? " is-invalid " : '' }}" value="{{ old('tax_rate',$tax->tax_rate) }}">
                                     @error('tax_rate')
                                     <div class="invalid-feedback">
@@ -72,7 +72,7 @@
                                 </div>
 
                                 <div class="form-group">
-                                    <label>{{ __('Type') }}</label> <span class="text-danger">*</span>
+                                    <label>{{ __('levels.Type') }}</label> <span class="text-danger">*</span>
                                     <select name="type" class="form-control @error('type') is-invalid @enderror">
                                         @foreach(trans('taxtype') as $key => $type)
                                             <option value="{{ $key }}" {{ (old('type',$tax->type) == $key) ? 'selected' : '' }}>{{ $type }}</option>
@@ -86,7 +86,7 @@
                                 </div>
 
 						        <div class="form-group">
-						            <label>{{ __('Status') }}</label> <span class="text-danger">*</span>
+						            <label>{{ __('levels.status') }}</label> <span class="text-danger">*</span>
 						            <select name="status" class="form-control @error('status') is-invalid @enderror">
 						            	@foreach(trans('statuses') as $key => $status)
 						                	<option value="{{ $key }}" {{ (old('status', $tax->status) == $key) ? 'selected' : '' }}>{{ $status }}</option>
@@ -101,7 +101,7 @@
 
 						    </div>
 					        <div class="card-footer">
-		                    	<button class="btn btn-primary mr-1" type="submit">{{ __('Submit') }}</button>
+		                    	<button class="btn btn-primary mr-1" type="submit">{{ __('levels.submit') }}</button>
 		                  	</div>
 		                </form>
 					</div>

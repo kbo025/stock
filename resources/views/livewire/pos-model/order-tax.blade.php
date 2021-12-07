@@ -5,14 +5,14 @@
         <div class="modal-dialog">
             <div id="cartItem" class="modal-content">
                 <div class="modal-header modal-primary">
-                    <h5 class="modal-title">{{__('EDIT ORDER TAX')}}</h5>
+                    <h5 class="modal-title">{{__('levels.EDIT ORDER TAX')}}</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><i class="fa fa-times"></i></button>
                 </div>
                 <div class="modal-body">
                     <div class="form-group col-12">
-                        <label for="ProductTax">{{ __('Tax Rates') }}</label>
+                        <label for="ProductTax">{{ __('levels.Tax Rates') }}</label>
                         <select id="ProductTax"  wire:key="taxID" class="form-control" wire:model="taxID" wire:change="changeEventTax">
-                            <option value="">{{ __('select Tax Rate') }}</option>
+                            <option value="">{{ __('levels.select Tax Rate') }}</option>
                             @foreach($taxs as $tax)
                                 <option value="{{ $tax->id }}"
                                     {{ (old('attribute') === $tax->id) ? 'selected' : '' }}>{{ $tax->name }}

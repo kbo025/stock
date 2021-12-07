@@ -16,7 +16,7 @@ return [
     |
      */
 
-    ShopStatus::ACTIVE   => "Active",
-    ShopStatus::INACTIVE   => "Inactive",
+    ShopStatus::ACTIVE   => "Ativo",
+    ShopStatus::INACTIVE   => "Inativo",
 
 ];

@@ -8,19 +8,19 @@
             <div class="col-lg-4 col-md-4 col-sm-12">
                 <div class="card card-statistic-2">
                     <div class="card-stats">
-                        <div class="card-stats-title">{{__('Total Summary')}}</div>
+                        <div class="card-stats-title">{{__('levels.total_summary')}}</div>
                         <div class="card-stats-items">
                             <div class="card-stats-item">
                                 <div class="card-stats-item-count">{{$totalProduct}}</div>
-                                <div class="card-stats-item-label">{{__('Product')}}</div>
+                                <div class="card-stats-item-label">{{__('levels.product')}}</div>
                             </div>
                             <div class="card-stats-item">
                                 <div class="card-stats-item-count">{{$totalCustomer->count()}}</div>
-                                <div class="card-stats-item-label">{{__('Customer')}}</div>
+                                <div class="card-stats-item-label">{{__('levels.customer')}}</div>
                             </div>
                             <div class="card-stats-item">
                                 <div class="card-stats-item-count">{{$totalTodaySale}}</div>
-                                <div class="card-stats-item-label">{{__('Today sale')}}</div>
+                                <div class="card-stats-item-label">{{__('levels.today_sale')}}</div>
                             </div>
                         </div>
                     </div>
@@ -29,7 +29,7 @@
                     </div>
                     <div class="card-wrap">
                         <div class="card-header">
-                            <h4>{{__('Total Sales')}}</h4>
+                            <h4>{{__('levels.total_sales')}}</h4>
                         </div>
                         <div class="card-body">
                            {{$totalSales->count()}}
@@ -47,7 +47,7 @@
                     </div>
                     <div class="card-wrap">
                         <div class="card-header">
-                            <h4>{{__('Total Purchases')}}</h4>
+                            <h4>{{__('levels.total_purchases')}}</h4>
                         </div>
                         <div class="card-body">
                             {{currencyFormat($purchaseAmount)}}
@@ -65,7 +65,7 @@
                     </div>
                     <div class="card-wrap">
                         <div class="card-header">
-                            <h4>{{__('Total Sales')}}</h4>
+                            <h4>{{__('levels.total_sales')}}</h4>
                         </div>
                         <div class="card-body">
                             {{currencyFormat($totalIncome)}}
@@ -98,20 +98,20 @@
             <div class="col-md-8">
 		        <div class="card">
 		            <div class="card-header">
-		                <h4>{{ __('Recent Sales') }} <span class="badge badge-primary">{{ 0 }}</span></h4>
+		                <h4>{{ __('levels.recent_sales') }} <span class="badge badge-primary">{{ 0 }}</span></h4>
 		                <div class="card-header-action">
-		                    <a href="{{ route('admin.sale.index') }}" class="btn btn-primary">{{ __('View More') }} <i class="fas fa-chevron-right"></i></a>
+		                    <a href="{{ route('admin.sale.index') }}" class="btn btn-primary">{{ __('levels.view_more') }} <i class="fas fa-chevron-right"></i></a>
 		                </div>
 		            </div>
 		            <div class="card-body p-0">
 		                <div class="table-responsive table-invoice">
 		                    <table class="table table-striped">
 		                        <tr>
-		                            <th>{{ __('Invoice ID') }}</th>
-		                            <th>{{ __('Customer') }}</th>
-		                            <th>{{ __('Date') }}</th>
-		                            <th>{{ __('Total') }}</th>
-		                            <th>{{ __('Action') }}</th>
+		                            <th>{{ __('levels.invoice_id') }}</th>
+		                            <th>{{ __('levels.customer') }}</th>
+		                            <th>{{ __('levels.date') }}</th>
+		                            <th>{{ __('levels.Total') }}</th>
+		                            <th>{{ __('levels.Action') }}</th>
 		                        </tr>
 		                        @if(!blank($todaySale))
 		                        	@foreach($todaySale as $sale)

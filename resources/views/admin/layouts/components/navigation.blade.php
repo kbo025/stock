@@ -30,15 +30,15 @@
         <li class="dropdown">
             <a href="{{ route('admin.profile') }}" data-toggle="dropdown" class="nav-link dropdown-toggle nav-link-lg nav-link-user">
                 <img alt="image" src="{{ auth()->user()->images }}" class="rounded-circle mr-1">
-                <div class="d-sm-none d-lg-inline-block">{{ __('Hi') }}, {{ auth()->user()->name }}</div>
+                <div class="d-sm-none d-lg-inline-block">{{ __('levels.hi') }}, {{ auth()->user()->name }}</div>
             </a>
             <div class="dropdown-menu dropdown-menu-right">
                 <a href="{{ route('admin.profile') }}" class="dropdown-item has-icon">
-                    <i class="far fa-user"></i> {{ __('Profile') }}
+                    <i class="far fa-user"></i> {{ __('levels.profile') }}
                 </a>
                 <div class="dropdown-divider"></div>
                 <a href="{{ route('logout') }}" onclick="event.preventDefault();document.getElementById('logout-form').submit();" class="dropdown-item has-icon text-danger">
-                    <i class="fas fa-sign-out-alt"></i> {{ __('Logout') }}
+                    <i class="fas fa-sign-out-alt"></i> {{ __('levels.logout') }}
                 </a>
                 <form id="logout-form" action="{{ route('logout') }}" method="POST" class="display-none">
                     @csrf
@@ -62,10 +62,10 @@
                 @csrf
                 <div class="modal-body">
                             <div class="form-group col-6">
-                                <label for="user_id">{{ __('Customer') }}</label> <span class="text-danger">*</span>
+                                <label for="user_id">{{ __('levels.customer') }}</label> <span class="text-danger">*</span>
                                 <select name="user_id" id="user_id"
                                         class="select2 form-control {{ $errors->has('user_id') ? " is-invalid " : '' }}">
-                                    <option value="">{{ __('Select Customer') }}</option>
+                                    <option value="">{{ __('levels.Select Customer') }}</option>
                                     @if(Request::is('admin/pos'))
                                         @if(!blank($customers))
                                             @foreach($customers as $customer)
@@ -83,7 +83,7 @@
                                 @enderror
                             </div>
                             <div class="form-group col-12">
-                                <label for="amount">{{ __('Amount') }}</label> <span class="text-danger">*</span>
+                                <label for="amount">{{ __('levels.Amount') }}</label> <span class="text-danger">*</span>
                                 <input id="amount" type="text" name="amount" class="form-control {{ $errors->has('amount') ? " is-invalid " : '' }}" value="{{ old('amount') }}">
                                 @error('amount')
                                 <div class="invalid-feedback">
@@ -95,7 +95,7 @@
                 <div class="modal-footer justify-content-between">
                     <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
                     <div>
-                        <button class="btn btn-primary mr-1" onclick="depositFunction()" type="submit">{{ __('Add Deposit') }}</button>
+                        <button class="btn btn-primary mr-1" onclick="depositFunction()" type="submit">{{ __('levels.Add Deposit') }}</button>
                     </div>
                 </div>
             </form>

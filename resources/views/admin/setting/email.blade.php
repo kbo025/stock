@@ -11,7 +11,7 @@
                 <form class="form-horizontal" role="form" method="POST" action="{{ route('admin.setting.email-update') }}">
                     @csrf
                     <fieldset class="setting-fieldset">
-                        <legend class="setting-legend">{{ __('Email Setting') }}</legend>
+                        <legend class="setting-legend">{{ __('levels.Email Setting') }}</legend>
                         <div class="row">
                             <div class="col-sm-6">
                                 <div class="form-group">
@@ -56,8 +56,8 @@
                                     <label>{{ __('levels.status') }}</label> <span class="text-danger">*</span>
                                     <select name="mail_disabled" id="mail_disabled"
                                         class="form-control @error('mail_disabled') is-invalid @enderror">
-                                        <option value="1" {{ (old('mail_disabled', setting('mail_disabled')) == 1) ? 'selected' : '' }}> {{ __('Enable') }}</option>
-                                        <option value="0" {{ (old('mail_disabled', setting('mail_disabled')) == 0) ? 'selected' : '' }}> {{ __('Disable') }}</option>
+                                        <option value="1" {{ (old('mail_disabled', setting('mail_disabled')) == 1) ? 'selected' : '' }}> {{ __('levels.Enable') }}</option>
+                                        <option value="0" {{ (old('mail_disabled', setting('mail_disabled')) == 0) ? 'selected' : '' }}> {{ __('levels.Disable') }}</option>
                                     </select>
                                     @error('mail_disabled')
                                         <div class="invalid-feedback">
@@ -109,7 +109,7 @@
                     <div class="row">
                         <div class="form-group col-md-6">
                             <button type="submit" class="btn btn-primary">
-                                <span>{{ __('Update Email Setting') }}</span>
+                                <span>{{ __('levels.Update Email Setting') }}</span>
                             </button>
                         </div>
                     </div>

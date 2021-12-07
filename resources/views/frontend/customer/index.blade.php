@@ -5,8 +5,8 @@
         <div class="row">
             <div class="col-lg-6">
                 <div>
-                    <h1 class="header-title">{{__('Find Your Balance')}}</h1>
-                    <p class="header-description">{{__('Give your whatsapp number')}}</p>
+                    <h1 class="header-title">{{__('levels.Find Your Balance')}}</h1>
+                    <p class="header-description">{{__('levels.Give your whatsapp number')}}</p>
                     <form id="myForm" action="{{ route('check-balance') }}" method="POST" >
                         @csrf
                         <div class="form-group">
@@ -16,9 +16,9 @@
                             @enderror
                         </div>
                         <a href="{{ route('/') }}" class="btn btn-warning float-left mr-2">
-                            <i class="fas fa-angle-left" aria-hidden="true"></i> {{__('Cancel')}}
+                            <i class="fas fa-angle-left" aria-hidden="true"></i> {{__('levels.Cancel')}}
                         </a>
-                        <button type="submit" class="btn btn-primary">{{__('Check balance')}}</button>
+                        <button type="submit" class="btn btn-primary">{{__('levels.Check balance')}}</button>
                     </form>
                 </div>
             </div>
@@ -39,16 +39,16 @@
                                 </aside>
                                 <div class="col-sm-8">
                                     <dl class="row">
-                                        <dt class="col-sm-4">{{__('Name')}} <small class="float-right">:</small></dt>
+                                        <dt class="col-sm-4">{{__('levels.name')}} <small class="float-right">:</small></dt>
                                         <dd class="col-sm-8">{{ $customer->name }}</dd>
 
-                                        <dt class="col-sm-4">{{__('Phone')}} <small class="float-right">:</small></dt>
+                                        <dt class="col-sm-4">{{__('levels.phone')}} <small class="float-right">:</small></dt>
                                         <dd class="col-sm-8">{{ $customer->phone }}</dd>
 
-                                        <dt class="col-sm-4">{{__('Balance')}} <small class="float-right">:</small></dt>
+                                        <dt class="col-sm-4">{{__('levels.Balance')}} <small class="float-right">:</small></dt>
                                         <dd class="col-sm-8">{{currencyFormat($customer->balance->balance > 0 ? $customer->balance->balance : 0 ) }}</dd>
 
-                                        <dt class="col-sm-4">{{__('Address')}} <small class="float-right">:</small></dt>
+                                        <dt class="col-sm-4">{{__('levels.address')}} <small class="float-right">:</small></dt>
                                         <dd class="col-sm-8">{{ $customer->address }} </dd>
                                     </dl>
                                 </div>
@@ -57,7 +57,7 @@
                         @elseif(!$details)
                             <div class="row g-4">
                                 <div class="col d-flex align-items-start border border-warning bg-white rounded">
-                                    <p align="center" class="not-data text-danger  m-auto py-3 h4">{{__('Sorry,no customer available!')}}</p>
+                                    <p align="center" class="not-data text-danger  m-auto py-3 h4">{{__('levels.Sorry,no customer available!')}}</p>
                                 </div>
                             </div>
                     </article>

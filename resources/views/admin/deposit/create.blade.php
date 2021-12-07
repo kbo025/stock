@@ -10,7 +10,7 @@
 
     <section class="section">
         <div class="section-header">
-            <h1>{{ __('Deposit Add') }}</h1>
+            <h1>{{ __('levels.Deposit Add') }}</h1>
             {{ Breadcrumbs::render('deposit/add') }}
         </div>
 
@@ -23,10 +23,10 @@
                                     <div class="card-body">
                                         <div class="form-row">
                                                 <div class="form-group col-6">
-                                                    <label for="user_id">{{ __('Customer') }}</label> <span class="text-danger">*</span>
+                                                    <label for="user_id">{{ __('levels.customer') }}</label> <span class="text-danger">*</span>
                                                     <select name="user_id" id="user_id"
                                                             class="select2 form-control {{ $errors->has('user_id') ? " is-invalid " : '' }}">
-                                                        <option value="">{{ __('Select Customer') }}</option>
+                                                        <option value="">{{ __('levels.Select Customer') }}</option>
                                                         @if(!blank($users))
                                                             @foreach($users as $user)
                                                                 <option value="{{ $user->id }}"
@@ -44,7 +44,7 @@
                                         </div>
                                         <div class="form-row">
                                             <div class="form-group col-6">
-                                                <label for="amount">{{ __('Amount') }}</label> <span class="text-danger">*</span>
+                                                <label for="amount">{{ __('levels.Amount') }}</label> <span class="text-danger">*</span>
                                                 <input id="amount" type="number" step="0.01"  name="amount" class="form-control {{ $errors->has('amount') ? " is-invalid " : '' }}" value="{{ old('amount') }}">
                                                 @error('amount')
                                                 <div class="invalid-feedback">
@@ -55,7 +55,7 @@
                                         </div>
                                     </div>
                                     <div class="card-footer ">
-                                        <button class="btn btn-primary mr-1" type="submit">{{ __('Add Deposit') }}</button>
+                                        <button class="btn btn-primary mr-1" type="submit">{{ __('levels.Add Deposit') }}</button>
                                     </div>
                                 </div>
                             </div>

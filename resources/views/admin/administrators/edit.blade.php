@@ -4,7 +4,7 @@
 
     <section class="section">
         <div class="section-header">
-            <h1>{{ __('Administrators') }}</h1>
+            <h1>{{ __('levels.administrators') }}</h1>
             {{ Breadcrumbs::render('administrators/edit') }}
         </div>
 
@@ -81,7 +81,7 @@
 
                                 <div class="form-row">
                                     <div class="form-group col">
-                                        <label for="role_id">{{ __('Role') }}</label> <span class="text-danger">*</span>
+                                        <label for="role_id">{{ __('levels.role') }}</label> <span class="text-danger">*</span>
                                         <select id="role_id" name="role_id" class="form-control @error('role_id') is-invalid @enderror">
                                             @foreach($roles as $key => $role)
                                                 <option value="{{ $role->id }}" {{ (old('role_id',$user->myrole) == $role->id) ? 'selected' : '' }}>{{ $role->name }}</option>
@@ -94,7 +94,7 @@
                                         @enderror
                                     </div>
                                     <div class="form-group col">
-                                        <label for="status">{{ __('Status') }}</label> <span class="text-danger">*</span>
+                                        <label for="status">{{ __('levels.status') }}</label> <span class="text-danger">*</span>
                                         <select name="status" class="form-control @error('status') is-invalid @enderror">
                                             @foreach(trans('user_statuses') as $key => $status)
                                                 <option value="{{ $key }}" {{ (old('status', $user->status) == $key) ? 'selected' : '' }}>{{ $status }}</option>
@@ -114,7 +114,7 @@
                                         <label for="customFile">{{ __('levels.image') }}</label>
                                         <div class="custom-file">
                                             <input name="image" type="file" class="custom-file-input @error('image') is-invalid @enderror" id="customFile" onchange="readURL(this);">
-                                            <label class="custom-file-label" for="customFile">{{ __('Choose file') }}</label>
+                                            <label class="custom-file-label" for="customFile">{{ __('levels.choose_file') }}</label>
                                         </div>
                                         @if ($errors->has('image'))
                                             <div class="help-block text-danger">
@@ -140,7 +140,7 @@
                                 </div>
                             </div>
                             <div class="card-footer">
-                                <button class="btn btn-primary mr-1" type="submit">{{ __('Submit') }}</button>
+                                <button class="btn btn-primary mr-1" type="submit">{{ __('levels.submit') }}</button>
                             </div>
                         </div>
                     </form>

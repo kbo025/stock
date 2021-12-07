@@ -4,7 +4,7 @@
 
 	<section class="section">
         <div class="section-header">
-            <h1>{{ __('Units') }}</h1>
+            <h1>{{ __('levels.Units') }}</h1>
             {{ Breadcrumbs::render('unit/edit') }}
         </div>
 
@@ -19,10 +19,10 @@
                                 <div class="form-group">
                                     @if(auth()->user()->myrole == 1)
                                         <div class="form-group">
-                                            <label for="shop_id">{{ __('Shop') }}</label> <span class="text-danger">*</span>
+                                            <label for="shop_id">{{ __('levels.shop') }}</label> <span class="text-danger">*</span>
                                             <select name="shop_id" id="shop_id"
                                                     class="select2 form-control @error('shop_id') is-invalid red-border @enderror">
-                                                <option value="">{{ __('Select Shop') }}</option>
+                                                <option value="">{{ __('levels.select_shop') }}</option>
                                                 @if(!blank($shops))
                                                     @foreach($shops as $shop)
                                                         <option value="{{ $shop->id }}"
@@ -42,7 +42,7 @@
                                     @endif
                                 </div>
 						        <div class="form-group">
-			                        <label>{{ __('Name') }}</label> <span class="text-danger">*</span>
+			                        <label>{{ __('levels.name') }}</label> <span class="text-danger">*</span>
 			                        <input type="text" name="name" class="form-control @error('name') is-invalid @enderror" value="{{ old('name', $unit->name ) }}">
 			                        @error('name')
 				                        <div class="invalid-feedback">
@@ -52,7 +52,7 @@
 			                    </div>
 
 						        <div class="form-group">
-						            <label>{{ __('Status') }}</label> <span class="text-danger">*</span>
+						            <label>{{ __('levels.status') }}</label> <span class="text-danger">*</span>
 						            <select name="status" class="form-control @error('status') is-invalid @enderror">
 						            	@foreach(trans('statuses') as $key => $status)
 						                	<option value="{{ $key }}" {{ (old('status', $unit->status) == $key) ? 'selected' : '' }}>{{ $status }}</option>
@@ -67,7 +67,7 @@
 
 						    </div>
 					        <div class="card-footer">
-		                    	<button class="btn btn-primary mr-1" type="submit">{{ __('Submit') }}</button>
+		                    	<button class="btn btn-primary mr-1" type="submit">{{ __('levels.submit') }}</button>
 		                  	</div>
 		                </form>
 					</div>

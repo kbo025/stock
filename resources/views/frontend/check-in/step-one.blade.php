@@ -4,8 +4,8 @@
     <div class="container-padding">
         <div class="row">
             <div class="col-lg-6">
-                <h1 class="header-title">{{__('Register With Us')}}</h1>
-                <p class="header-description">{{__('Register by Your WhatsApp Number')}}</p>
+                <h1 class="header-title">{{__('levels.Register With Us')}}</h1>
+                <p class="header-description">{{__('levels.Register by Your WhatsApp Number')}}</p>
 
                 <form id="payment-form" action="{{ route('check-in.step-one.store') }}" method="POST" >
                     @csrf
@@ -48,25 +48,25 @@
                         @if(auth()->user())
                         <select class="form-control @error('payment_type') is-invalid @enderror" name="payment_type" id="payment_type" >
                             <option value="{{ App\Enums\PaymentMethod::CASH }}"
-                                    @if (old('payment_type') == App\Enums\PaymentMethod::CASH) selected="selected" @endif>{{ __('Cash') }}</option>
+                                    @if (old('payment_type') == App\Enums\PaymentMethod::CASH) selected="selected" @endif>{{ __('levels.Cash') }}</option>
                             @if(setting('stripe_disabled') && setting('stripe_key') && setting('stripe_secret'))
                                 <option value="{{ App\Enums\PaymentMethod::STRIPE }}"
-                                        @if (old('payment_type') == App\Enums\PaymentMethod::STRIPE) selected="selected" @endif>{{ __('Stripe') }}</option>
+                                        @if (old('payment_type') == App\Enums\PaymentMethod::STRIPE) selected="selected" @endif>{{ __('levels.Stripe') }}</option>
                             @endif
                             @if(setting('razorpay_disabled') && setting('razorpay_key') && setting('razorpay_secret'))
                                 <option value="{{ App\Enums\PaymentMethod::RAZORPAY }}"
-                                        @if (old('payment_type') == App\Enums\PaymentMethod::RAZORPAY) selected="selected" @endif>{{ __('RazorPay') }}</option>
+                                        @if (old('payment_type') == App\Enums\PaymentMethod::RAZORPAY) selected="selected" @endif>{{ __('levels.RazorPay') }}</option>
                             @endif
                         </select>
                         @elseif(setting('stripe_disabled') || setting('stripe_key') && setting('stripe_secret') || setting('razorpay_disabled') || setting('razorpay_key') && setting('razorpay_secret'))
                         <select class="form-control  @error('payment_type') is-invalid @enderror" name="payment_type" id="payment_type" >
                                 @if(setting('stripe_disabled') && setting('stripe_key') && setting('stripe_secret'))
                                     <option value="{{ App\Enums\PaymentMethod::STRIPE }}"
-                                            @if (old('payment_type') == App\Enums\PaymentMethod::STRIPE) selected="selected" @endif>{{ __('Stripe') }}</option>
+                                            @if (old('payment_type') == App\Enums\PaymentMethod::STRIPE) selected="selected" @endif>{{ __('levels.Stripe') }}</option>
                                 @endif
                                 @if(setting('razorpay_disabled') && setting('razorpay_key') && setting('razorpay_secret'))
                                     <option value="{{ App\Enums\PaymentMethod::RAZORPAY }}"
-                                            @if (old('payment_type') == App\Enums\PaymentMethod::RAZORPAY) selected="selected" @endif>{{ __('RazorPay') }}</option>
+                                            @if (old('payment_type') == App\Enums\PaymentMethod::RAZORPAY) selected="selected" @endif>{{ __('levels.RazorPay') }}</option>
                                 @endif
                             </select>
                        @endif
@@ -78,7 +78,7 @@
                         <div class="col-md">
                             <div class="reg-form form-floating border-black">
                                 <div class="payment-card-css mb-3">
-                                    <label id="card-element-label">{{ __('Credit or debit card') }}</label>
+                                    <label id="card-element-label">{{ __('levels.Credit or debit card') }}</label>
                                     <div class="mt-1">
                                         <div id="card-element"></div>
                                         <div id="card-errors" class="text-warning" role="alert"></div>
@@ -88,7 +88,7 @@
                         </div>
                     </div>
 
-                    <button type="submit" class="btn btn-primary">{{__('Take Membership')}}</button>
+                    <button type="submit" class="btn btn-primary">{{__('levels.Take Membership')}}</button>
                 </form>
             </div>
 

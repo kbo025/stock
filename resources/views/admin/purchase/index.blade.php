@@ -4,7 +4,7 @@
 
     <section class="section">
         <div class="section-header">
-            <h1>{{ __('Purchases') }}</h1>
+            <h1>{{ __('levels.Purchases') }}</h1>
             {{ Breadcrumbs::render('purchase') }}
         </div>
 
@@ -14,7 +14,7 @@
                     <div class="card">
                         @if(auth()->user()->can('purchase_create'))
                         <div class="card-header">
-                            <a href="{{ route('admin.purchase.create') }}" class="btn btn-icon icon-left btn-primary"><i class="fas fa-plus"></i> {{ __('Add Purchase') }}
+                            <a href="{{ route('admin.purchase.create') }}" class="btn btn-icon icon-left btn-primary"><i class="fas fa-plus"></i> {{ __('levels.Add Purchase') }}
                             </a>
                         </div>
                         @endif
@@ -23,13 +23,13 @@
                                 <table class="table table-striped" id="maintable" data-url="{{ route('admin.purchase.get-purchase') }}" data-status="{{ \App\Enums\Status::ACTIVE }}">
                                     <thead>
                                     <tr>
-                                        <th>{{ __('ID') }}</th>
-                                        <th>{{ __('Shop') }}</th>
-                                        <th>{{ __('Purchases No') }}</th>
-                                        <th>{{ __('Date') }}</th>
-                                        <th>{{ __('Status') }}</th>
-                                        <th>{{ __('Amount') }}</th>
-                                        <th>{{ __('Actions') }}</th>
+                                        <th>{{ __('levels.ID') }}</th>
+                                        <th>{{ __('levels.shop') }}</th>
+                                        <th>{{ __('levels.Purchases No') }}</th>
+                                        <th>{{ __('levels.date') }}</th>
+                                        <th>{{ __('levels.status') }}</th>
+                                        <th>{{ __('levels.Amount') }}</th>
+                                        <th>{{ __('levels.actions') }}</th>
                                     </tr>
                                     </thead>
                                 </table>

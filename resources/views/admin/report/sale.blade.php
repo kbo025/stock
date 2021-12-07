@@ -4,7 +4,7 @@
 
     <section class="section">
         <div class="section-header">
-            <h1>{{ __('Sales Report') }}</h1>
+            <h1>{{ __('levels.Sales Report') }}</h1>
             {{ Breadcrumbs::render('sales-report') }}
         </div>
 
@@ -18,10 +18,10 @@
                                     @if(auth()->user()->myrole == 1)
                                 <div class="col-sm-4">
                                         <div class="form-group">
-                                            <label for="shop_id">{{ __('Shop') }}</label> <span class="text-danger">*</span>
+                                            <label for="shop_id">{{ __('levels.shop') }}</label> <span class="text-danger">*</span>
                                             <select name="shop_id" id="shop_id"
                                                     class="select2 form-control @error('shop_id') is-invalid red-border @enderror">
-                                                <option value="">{{ __('Select Shop') }}</option>
+                                                <option value="">{{ __('levels.select_shop') }}</option>
                                                 @if(!blank($shops))
                                                     @foreach($shops as $shop)
                                                         <option value="{{ $shop->id }}"
@@ -43,7 +43,7 @@
 
                             <div class="col-sm-4">
                                 <div class="form-group">
-                                    <label>{{ __('From Date') }}</label>
+                                    <label>{{ __('levels.From Date') }}</label>
                                     <input type="text" name="from_date" class="form-control @error('from_date') is-invalid @enderror datepicker" value="{{ old('from_date', $set_from_date) }}">
                                     @error('from_date')
                                         <div class="invalid-feedback">
@@ -54,7 +54,7 @@
                             </div>
                             <div class="col-sm-4">
                                 <div class="form-group">
-                                    <label>{{ __('To Date') }}</label>
+                                    <label>{{ __('levels.To Date') }}</label>
                                     <input type="text" name="to_date" class="form-control @error('to_date') is-invalid @enderror datepicker" value="{{ old('to_date', $set_to_date) }}">
                                     @error('to_date')
                                         <div class="invalid-feedback">
@@ -77,7 +77,7 @@
                 <div class="card">
                     <div class="card-header">
                         <h5>{{ _('Sales Report ') }} </h5>
-                        <button class="btn btn-success btn-sm report-print-button" onclick="printDiv('printablediv')">{{ __('Print') }}</button>
+                        <button class="btn btn-success btn-sm report-print-button" onclick="printDiv('printablediv')">{{ __('levels.Print') }}</button>
                     </div>
                     <div class="card-body" id="printablediv">
                         @if(!blank($sales))
@@ -85,12 +85,12 @@
                                 <table class="table table-striped">
                                     <thead>
                                         <tr>
-                                            <th>{{ __('BilNo') }}</th>
-                                            <th>{{ __('Customer') }}</th>
-                                            <th>{{ __('Date') }}</th>
-                                            <th>{{ __('Order Tax') }}</th>
-                                            <th>{{ __('Total') }}</th>
-                                            <th>{{ __('Paid') }}</th>
+                                            <th>{{ __('levels.BilNo') }}</th>
+                                            <th>{{ __('levels.customer') }}</th>
+                                            <th>{{ __('levels.date') }}</th>
+                                            <th>{{ __('levels.Order Tax') }}</th>
+                                            <th>{{ __('levels.Total') }}</th>
+                                            <th>{{ __('levels.Paid') }}</th>
 
                                         </tr>
                                         @foreach($sales as $sale)
@@ -107,7 +107,7 @@
                                 </table>
                             </div>
                         @else
-                            <h4 class="text-danger">{{ __('The Sales data not found') }}</h4>
+                            <h4 class="text-danger">{{ __('levels.The Sales data not found') }}</h4>
                         @endif
                     </div>
                 </div>

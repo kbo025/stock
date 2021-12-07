@@ -12,7 +12,7 @@
 
 	<section class="section">
         <div class="section-header">
-            <h1>{{ __('Purchase Edit') }}</h1>
+            <h1>{{ __('levels.Purchase Edit') }}</h1>
             {{ Breadcrumbs::render('purchase/edit') }}
         </div>
 
@@ -24,10 +24,10 @@
                             <div class="form-row">
                                 @if(auth()->user()->myrole == 1)
                                     <div class="form-group col-md-4">
-                                        <label for="shop_id">{{ __('Shop') }}</label> <span class="text-danger">*</span>
+                                        <label for="shop_id">{{ __('levels.shop') }}</label> <span class="text-danger">*</span>
                                         <select name="shop_id" id="shop_id"
                                                 class="select2 form-control @error('shop_id') is-invalid red-border @enderror">
-                                            <option value="">{{ __('Select Shop') }}</option>
+                                            <option value="">{{ __('levels.select_shop') }}</option>
                                             @if(!blank($shops))
                                                 @foreach($shops as $shop)
                                                     <option value="{{ $shop->id }}"
@@ -46,17 +46,17 @@
                                     <input type="hidden" name="shop_id" id="shop_id" value="{{auth()->user()->shop->id ?? 0}}">
                                 @endif
                                 <div class="form-group col-md-4 input-daterange" id="date-picker">
-                                    <label for="product">{{ __('Date') }}</label>
+                                    <label for="product">{{ __('levels.date') }}</label>
                                     <input autocomplete="off" class="form-control" id="date" type="text" name="date" value="{{ date('d-m-Y', strtotime($purchase->date)) }}">
                                 </div>
                                 <div class="form-group col-md-4">
-                                    <label for="purchases_no">{{ __('Reference No') }} <span class="text-danger">*</span></label>
+                                    <label for="purchases_no">{{ __('levels.Reference No') }} <span class="text-danger">*</span></label>
                                     <input  class="form-control" id="purchases_no" type="text" name="purchases_no" value="{{old('purchases_no',$purchase->purchases_no)}}">
                                 </div>
                                 <div class="form-group col-md-12">
-                                    <label for="product">{{ __('Product') }} <span class="text-danger">*</span></label>
+                                    <label for="product">{{ __('levels.product') }} <span class="text-danger">*</span></label>
                                     <select id="product" name="product" class="form-control select2">
-                                        <option value="0">{{ __('Select Product') }}</option>
+                                        <option value="0">{{ __('levels.Select Product') }}</option>
                                         @if(!blank($products))
                                             @foreach($products as $product)
                                                 @if($product->type == 10 && !blank($product->variations))
@@ -76,12 +76,12 @@
                                     <table class="table table-bordered product-style purchase-table-font">
                                     <thead>
                                     <tr>
-                                        <th class="row-cols-sm-1">{{__('#')}}</th>
-                                        <th class="row-cols-sm-3">{{__('Product')}}</th>
-                                        <th class="row-cols-sm-1" >{{__('Unit Price')}}</th>
-                                        <th class="row-cols-sm-1">{{__('Quantity')}}</th>
-                                        <th class="row-cols-sm-2">{{__('Subtotal')}}</th>
-                                        <th class="row-cols-sm-1">{{__('Action')}}</th>
+                                        <th class="row-cols-sm-1">{{__('levels.#')}}</th>
+                                        <th class="row-cols-sm-3">{{__('levels.product')}}</th>
+                                        <th class="row-cols-sm-1" >{{__('levels.Unit Price')}}</th>
+                                        <th class="row-cols-sm-1">{{__('levels.Quantity')}}</th>
+                                        <th class="row-cols-sm-2">{{__('levels.Subtotal')}}</th>
+                                        <th class="row-cols-sm-1">{{__('levels.Action')}}</th>
                                     </tr>
                                     </thead>
                                     <tbody id="productList">
@@ -150,7 +150,7 @@
                             </div>
                                 <div class="form-row">
                                     <div class="form-group col-md-6">
-                                        <label for="site_description">{{ __('Note') }}</label>
+                                        <label for="site_description">{{ __('levels.Note') }}</label>
                                         <textarea name="description" id="description" cols="30" rows="3" class="form-control small-textarea-height @error('description') is-invalid @enderror">{{ old('description',$purchase->description) }}</textarea>
                                         @error('description')
                                         <div class="invalid-feedback">
@@ -161,7 +161,7 @@
                                 </div>
                         </div>
                         <div class="card-footer">
-                            <button id="addPurchaseButton" class="btn btn-primary mr-1" type="submit">{{ __('Submit') }}</button>
+                            <button id="addPurchaseButton" class="btn btn-primary mr-1" type="submit">{{ __('levels.submit') }}</button>
                         </div>
                     </div>
                 </div>
@@ -180,22 +180,22 @@
                 <div class="modal-body" id= "modal-body">
                     <div class="modal-body">
                         <div class="form-group col-10">
-                            <label for="ProductVariants">{{ __('Product Variants') }}</label>
+                            <label for="ProductVariants">{{ __('levels.Product Variants') }}</label>
                             <select id="ProductVariants"  class="form-control">
                             </select>
                         </div>
                         <div class="form-group col-10">
-                            <label for="pquantity">{{ __('Quantity') }}</label>
+                            <label for="pquantity">{{ __('levels.Quantity') }}</label>
                             <input  class="form-control" id="pquantity" type="number">
                         </div>
                         <div class="form-group col-10">
-                            <label for="pprice">{{ __('Price') }}</label>
+                            <label for="pprice">{{ __('levels.Price') }}</label>
                             <input  class="form-control" id="pprice" type="number" >
                         </div>
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button id="addProductVariant" class="btn btn-primary mr-1" type="button">{{ __('Submit') }}</button>
+                    <button id="addProductVariant" class="btn btn-primary mr-1" type="button">{{ __('levels.submit') }}</button>
                 </div>
             </div>
         </div>

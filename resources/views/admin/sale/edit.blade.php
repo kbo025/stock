@@ -10,7 +10,7 @@
 
     <section class="section">
         <div class="section-header">
-            <h1>{{ __('Products') }}</h1>
+            <h1>{{ __('levels.Products') }}</h1>
             {{ Breadcrumbs::render('products/edit') }}
         </div>
 
@@ -101,7 +101,7 @@
                                         @enderror
                                     </div>
                                     <div class="form-group col {{ $errors->has('document') ? 'has-error' : '' }}">
-                                        <label for="document">{{ __('Image') }}
+                                        <label for="document">{{ __('levels.image') }}
                                             <span class="text-danger">*</span>
                                         </label>
                                         <div class="needsclick dropzone {{ $errors->has('document') ? ' is-invalid' : '' }}" id="document-dropzone"></div>
@@ -115,7 +115,7 @@
                             </div>
 
                             <div class="card-footer ">
-                                <button class="btn btn-primary mr-1" type="submit">{{ __('Update') }}</button>
+                                <button class="btn btn-primary mr-1" type="submit">{{ __('levels.Update') }}</button>
                             </div>
                         </form>
                     </div>

@@ -4,7 +4,7 @@
 
 	<section class="section">
         <div class="section-header">
-            <h1>{{ __('Customers') }}</h1>
+            <h1>{{ __('levels.customers') }}</h1>
             {{ Breadcrumbs::render('customers/edit') }}
         </div>
 

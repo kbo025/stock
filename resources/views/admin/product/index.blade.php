@@ -4,7 +4,7 @@
 
 <section class="section">
     <div class="section-header">
-        <h1>{{ __('Products') }}</h1>
+        <h1>{{ __('levels.Products') }}</h1>
         {{ Breadcrumbs::render('products') }}
     </div>
 
@@ -16,7 +16,7 @@
                     @can('products_create')
                         <div class="card-header">
                             <a href="{{ route('admin.products.create') }}" class="btn btn-icon icon-left btn-primary"><i
-                                    class="fas fa-plus"></i> {{ __('Add Product') }}</a>
+                                    class="fas fa-plus"></i> {{ __('levels.Add Product') }}</a>
                         </div>
                     @endcan
 
@@ -25,18 +25,18 @@
                             <div class="col-sm-6 offset-sm-3">
                                 <div class="input-group input-daterange" id="date-picker">
                                     <select class="form-control" id="status" name="status" >
-                                       <option value="">{{ __('Select Status') }}</option>
+                                       <option value="">{{ __('levels.Select Status') }}</option>
                                         @foreach(trans('statuses') as $key => $status)
                                         <option value="{{ $key }}">{{ $status }}</option>
                                         @endforeach
                                     </select>
                                     <div class="input-group-append">
                                         <button class="btn btn-outline-secondary" type="button" id="refresh">
-                                            {{ __('Refresh') }}</button>
+                                            {{ __('levels.refresh') }}</button>
                                     </div>
                                     <div class="input-group-append">
                                         <button class="btn btn-outline-secondary" type="button"
-                                            id="date-search">{{ __('Search') }}</button>
+                                            id="date-search">{{ __('levels.search') }}</button>
                                     </div>
                                 </div>
                             </div>
@@ -50,10 +50,10 @@
                                     <tr>
                                         <th>{{ __('levels.id') }}</th>
                                         <th>{{ __('levels.name') }}</th>
-                                        <th>{{ __('Unit') }}</th>
+                                        <th>{{ __('levels.Unit') }}</th>
                                         <th>{{ __('levels.categories') }}</th>
-                                        <th>{{ __('Cost') }}</th>
-                                        <th>{{ __('Price') }}</th>
+                                        <th>{{ __('levels.Cost') }}</th>
+                                        <th>{{ __('levels.Price') }}</th>
                                         <th>{{ __('levels.status') }}</th>
                                         <th>{{ __('levels.actions') }}</th>
                                     </tr>

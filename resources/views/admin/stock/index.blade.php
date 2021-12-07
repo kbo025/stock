@@ -4,7 +4,7 @@
 
   <section class="section">
         <div class="section-header">
-            <h1>{{ __('Stocks') }}</h1>
+            <h1>{{ __('levels.Stocks') }}</h1>
             {{ Breadcrumbs::render('stocks') }}
         </div>
 
@@ -17,12 +17,12 @@
                                 <table class="table table-striped" id="maintable" data-url="{{ route('admin.stock.get-stock') }}" data-status="{{ \App\Enums\Status::ACTIVE }}">
                                     <thead>
                                         <tr>
-                                            <th>{{ __('ID') }}</th>
-                                            <th>{{ __('Product') }}</th>
-                                            <th>{{ __('Unit') }}</th>
-                                            <th>{{ __('Sale Qty') }}</th>
-                                            <th>{{ __('Total Qty') }}</th>
-                                            <th>{{ __('Stock Qty') }}</th>
+                                            <th>{{ __('levels.ID') }}</th>
+                                            <th>{{ __('levels.product') }}</th>
+                                            <th>{{ __('levels.Unit') }}</th>
+                                            <th>{{ __('levels.Sale Qty') }}</th>
+                                            <th>{{ __('levels.Total Qty') }}</th>
+                                            <th>{{ __('levels.Stock Qty') }}</th>
                                         </tr>
                                     </thead>
                                 </table>

@@ -4,7 +4,7 @@
 
   <section class="section">
         <div class="section-header">
-            <h1>{{ __('Customers') }}</h1>
+            <h1>{{ __('levels.customers') }}</h1>
             {{ Breadcrumbs::render('customers') }}
         </div>
 
@@ -14,7 +14,7 @@
                     <div class="card">
                         @can('customers_create')
                             <div class="card-header">
-                                <a href="{{ route('admin.customers.create') }}" class="btn btn-icon icon-left btn-primary"><i class="fas fa-plus"></i> {{ __('Add Customer') }}</a>
+                                <a href="{{ route('admin.customers.create') }}" class="btn btn-icon icon-left btn-primary"><i class="fas fa-plus"></i> {{ __('levels.add_customer') }}</a>
                             </div>
                         @endcan
                         <div class="card-body">
@@ -22,12 +22,12 @@
                                 <table class="table table-striped" id="maintable" data-url="{{ route('admin.customers.get-customers') }}" data-hidecolumn="{{ auth()->user()->can('customers_show') || auth()->user()->can('customers_edit') || auth()->user()->can('customers_delete') }}">
                                     <thead>
                                         <tr>
-                                            <th>{{ __('ID') }}</th>
-                                            <th>{{ __('Image') }}</th>
-                                            <th>{{ __('Name') }}</th>
-                                            <th>{{ __('Phone') }}</th>
-                                            <th>{{ __('Credit') }}</th>
-                                            <th>{{ __('Actions') }}</th>
+                                            <th>{{ __('levels.ID') }}</th>
+                                            <th>{{ __('levels.image') }}</th>
+                                            <th>{{ __('levels.name') }}</th>
+                                            <th>{{ __('levels.phone') }}</th>
+                                            <th>{{ __('levels.credit') }}</th>
+                                            <th>{{ __('levels.actions') }}</th>
                                         </tr>
                                     </thead>
                                 </table>

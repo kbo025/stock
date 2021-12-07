@@ -4,7 +4,7 @@
 
     <section class="section">
         <div class="section-header">
-            <h1>{{ __('Stock Report') }}</h1>
+            <h1>{{ __('levels.Stock Report') }}</h1>
             {{ Breadcrumbs::render('stock-report') }}
         </div>
 
@@ -18,10 +18,10 @@
                                     @if(auth()->user()->myrole == 1)
                                 <div class="col-sm-4">
                                         <div class="form-group">
-                                            <label for="shop_id">{{ __('Shop') }}</label> <span class="text-danger">*</span>
+                                            <label for="shop_id">{{ __('levels.shop') }}</label> <span class="text-danger">*</span>
                                             <select name="shop_id" id="shop_id"
                                                     class="select2 form-control @error('shop_id') is-invalid red-border @enderror">
-                                                <option value="">{{ __('Select Shop') }}</option>
+                                                <option value="">{{ __('levels.select_shop') }}</option>
                                                 @if(!blank($shops))
                                                     @foreach($shops as $shop)
                                                         <option value="{{ $shop->id }}"
@@ -42,9 +42,9 @@
                                     @endif
                             <div class="col-sm-4">
                                 <div class="form-group">
-                                    <label for="product">{{ __('Product') }}</label>
+                                    <label for="product">{{ __('levels.product') }}</label>
                                     <select id="product" name="product_id" class="form-control select2">
-                                        <option value="">{{ __('Select Product') }}</option>
+                                        <option value="">{{ __('levels.Select Product') }}</option>
                                         @if(!blank($products))
                                             @foreach($products as $product)
                                                 @if($product->type == 10 && !blank($product->variations))
@@ -60,7 +60,7 @@
 
                             <div class="col-sm-4">
                                 <div class="form-group">
-                                    <label>{{ __('From Date') }}</label>
+                                    <label>{{ __('levels.From Date') }}</label>
                                     <input type="text" name="from_date" class="form-control @error('from_date') is-invalid @enderror datepicker" value="{{ old('from_date', $set_from_date) }}">
                                     @error('from_date')
                                         <div class="invalid-feedback">
@@ -71,7 +71,7 @@
                             </div>
                             <div class="col-sm-4">
                                 <div class="form-group">
-                                    <label>{{ __('To Date') }}</label>
+                                    <label>{{ __('levels.To Date') }}</label>
                                     <input type="text" name="to_date" class="form-control @error('to_date') is-invalid @enderror datepicker" value="{{ old('to_date', $set_to_date) }}">
                                     @error('to_date')
                                         <div class="invalid-feedback">
@@ -93,8 +93,8 @@
             @if($showView)
                 <div class="card">
                     <div class="card-header">
-                        <h5>{{ __('Stock Report ') }} </h5>
-                        <button class="btn btn-success btn-sm report-print-button" onclick="printDiv('printablediv')">{{ __('Print') }}</button>
+                        <h5>{{ __('levels.Stock Report ') }} </h5>
+                        <button class="btn btn-success btn-sm report-print-button" onclick="printDiv('printablediv')">{{ __('levels.Print') }}</button>
                     </div>
                     <div class="card-body" id="printablediv">
                         @if(!blank($stockProducts))
@@ -102,17 +102,17 @@
                                 <table class="table table-striped">
                                     <thead>
                                         <tr>
-                                            <th>{{ __('ID') }}</th>
+                                            <th>{{ __('levels.ID') }}</th>
                                             @if(auth()->user()->myrole == 1)
-                                                <th>{{ __('Shop') }}</th>
+                                                <th>{{ __('levels.shop') }}</th>
                                             @endif
-                                            <th>{{ __('Product') }}</th>
-                                            <th>{{ __('Unit') }}</th>
-                                            <th>{{ __('Cost') }}</th>
-                                            <th>{{ __('Sale Qty') }}</th>
-                                            <th>{{ __('Total Qty') }}</th>
-                                            <th>{{ __('Stock Qty') }}</th>
-                                            <th>{{ __('Income') }}</th>
+                                            <th>{{ __('levels.product') }}</th>
+                                            <th>{{ __('levels.Unit') }}</th>
+                                            <th>{{ __('levels.Cost') }}</th>
+                                            <th>{{ __('levels.Sale Qty') }}</th>
+                                            <th>{{ __('levels.Total Qty') }}</th>
+                                            <th>{{ __('levels.Stock Qty') }}</th>
+                                            <th>{{ __('levels.Income') }}</th>
 
                                         </tr>
                                         @php($i=0)
@@ -135,7 +135,7 @@
                                 </table>
                             </div>
                         @else
-                            <h4 class="text-danger">{{ __('The stock data not found') }}</h4>
+                            <h4 class="text-danger">{{ __('levels.The stock data not found') }}</h4>
                         @endif
                     </div>
                 </div>

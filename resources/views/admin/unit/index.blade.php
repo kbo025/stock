@@ -4,7 +4,7 @@
 
     <section class="section">
         <div class="section-header">
-            <h1>{{ __('Units') }}</h1>
+            <h1>{{ __('levels.Units') }}</h1>
             {{ Breadcrumbs::render('units') }}
         </div>
 
@@ -14,7 +14,7 @@
                     <div class="card">
                         @if(auth()->user()->can('unit_create'))
                         <div class="card-header">
-                            <a href="{{ route('admin.unit.create') }}" class="btn btn-icon icon-left btn-primary"><i class="fas fa-plus"></i> {{ __('Add Unit') }}
+                            <a href="{{ route('admin.unit.create') }}" class="btn btn-icon icon-left btn-primary"><i class="fas fa-plus"></i> {{ __('levels.Add Unit') }}
                             </a>
                         </div>
                         @endif
@@ -28,10 +28,10 @@
                                             @endforeach
                                         </select>
                                         <div class="input-group-append">
-                                            <button class="btn btn-outline-secondary" type="button" id="refresh"> {{ __('Refresh') }}</button>
+                                            <button class="btn btn-outline-secondary" type="button" id="refresh"> {{ __('levels.refresh') }}</button>
                                         </div>
                                         <div class="input-group-append">
-                                            <button class="btn btn-outline-secondary" type="button" id="date-search">{{ __('Search') }}</button>
+                                            <button class="btn btn-outline-secondary" type="button" id="date-search">{{ __('levels.search') }}</button>
                                         </div>
                                     </div>
                                 </div>
@@ -41,10 +41,10 @@
                                 <table class="table table-striped" id="maintable" data-url="{{ route('admin.unit.get-unit') }}" data-status="{{ \App\Enums\Status::ACTIVE }}">
                                     <thead>
                                     <tr>
-                                        <th>{{ __('ID') }}</th>
-                                        <th>{{ __('Name') }}</th>
-                                        <th>{{ __('Status') }}</th>
-                                        <th>{{ __('Actions') }}</th>
+                                        <th>{{ __('levels.ID') }}</th>
+                                        <th>{{ __('levels.name') }}</th>
+                                        <th>{{ __('levels.status') }}</th>
+                                        <th>{{ __('levels.actions') }}</th>
                                     </tr>
                                     </thead>
                                 </table>

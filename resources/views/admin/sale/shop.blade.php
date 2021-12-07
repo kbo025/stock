@@ -4,7 +4,7 @@
 
 	<section class="section">
         <div class="section-header">
-            <h1>{{ __('Please Select Shop') }}</h1>
+            <h1>{{ __('levels.please_select_shop') }}</h1>
         </div>
 
         <div class="section-body">
@@ -17,10 +17,10 @@
                                 <div class="form-group">
                                     @if(auth()->user()->myrole == 1)
                                         <div class="form-group">
-                                            <label for="shop_id">{{ __('Shop') }}</label> <span class="text-danger">*</span>
+                                            <label for="shop_id">{{ __('levels.shop') }}</label> <span class="text-danger">*</span>
                                             <select name="shop_id" id="shop_id"
                                                     class="select2 form-control @error('shop_id') is-invalid red-border @enderror">
-                                                <option value="">{{ __('Select Shop') }}</option>
+                                                <option value="">{{ __('levels.select_shop') }}</option>
                                                 @if(!blank($shops))
                                                     @foreach($shops as $shop)
                                                         <option value="{{ $shop->id }}"
@@ -40,7 +40,7 @@
 
 						    </div>
 					        <div class="card-footer">
-		                    	<button class="btn btn-primary mr-1" type="submit">{{ __('Submit') }}</button>
+		                    	<button class="btn btn-primary mr-1" type="submit">{{ __('levels.submit') }}</button>
 		                  	</div>
 		                </form>
 					</div>

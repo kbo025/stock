@@ -3,7 +3,7 @@
 @section('main-content')
     <section class="section">
         <div class="section-header">
-            <h1>{{ __('Profile') }}</h1>
+            <h1>{{ __('validation.attributes.profile') }}</h1>
             {{ Breadcrumbs::render('profile') }}
         </div>
         <div class="section-body">
@@ -23,17 +23,19 @@
                                 </div>
                             </div>
                             <dl class="row">
-                                <dt class="col-sm-4">{{ __('Username') }}</dt>
+                                <dt class="col-sm-4">{{ 'Locale' }}</dt>
+                                <dd class="col-sm-8">{{ App::getLocale() }}</dd>
+                                <dt class="col-sm-4">{{ __('levels.username') }}</dt>
                                 <dd class="col-sm-8">{{ $user->username }}</dd>
-                                <dt class="col-sm-4">{{ __('Role') }}</dt>
+                                <dt class="col-sm-4">{{ __('levels.role') }}</dt>
                                 <dd class="col-sm-8">{{ $user->getrole->name }}</dd>
-                                <dt class="col-sm-4">{{ __('Phone') }}</dt>
+                                <dt class="col-sm-4">{{ __('levels.phone') }}</dt>
                                 <dd class="col-sm-8">{{ $user->phone }}</dd>
-                                <dt class="col-sm-4">{{ __('Address') }}</dt>
+                                <dt class="col-sm-4">{{ __('levels.address') }}</dt>
                                 <dd class="col-sm-8">
                                     <p>{{ $user->address }}</p>
                                 </dd>
-                                <dt class="col-sm-4">{{ __('Credit') }}</dt>
+                                <dt class="col-sm-4">{{ __('levels.credit') }}</dt>
                                 <dd class="col-sm-8">{{ currencyFormat($user->balance->balance > 0 ? $user->balance->balance : 0 ) }}</dd>
 
                             </dl>
@@ -44,12 +46,12 @@
                             @csrf
                             @method('put')
                             <div class="card-header">
-                                <h4>{{ __('Change Password') }}</h4>
+                                <h4>{{ __('levels.Change Password') }}</h4>
                             </div>
                             <div class="card-body">
                                 <div class="row">
                                     <div class="form-group col-md-12 col-12">
-                                        <label for="old_password">{{ __('Old Password') }}</label> <span class="text-danger">*</span>
+                                        <label for="old_password">{{ __('levels.Old Password') }}</label> <span class="text-danger">*</span>
                                         <input id="old_password" name="old_password"  type="password" class="form-control @error('old_password') is-invalid @enderror">
                                         @error('old_password')
                                             <div class="invalid-feedback">
@@ -58,7 +60,7 @@
                                         @enderror
                                     </div>
                                     <div class="form-group col-md-12 col-12">
-                                        <label for="password">{{ __('Password') }}</label> <span class="text-danger">*</span>
+                                        <label for="password">{{ __('levels.Password') }}</label> <span class="text-danger">*</span>
                                         <input id="password" name="password"  type="password" class="form-control @error('password') is-invalid @enderror"/>
                                         @error('password')
                                             <div class="invalid-feedback">
@@ -67,7 +69,7 @@
                                         @enderror
                                     </div>
                                     <div class="form-group col-md-12 col-12">
-                                        <label for="password_confirmation">{{ __('Password Confirmation') }}</label> <span class="text-danger">*</span>
+                                        <label for="password_confirmation">{{ __('levels.Password Confirmation') }}</label> <span class="text-danger">*</span>
                                         <input id="password_confirmation" name="password_confirmation"  type="password" class="form-control @error('password_confirmation') is-invalid @enderror"/>
                                         @error('password_confirmation')
                                             <div class="invalid-feedback">
@@ -78,7 +80,7 @@
                                 </div>
                             </div>
                             <div class="card-footer">
-                                <button class="btn btn-primary">{{ __('Save Password') }}</button>
+                                <button class="btn btn-primary">{{ __('levels.Save Password') }}</button>
                             </div>
                         </form>
                     </div>
@@ -91,7 +93,7 @@
                             <div class="card-body">
                                 <div class="form-row">
                                     <div class="form-group col">
-                                        <label>{{ __('First Name') }}</label> <span class="text-danger">*</span>
+                                        <label>{{ __('levels.first_name') }}</label> <span class="text-danger">*</span>
                                         <input type="text" name="first_name" class="form-control @error('first_name') is-invalid @enderror" value="{{ old('first_name', $user->first_name) }}">
                                         @error('first_name')
                                             <div class="invalid-feedback">
@@ -100,7 +102,7 @@
                                         @enderror
                                     </div>
                                     <div class="form-group col">
-                                        <label>{{ __('Last Name') }}</label> <span class="text-danger">*</span>
+                                        <label>{{ __('levels.last_name') }}</label> <span class="text-danger">*</span>
                                         <input type="text" name="last_name" class="form-control @error('last_name') is-invalid @enderror" value="{{ old('last_name', $user->last_name) }}">
                                         @error('last_name')
                                             <div class="invalid-feedback">
@@ -112,7 +114,7 @@
 
                                 <div class="form-row">
                                     <div class="form-group col">
-                                        <label>{{ __('Email') }}</label> <span class="text-danger">*</span>
+                                        <label>{{ __('levels.email') }}</label> <span class="text-danger">*</span>
                                         <input type="text" name="email" class="form-control @error('email') is-invalid @enderror" value="{{ old('email', $user->email) }}">
                                         @error('email')
                                             <div class="invalid-feedback">
@@ -121,7 +123,7 @@
                                         @enderror
                                     </div>
                                     <div class="form-group col">
-                                        <label>{{ __('Phone') }}</label>
+                                        <label>{{ __('levels.phone') }}</label>
                                         <input type="text" name="phone" class="form-control @error('phone') is-invalid @enderror" value="{{ old('phone', $user->phone) }}">
                                         @error('phone')
                                             <div class="invalid-feedback">
@@ -133,7 +135,7 @@
 
                                 <div class="form-row">
                                     <div class="form-group col">
-                                        <label>{{ __('Username') }}</label>
+                                        <label>{{ __('levels.username') }}</label>
                                         <input type="text" name="username" class="form-control @error('username') is-invalid @enderror" value="{{ old('username', $user->username) }}">
                                         @error('username')
                                             <div class="invalid-feedback">
@@ -146,20 +148,20 @@
 
                                 <div class="form-row">
                                     <div class="form-group col">
-                                        <label for="customFile">{{ __('Image') }}</label>
+                                        <label for="customFile">{{ __('levels.image') }}</label>
                                         <div class="custom-file">
                                             <input name="image" type="file" class="custom-file-input @error('image') is-invalid @enderror" id="customFile" onchange="readURL(this);">
-                                            <label  class="custom-file-label" for="customFile">{{ __('Choose file') }}</label>
+                                            <label  class="custom-file-label" for="customFile">{{ __('levels.choose_file') }}</label>
                                         </div>
                                         @if ($errors->has('image'))
                                             <div class="help-block text-danger">
                                                 {{ $errors->first('image') }}
                                             </div>
                                         @endif
-                                        <img class="img-thumbnail image-width mt-4 mb-3" id="previewImage" src="{{ $user->images }}" alt="{{ $user->name }} {{ __('profile image') }}"/>
+                                        <img class="img-thumbnail image-width mt-4 mb-3" id="previewImage" src="{{ $user->images }}" alt="{{ $user->name }} {{ __('levels.profile image') }}"/>
                                     </div>
                                     <div class="form-group col">
-                                        <label>{{ __('Address') }}</label>
+                                        <label>{{ __('levels.address') }}</label>
                                         <textarea name="address" class="form-control small-textarea-height" id="address" cols="30" rows="10">{{ old('address', $user->address) }}</textarea>
                                         @error('address')
                                             <div class="invalid-feedback">
@@ -171,7 +173,7 @@
 
                             </div>
                             <div class="card-footer text-right">
-                                <button class="btn btn-primary mr-1" type="submit">{{ __('Submit') }}</button>
+                                <button class="btn btn-primary mr-1" type="submit">{{ __('levels.submit') }}</button>
                             </div>
                         </div>
                     </form>
