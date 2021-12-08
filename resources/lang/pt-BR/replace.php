@@ -174,7 +174,7 @@ return [
     'Already registered?' =>  'already_registered?',
     'Register' =>  'register',
     'Reset Password' =>  'reset_password',
-    'Thanks for signing up! Before getting started, could you verify your email address by clicking on the link we just emailed to you? If you didn't receive the email, we will gladly send you another.' =>  'thanks_for_signing_up!_before_getting_started_could_you_verify_your_email_address_by_clicking_on_the_link_we_just_emailed_to_you?_if_you_didn't_receive_the_email_we_will_gladly_send_you_another',
+    "Thanks for signing up! Before getting started, could you verify your email address by clicking on the link we just emailed to you? If you didn't receive the email, we will gladly send you another."  =>  'thanks_for_signing_up!_before_getting_started_could_you_verify_your_email_address_by_clicking_on_the_link_we_just_emailed_to_you?_if_you_didnt_receive_the_email_we_will_gladly_send_you_another',
     'A new verification link has been sent to the email address you provided during registration.' =>  'a_new_verification_link_has_been_sent_to_the_email_address_you_provided_during_registration',
     'Resend Verification Email' =>  'resend_verification_email',
     'Log Out' =>  'log_out',
