@@ -4,7 +4,7 @@
 
 <section class="section">
     <div class="section-header">
-        <h1>{{ __('levels.Customer Deposit') }}</h1>
+        <h1>{{ __('levels.customer_deposit') }}</h1>
         {{ Breadcrumbs::render('deposit') }}
     </div>
 
@@ -16,7 +16,7 @@
                     @can('deposit_create')
                         <div class="card-header">
                             <a href="{{ route('admin.deposit.create') }}" class="btn btn-icon icon-left btn-primary"><i
-                                    class="fas fa-plus"></i> {{ __('levels.Add Deposit') }}</a>
+                                    class="fas fa-plus"></i> {{ __('levels.add_deposit') }}</a>
                         </div>
                     @endcan
 
@@ -30,7 +30,7 @@
                                         <th>{{ __('levels.id') }}</th>
                                         <th>{{ __('levels.image') }}</th>
                                         <th>{{ __('levels.name') }}</th>
-                                        <th>{{ __('levels.Amount') }}</th>
+                                        <th>{{ __('levels.amount') }}</th>
                                         <th>{{ __('levels.date') }}</th>
                                         <th>{{ __('levels.actions') }}</th>
                                     </tr>

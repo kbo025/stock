@@ -8,12 +8,12 @@
 @section('main-content')
     <section class="section">
         <div class="section-header">
-            <h1>{{ __('levels.Sales View') }}</h1>
+            <h1>{{ __('levels.sales_view') }}</h1>
             {{ Breadcrumbs::render('sale/view') }}
         </div>
         <div class="section-body">
             <div class="card-header">
-                <a href="#" class="btn btn-icon icon-left btn-primary" onclick="printDiv('printablediv')"><i class="fas fa-print"></i> {{ __('levels.Print') }}
+                <a href="#" class="btn btn-icon icon-left btn-primary" onclick="printDiv('printablediv')"><i class="fas fa-print"></i> {{ __('levels.print') }}
                 </a>
             </div>
             <div class="card">
@@ -49,7 +49,7 @@
                                 <b class="pull-right">{{__('levels.Date : ')}} {{ \Carbon\Carbon::parse($sale->created_at)->format('d M Y')}}</b><br>
                                 <b class="pull-right">{{__('levels.Customer : ')}} {{$sale->user->name}}</b><br>
                                 <b class="pull-right">{{__('levels.Phone : ')}} {{$sale->user->phone}}</b><br>
-                                <b class="pull-right">{{__('levels.Paid by : ')}} {{__('levels.Cash/Credit')}}</b><br>
+                                <b class="pull-right">{{__('levels.Paid by : ')}} {{__('levels.cash_credit')}}</b><br>
                                 <b class="pull-right "><img class="mr-1 img-1" src="{{ $sale->barcodeprint }}" alt="POS-{{$sale->id}}"><img src="{{ $sale->qrcodeprint }}" alt="POS-{{$sale->id}}"></b>
                             </address>
                         </div>
@@ -64,11 +64,11 @@
                                     <tr>
                                         <th class="row-cols-sm-1">{{__('levels.#')}}</th>
                                         <th class="row-cols-sm-3">{{__('levels.product')}}</th>
-                                        <th class="row-cols-sm-3">{{__('levels.Unit')}}</th>
-                                        <th class="row-cols-sm-1" >{{__('levels.Unit Price')}}</th>
-                                        <th class="row-cols-sm-1" >{{__('levels.Tax')}}</th>
-                                        <th class="row-cols-sm-1">{{__('levels.Quantity')}}</th>
-                                        <th class="row-cols-sm-2">{{__('levels.Subtotal')}}</th>
+                                        <th class="row-cols-sm-3">{{__('levels.unit')}}</th>
+                                        <th class="row-cols-sm-1" >{{__('levels.unit_price')}}</th>
+                                        <th class="row-cols-sm-1" >{{__('levels.tax')}}</th>
+                                        <th class="row-cols-sm-1">{{__('levels.quantity')}}</th>
+                                        <th class="row-cols-sm-2">{{__('levels.subtotal')}}</th>
                                     </tr>
                                     </thead>
                                     <tbody>
@@ -108,24 +108,24 @@
                                     </tbody>
                                     <tfoot>
                                     <tr>
-                                        <td colspan="6"><span class="pull-right"><b>{{__('levels.Total Order Tax')}}</b></span></td>
+                                        <td colspan="6"><span class="pull-right"><b>{{__('levels.total_order_tax')}}</b></span></td>
                                         <td><b>{{currencyFormat($sale->tax_amount)}}</b></td>
                                     </tr>
                                     <tr>
-                                        <td colspan="6"><span class="pull-right"><b>{{__('levels.Total Amount')}}</b></span></td>
+                                        <td colspan="6"><span class="pull-right"><b>{{__('levels.total_amount')}}</b></span></td>
                                         <td><b>{{currencyFormat($totalsubtotal+$sale->tax_amount)}}</b></td>
                                     </tr>
 
                                     <tr>
-                                        <td colspan="6"><span class="pull-right"><b>{{__('levels.Total Credit Amount')}}</b></span></td>
+                                        <td colspan="6"><span class="pull-right"><b>{{__('levels.total_credit_amount')}}</b></span></td>
                                         <td><b>{{currencyFormat($sale->paid_credit_amount)}}</b></td>
                                     </tr>
                                     <tr>
-                                        <td colspan="6"><span class="pull-right"><b>{{__('levels.Total Cash Amount')}}</b></span></td>
+                                        <td colspan="6"><span class="pull-right"><b>{{__('levels.total_cash_amount')}}</b></span></td>
                                         <td><b>{{currencyFormat($sale->paid_cash_amount)}}</b></td>
                                     </tr>
                                     <tr>
-                                        <td colspan="6"><span class="pull-right"><b>{{__('levels.Total Paid Amount')}}</b></span></td>
+                                        <td colspan="6"><span class="pull-right"><b>{{__('levels.total_paid_amount')}}</b></span></td>
                                         <td><b>{{currencyFormat($sale->paid_amount)}}</b></td>
                                     </tr>
 
@@ -140,7 +140,7 @@
                         <div class="col-sm-3 col-xs-12 pull-right">
                             <div class="well well-sm">
                                 <p>
-                                    {{__('levels.Create by')}} : {{optional($sale->creator)->name}}
+                                    {{__('levels.create_by')}} : {{optional($sale->creator)->name}}
                                     <br>
                                     {{__('levels.date')}}:{{\Carbon\Carbon::parse($sale->created_at)->format('d M Y, h:i A') }}
                                 </p>

@@ -46,12 +46,12 @@
                             @csrf
                             @method('put')
                             <div class="card-header">
-                                <h4>{{ __('levels.Change Password') }}</h4>
+                                <h4>{{ __('levels.change_password') }}</h4>
                             </div>
                             <div class="card-body">
                                 <div class="row">
                                     <div class="form-group col-md-12 col-12">
-                                        <label for="old_password">{{ __('levels.Old Password') }}</label> <span class="text-danger">*</span>
+                                        <label for="old_password">{{ __('levels.old_password') }}</label> <span class="text-danger">*</span>
                                         <input id="old_password" name="old_password"  type="password" class="form-control @error('old_password') is-invalid @enderror">
                                         @error('old_password')
                                             <div class="invalid-feedback">
@@ -60,7 +60,7 @@
                                         @enderror
                                     </div>
                                     <div class="form-group col-md-12 col-12">
-                                        <label for="password">{{ __('levels.Password') }}</label> <span class="text-danger">*</span>
+                                        <label for="password">{{ __('levels.password') }}</label> <span class="text-danger">*</span>
                                         <input id="password" name="password"  type="password" class="form-control @error('password') is-invalid @enderror"/>
                                         @error('password')
                                             <div class="invalid-feedback">
@@ -69,7 +69,7 @@
                                         @enderror
                                     </div>
                                     <div class="form-group col-md-12 col-12">
-                                        <label for="password_confirmation">{{ __('levels.Password Confirmation') }}</label> <span class="text-danger">*</span>
+                                        <label for="password_confirmation">{{ __('levels.password_confirmation') }}</label> <span class="text-danger">*</span>
                                         <input id="password_confirmation" name="password_confirmation"  type="password" class="form-control @error('password_confirmation') is-invalid @enderror"/>
                                         @error('password_confirmation')
                                             <div class="invalid-feedback">
@@ -80,7 +80,7 @@
                                 </div>
                             </div>
                             <div class="card-footer">
-                                <button class="btn btn-primary">{{ __('levels.Save Password') }}</button>
+                                <button class="btn btn-primary">{{ __('levels.save_password') }}</button>
                             </div>
                         </form>
                     </div>
@@ -158,7 +158,7 @@
                                                 {{ $errors->first('image') }}
                                             </div>
                                         @endif
-                                        <img class="img-thumbnail image-width mt-4 mb-3" id="previewImage" src="{{ $user->images }}" alt="{{ $user->name }} {{ __('levels.profile image') }}"/>
+                                        <img class="img-thumbnail image-width mt-4 mb-3" id="previewImage" src="{{ $user->images }}" alt="{{ $user->name }} {{ __('levels.profile_image') }}"/>
                                     </div>
                                     <div class="form-group col">
                                         <label>{{ __('levels.address') }}</label>

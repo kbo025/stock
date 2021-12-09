@@ -4,7 +4,7 @@
 
     <section class="section">
         <div class="section-header">
-            <h1>{{ __('levels.Purchases Report') }}</h1>
+            <h1>{{ __('levels.purchases_report') }}</h1>
             {{ Breadcrumbs::render('purchases-report') }}
         </div>
 
@@ -43,7 +43,7 @@
 
                             <div class="col-sm-4">
                                 <div class="form-group">
-                                    <label>{{ __('levels.From Date') }}</label>
+                                    <label>{{ __('levels.from_date') }}</label>
                                     <input type="text" name="from_date" class="form-control @error('from_date') is-invalid @enderror datepicker" value="{{ old('from_date', $set_from_date) }}">
                                     @error('from_date')
                                         <div class="invalid-feedback">
@@ -54,7 +54,7 @@
                             </div>
                             <div class="col-sm-4">
                                 <div class="form-group">
-                                    <label>{{ __('levels.To Date') }}</label>
+                                    <label>{{ __('levels.to_date') }}</label>
                                     <input type="text" name="to_date" class="form-control @error('to_date') is-invalid @enderror datepicker" value="{{ old('to_date', $set_to_date) }}">
                                     @error('to_date')
                                         <div class="invalid-feedback">
@@ -76,8 +76,8 @@
             @if($showView)
                 <div class="card">
                     <div class="card-header">
-                        <h5>{{ __('levels.Purchases Report ') }} </h5>
-                        <button class="btn btn-success btn-sm report-print-button" onclick="printDiv('printablediv')">{{ __('levels.Print') }}</button>
+                        <h5>{{ __('levels.purchases_report') }} </h5>
+                        <button class="btn btn-success btn-sm report-print-button" onclick="printDiv('printablediv')">{{ __('levels.print') }}</button>
                     </div>
                     <div class="card-body" id="printablediv">
                         @if(!blank($purchases))
@@ -85,12 +85,12 @@
                                 <table class="table table-striped">
                                     <thead>
                                         <tr>
-                                            <th>{{ __('levels.PurchaseNo') }}</th>
+                                            <th>{{ __('levels.purchaseno') }}</th>
                                             @if(auth()->user()->myrole == 1)
                                             <th>{{ __('levels.shop') }}</th>
                                             @endif
                                             <th>{{ __('levels.date') }}</th>
-                                            <th>{{ __('levels.Total') }}</th>
+                                            <th>{{ __('levels.total') }}</th>
 
                                         </tr>
                                         @foreach($purchases as $purchase)
@@ -107,7 +107,7 @@
                                 </table>
                             </div>
                         @else
-                            <h4 class="text-danger">{{ __('levels.The purchase data not found') }}</h4>
+                            <h4 class="text-danger">{{ __('levels.the_purchase_data_not_found') }}</h4>
                         @endif
                     </div>
                 </div>

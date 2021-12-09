@@ -4,7 +4,7 @@
 
     <section class="section">
         <div class="section-header">
-            <h1>{{ __('levels.Settings') }}</h1>
+            <h1>{{ __('levels.settings') }}</h1>
 
             @yield('admin.setting.breadcrumbs')
         </div>
@@ -14,11 +14,11 @@
         <div class="col-md-3">
             <div class="bg-light card">
                 <div class="list-group list-group-flush">
-                    <a href="{{ route('admin.setting.index') }}" class="border-0 list-group-item list-group-item-action {{ (request()->is('admin/setting')) ? 'active' : '' }} ">{{ __('levels.Site Setting') }}</a>
-                    <a href="{{ route('admin.setting.whatsapp') }}" class="border-0 list-group-item list-group-item-action {{ (request()->is('admin/setting/whatsapp')) ? 'active' : '' }}">{{ __('levels.WhatsApp SMS Setting') }}</a>
-                    <a href="{{ route('admin.setting.sms') }}" class="border-0 list-group-item list-group-item-action {{ (request()->is('admin/setting/sms')) ? 'active' : '' }}">{{ __('levels.SMS Setting') }}</a>
-                    <a href="{{ route('admin.setting.payment') }}" class="border-0 list-group-item list-group-item-action {{ (request()->is('admin/setting/payment')) ? 'active' : '' }}">{{ __('levels.Payment Setting') }}</a>
-                    <a href="{{ route('admin.setting.email') }}" class="border-0 list-group-item list-group-item-action {{ (request()->is('admin/setting/email')) ? 'active' : '' }}">{{ __('levels.Email Setting') }}</a>
+                    <a href="{{ route('admin.setting.index') }}" class="border-0 list-group-item list-group-item-action {{ (request()->is('admin/setting')) ? 'active' : '' }} ">{{ __('levels.site_setting') }}</a>
+                    <a href="{{ route('admin.setting.whatsapp') }}" class="border-0 list-group-item list-group-item-action {{ (request()->is('admin/setting/whatsapp')) ? 'active' : '' }}">{{ __('levels.whatsapp_sms_setting') }}</a>
+                    <a href="{{ route('admin.setting.sms') }}" class="border-0 list-group-item list-group-item-action {{ (request()->is('admin/setting/sms')) ? 'active' : '' }}">{{ __('levels.sms_setting') }}</a>
+                    <a href="{{ route('admin.setting.payment') }}" class="border-0 list-group-item list-group-item-action {{ (request()->is('admin/setting/payment')) ? 'active' : '' }}">{{ __('levels.payment_setting') }}</a>
+                    <a href="{{ route('admin.setting.email') }}" class="border-0 list-group-item list-group-item-action {{ (request()->is('admin/setting/email')) ? 'active' : '' }}">{{ __('levels.email_setting') }}</a>
                 </div>
             </div>
         </div>

@@ -16,7 +16,7 @@
                     @can('shop_create')
                         <div class="card-header">
                             <a href="{{ route('admin.shop.create') }}" class="btn btn-icon icon-left btn-primary"><i
-                                    class="fas fa-plus"></i> {{ __('levels.Add Shop') }}</a>
+                                    class="fas fa-plus"></i> {{ __('levels.add_shop') }}</a>
                         </div>
                     @endcan
 

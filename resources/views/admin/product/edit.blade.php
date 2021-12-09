@@ -10,7 +10,7 @@
 
     <section class="section">
         <div class="section-header">
-            <h1>{{ __('levels.Products') }}</h1>
+            <h1>{{ __('levels.products') }}</h1>
             {{ Breadcrumbs::render('products/edit') }}
         </div>
 
@@ -83,7 +83,7 @@
                                 </div>
                                 <div class="form-row">
                                     <div class="form-group col">
-                                        <label for="cost">{{ __('levels.Product Cost') }}</label> <span class="text-danger">*</span>
+                                        <label for="cost">{{ __('levels.product_cost') }}</label> <span class="text-danger">*</span>
                                         <input id="cost" type="number" step="0.01"  name="cost" class="form-control {{ $errors->has('cost') ? " is-invalid " : '' }}" value="{{ old('cost',$product->cost) }}">
                                         @error('cost')
                                         <div class="invalid-feedback">
@@ -92,7 +92,7 @@
                                         @enderror
                                     </div>
                                     <div class="form-group col">
-                                        <label for="price">{{ __('levels.Product Price') }}</label> <span class="text-danger">*</span>
+                                        <label for="price">{{ __('levels.product_price') }}</label> <span class="text-danger">*</span>
                                         <input id="price" type="number" step="0.01"  name="price" class="form-control {{ $errors->has('price') ? " is-invalid " : '' }}" value="{{ old('price',$product->price) }}">
                                         @error('price')
                                         <div class="invalid-feedback">
@@ -103,9 +103,9 @@
                                 </div>
                                 <div class="form-row">
                                     <div class="form-group col">
-                                        <label for="unit">{{ __('levels.Product Unit') }}</label> <span class="text-danger">*</span>
+                                        <label for="unit">{{ __('levels.product_unit') }}</label> <span class="text-danger">*</span>
                                         <select id="unit" name="unit" class="form-control @error('unit') is-invalid @enderror">
-                                            <option value="">{{__('levels.Select Unit')}}</option>
+                                            <option value="">{{__('levels.select_unit')}}</option>
                                             @foreach($units as $key => $unit)
                                                 <option value="{{ $unit->id }}" {{ (old('unit',$product->unit_id) == $unit->id) ? 'selected' : '' }}>{{ $unit->name }}</option>
                                             @endforeach
@@ -117,9 +117,9 @@
                                         @enderror
                                     </div>
                                     <div class="form-group col">
-                                        <label for="tax_id">{{ __('levels.Tax Rate') }}</label>
+                                        <label for="tax_id">{{ __('levels.tax_rate') }}</label>
                                         <select id="tax_id" name="tax_id" class="form-control @error('tax_id') is-invalid @enderror">
-                                            <option value="">{{__('levels.Select Tax Rate')}}</option>
+                                            <option value="">{{__('levels.select_tax_rate')}}</option>
                                             @foreach($taxs as $key => $tax)
                                                 <option value="{{ $tax->id }}" {{ (old('tax_id',$product->tax_id) == $tax->id) ? 'selected' : '' }}>{{ $tax->name }}</option>
                                             @endforeach
@@ -134,7 +134,7 @@
 
                                 <div class="form-row">
                                     <div class="form-group col">
-                                        <label for="barcode">{{ __('levels.Barcode') }}</label> <span class="text-danger">*</span>
+                                        <label for="barcode">{{ __('levels.barcode') }}</label> <span class="text-danger">*</span>
                                         <input id="barcode" type="text" name="barcode" class="form-control {{ $errors->has('barcode') ? " is-invalid " : '' }}" value="{{ old('barcode',$product->barcode) }}">
                                         @error('barcode')
                                         <div class="invalid-feedback">
@@ -143,7 +143,7 @@
                                         @enderror
                                     </div>
                                     <div class="form-group col">
-                                        <label for="barcode_type">{{ __('levels.Barcode Type') }}</label> <span class="text-danger">*</span>
+                                        <label for="barcode_type">{{ __('levels.barcode_type') }}</label> <span class="text-danger">*</span>
                                         <select id="barcode_type" name="barcode_type" class="form-control @error('status') is-invalid @enderror">
                                             @foreach(trans('barcodes') as $key => $barcode)
                                                 <option value="{{ $barcode }}" {{ (old('barcode_type',$product->barcode_type) == $barcode) ? 'selected' : '' }}>{{ $barcode }}</option>
@@ -208,7 +208,7 @@
                                 </div>
                             </div>
                             <div class="card-footer ">
-                                <button class="btn btn-primary mr-1" type="submit">{{ __('levels.Update Product') }}</button>
+                                <button class="btn btn-primary mr-1" type="submit">{{ __('levels.update_product') }}</button>
                             </div>
                         </div>
                     </div>
@@ -217,7 +217,7 @@
                             <div class="card-body">
                                 <div class="custom-control custom-checkbox checkbox-xl">
                                     <input type="checkbox" name="variant" class="custom-control-input" id="checkbox-3" @if($product->type == 10 ) checked @elseif(old('variant') == 'on')  checked @endif   onclick="myFunction()">
-                                    <label class="custom-control-label" for="checkbox-3">{{__('levels.This product has multiple variants')}}</label>
+                                    <label class="custom-control-label" for="checkbox-3">{{__('levels.this_product_has_multiple_variants')}}</label>
                                 </div>
                                 <div class="row" id="variantsShow">
                                     <div class="col-sm-12">
@@ -226,7 +226,7 @@
                                                 <thead>
                                                 <tr>
                                                     <th>{{ __('levels.name') }}</th>
-                                                    <th>{{ __('levels.Additional Price') }}</th>
+                                                    <th>{{ __('levels.additional_price') }}</th>
                                                     <th>{{ __('levels.actions') }}</th>
                                                 </tr>
                                                 </thead>

@@ -12,7 +12,7 @@
 
 	<section class="section">
         <div class="section-header">
-            <h1>{{ __('levels.Purchase Edit') }}</h1>
+            <h1>{{ __('levels.purchase_edit') }}</h1>
             {{ Breadcrumbs::render('purchase/edit') }}
         </div>
 
@@ -50,7 +50,7 @@
                                     <input autocomplete="off" class="form-control" id="date" type="text" name="date" value="{{ date('d-m-Y', strtotime($purchase->date)) }}">
                                 </div>
                                 <div class="form-group col-md-4">
-                                    <label for="purchases_no">{{ __('levels.Reference No') }} <span class="text-danger">*</span></label>
+                                    <label for="purchases_no">{{ __('levels.reference_no') }} <span class="text-danger">*</span></label>
                                     <input  class="form-control" id="purchases_no" type="text" name="purchases_no" value="{{old('purchases_no',$purchase->purchases_no)}}">
                                 </div>
                                 <div class="form-group col-md-12">
@@ -78,10 +78,10 @@
                                     <tr>
                                         <th class="row-cols-sm-1">{{__('levels.#')}}</th>
                                         <th class="row-cols-sm-3">{{__('levels.product')}}</th>
-                                        <th class="row-cols-sm-1" >{{__('levels.Unit Price')}}</th>
-                                        <th class="row-cols-sm-1">{{__('levels.Quantity')}}</th>
-                                        <th class="row-cols-sm-2">{{__('levels.Subtotal')}}</th>
-                                        <th class="row-cols-sm-1">{{__('levels.Action')}}</th>
+                                        <th class="row-cols-sm-1" >{{__('levels.unit_price')}}</th>
+                                        <th class="row-cols-sm-1">{{__('levels.quantity')}}</th>
+                                        <th class="row-cols-sm-2">{{__('levels.subtotal')}}</th>
+                                        <th class="row-cols-sm-1">{{__('levels.action')}}</th>
                                     </tr>
                                     </thead>
                                     <tbody id="productList">
@@ -150,7 +150,7 @@
                             </div>
                                 <div class="form-row">
                                     <div class="form-group col-md-6">
-                                        <label for="site_description">{{ __('levels.Note') }}</label>
+                                        <label for="site_description">{{ __('levels.note') }}</label>
                                         <textarea name="description" id="description" cols="30" rows="3" class="form-control small-textarea-height @error('description') is-invalid @enderror">{{ old('description',$purchase->description) }}</textarea>
                                         @error('description')
                                         <div class="invalid-feedback">
@@ -180,16 +180,16 @@
                 <div class="modal-body" id= "modal-body">
                     <div class="modal-body">
                         <div class="form-group col-10">
-                            <label for="ProductVariants">{{ __('levels.Product Variants') }}</label>
+                            <label for="ProductVariants">{{ __('levels.product_variants') }}</label>
                             <select id="ProductVariants"  class="form-control">
                             </select>
                         </div>
                         <div class="form-group col-10">
-                            <label for="pquantity">{{ __('levels.Quantity') }}</label>
+                            <label for="pquantity">{{ __('levels.quantity') }}</label>
                             <input  class="form-control" id="pquantity" type="number">
                         </div>
                         <div class="form-group col-10">
-                            <label for="pprice">{{ __('levels.Price') }}</label>
+                            <label for="pprice">{{ __('levels.price') }}</label>
                             <input  class="form-control" id="pprice" type="number" >
                         </div>
                     </div>

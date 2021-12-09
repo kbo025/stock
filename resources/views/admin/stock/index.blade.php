@@ -4,7 +4,7 @@
 
   <section class="section">
         <div class="section-header">
-            <h1>{{ __('levels.Stocks') }}</h1>
+            <h1>{{ __('levels.stocks') }}</h1>
             {{ Breadcrumbs::render('stocks') }}
         </div>
 
@@ -19,10 +19,10 @@
                                         <tr>
                                             <th>{{ __('levels.ID') }}</th>
                                             <th>{{ __('levels.product') }}</th>
-                                            <th>{{ __('levels.Unit') }}</th>
-                                            <th>{{ __('levels.Sale Qty') }}</th>
-                                            <th>{{ __('levels.Total Qty') }}</th>
-                                            <th>{{ __('levels.Stock Qty') }}</th>
+                                            <th>{{ __('levels.unit') }}</th>
+                                            <th>{{ __('levels.sale_qty') }}</th>
+                                            <th>{{ __('levels.total_qty') }}</th>
+                                            <th>{{ __('levels.stock_qty') }}</th>
                                         </tr>
                                     </thead>
                                 </table>

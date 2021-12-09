@@ -4,7 +4,7 @@
 
     <section class="section">
         <div class="section-header">
-            <h1>{{ __('levels.Units') }}</h1>
+            <h1>{{ __('levels.units') }}</h1>
             {{ Breadcrumbs::render('units') }}
         </div>
 
@@ -14,7 +14,7 @@
                     <div class="card">
                         @if(auth()->user()->can('unit_create'))
                         <div class="card-header">
-                            <a href="{{ route('admin.unit.create') }}" class="btn btn-icon icon-left btn-primary"><i class="fas fa-plus"></i> {{ __('levels.Add Unit') }}
+                            <a href="{{ route('admin.unit.create') }}" class="btn btn-icon icon-left btn-primary"><i class="fas fa-plus"></i> {{ __('levels.add_unit') }}
                             </a>
                         </div>
                         @endif

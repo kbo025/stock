@@ -28,7 +28,7 @@
 
             <!-- Password -->
             <div class="mt-4">
-                <x-label for="password" :value="__('levels.Password')" />
+                <x-label for="password" :value="__('levels.password')" />
 
                 <x-input id="password" class="block mt-1 w-full"
                                 type="password"
@@ -38,7 +38,7 @@
 
             <!-- Confirm Password -->
             <div class="mt-4">
-                <x-label for="password_confirmation" :value="__('levels.Confirm Password')" />
+                <x-label for="password_confirmation" :value="__('levels.confirm_password')" />
 
                 <x-input id="password_confirmation" class="block mt-1 w-full"
                                 type="password"
@@ -47,11 +47,11 @@
 
             <div class="flex items-center justify-end mt-4">
                 <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('login') }}">
-                    {{ __('levels.Already registered?') }}
+                    {{ __('levels.already_registered') }}
                 </a>
 
                 <x-button class="ml-4">
-                    {{ __('levels.Register') }}
+                    {{ __('levels.register') }}
                 </x-button>
             </div>
         </form>

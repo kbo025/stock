@@ -4,7 +4,7 @@
 
     <section class="section">
         <div class="section-header">
-            <h1>{{ __('levels.Print Barcode/Label ') }}</h1>
+            <h1>{{ __('levels.print_barcode/label') }}</h1>
             {{ Breadcrumbs::render('barcode') }}
         </div>
 
@@ -16,9 +16,9 @@
                         <div class="row">
                                 <div class="col-sm-5">
                                 <div class="form-group">
-                                    <label>{{ __('levels.Products') }}</label>
+                                    <label>{{ __('levels.products') }}</label>
                                     <select name="product_id" id="productVariants" class="form-control select2 @error('product_id') is-invalid @enderror">
-                                        <option value="">{{ __('levels.Select product') }}</option>
+                                        <option value="">{{ __('levels.select_product') }}</option>
                                         @if(!blank($products))
                                             @foreach($products as $product)
                                                 <option value="{{ $product->id }}" {{ (old('product_id', $set_product_id) == $product->id) ? 'selected' : '' }}>{{ $product->name }} ({{$product->barcode}})</option>
@@ -34,9 +34,9 @@
                             </div>
                             <div class="col-sm-4">
                                 <div class="form-group">
-                                    <label>{{ __('levels.Product Variants') }}</label>
+                                    <label>{{ __('levels.product_variants') }}</label>
                                     <select name="variant_id" id="Variants" class="form-control select2 @error('variant_id') is-invalid @enderror">
-                                        <option value="">{{ __('levels.Select Variants') }}</option>
+                                        <option value="">{{ __('levels.select_variants') }}</option>
                                         @if(!blank($variants))
                                             @foreach($variants as $variant)
                                                 <option value="{{ $variant->id }}" {{ (old('variant_id', $set_variant_id) == $variant->id) ? 'selected' : '' }}>{{ $variant->name }} ({{$variant->price}}) </option>
@@ -52,7 +52,7 @@
                             </div>
                                 <div class="col-sm-3">
                                 <div class="form-group">
-                                    <label>{{ __('levels.Product Quantity') }}</label>
+                                    <label>{{ __('levels.product_quantity') }}</label>
                                     <input id="quantity" type="number" name="quantity" class="form-control {{ $errors->has('quantity') ? " is-invalid " : '' }}" value="{{ old('quantity',$set_quantity) }}">
                                     @error('quantity')
                                     <div class="invalid-feedback">
@@ -64,7 +64,7 @@
 
                             <div class="col-sm-3">
                                 <label for="">&nbsp;</label>
-                                <button class="btn btn-primary form-control" type="submit">{{ __('levels.Get Barcode/Label') }}</button>
+                                <button class="btn btn-primary form-control" type="submit">{{ __('levels.get_barcode/label') }}</button>
                             </div>
                         </div>
                     </form>
@@ -75,8 +75,8 @@
             @if($showView)
                 <div class="card">
                     <div class="card-header">
-                        <h5>{{ __('levels.Print Barcode/Label') }}</h5>
-                        <button class="btn btn-success btn-sm report-print-button" onclick="printDiv('printablediv')">{{ __('levels.Print') }}</button>
+                        <h5>{{ __('levels.print_barcode/label') }}</h5>
+                        <button class="btn btn-success btn-sm report-print-button" onclick="printDiv('printablediv')">{{ __('levels.print') }}</button>
                     </div>
                     <div class="card-body" id="printablediv">
                         @if(isset($productVariant))
@@ -85,7 +85,7 @@
                                 <div class="item barcodeStyle">
                                     <span class="barcode_site">{{$product->shop->name}}</span>
                                     <span class="barcode_name">{{$product->name}} ({{$productVariant->name}})</span>
-                                    <span class="barcode_price">{{__('levels.Price')}} {{currencyFormat($product->price + $productVariant->price)}}</span>
+                                    <span class="barcode_price">{{__('levels.price')}} {{currencyFormat($product->price + $productVariant->price)}}</span>
                                     <span class="barcode_image">
                                         <img src="{{ $productVariant->barcodeprint }}" alt="{{$product->barcode}}{{$productVariant->id}}" class="{{$product->name}}">
                                     </span>
@@ -99,7 +99,7 @@
                                 <div class="item barcodeStyle">
                                     <span class="barcode_site">{{$productBarcode->shop->name}}</span>
                                     <span class="barcode_name">{{$productBarcode->name}}</span>
-                                    <span class="barcode_price">{{__('levels.Price')}} {{currencyFormat($productBarcode->price)}} @if(isset($productBarcode->tax))/ {{$productBarcode->tax->name}}@endif</span>
+                                    <span class="barcode_price">{{__('levels.price')}} {{currencyFormat($productBarcode->price)}} @if(isset($productBarcode->tax))/ {{$productBarcode->tax->name}}@endif</span>
                                     <span class="barcode_image">
                                         <img src="{{ $productBarcode->barcodeprint }}" alt="{{$productBarcode->barcode}}" class="{{$productBarcode->name}}">
                                     </span>
@@ -108,7 +108,7 @@
                         </div>
                 </div>
             @else
-              <h4 class="text-danger">{{ __('levels.The Barcode/Label data not found') }}</h4>
+              <h4 class="text-danger">{{ __('levels.the_barcode_label_data_not_found') }}</h4>
                         @endif
                     </div>
                 </div>

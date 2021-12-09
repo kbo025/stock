@@ -13,7 +13,7 @@
                     <div class="modal-body">
                         <div class="form-row">
                             <div class="form-group col-12">
-                                <label for="first_name">{{ __('levels.Customer First Name') }}</label> <span class="text-danger">*</span>
+                                <label for="first_name">{{ __('levels.customer_first_name') }}</label> <span class="text-danger">*</span>
                                 <input wire:model="customer.first_name" type="text" name="first_name" id="first_name"  class="form-control @error('customer.first_name') is-invalid @enderror">
                                 @error('customer.first_name')
                                 <div class="invalid-feedback">
@@ -24,7 +24,7 @@
                         </div>
                         <div class="form-row">
                             <div class="form-group col-12">
-                                <label for="last_name">{{ __('levels.Customer Last Name') }}</label> <span class="text-danger">*</span>
+                                <label for="last_name">{{ __('levels.customer_last_name') }}</label> <span class="text-danger">*</span>
                                 <input wire:model="customer.last_name" type="text" name="last_name" id="last_name"  class="form-control @error('customer.last_name') is-invalid @enderror">
                                 @error('customer.last_name')
                                 <div class="invalid-feedback">
@@ -46,7 +46,7 @@
                         </div>
                             <div class="form-row">
                                 <div class="form-group col-12">
-                                    <label for="deposit_amount">{{ __('levels.Customer Deposit amount') }}</label> <span class="text-danger">*</span>
+                                    <label for="deposit_amount">{{ __('levels.customer_deposit_amount') }}</label> <span class="text-danger">*</span>
                                     <input wire:model="customer.deposit_amount" type="number" name="deposit_amount" id="deposit_amount"  class="form-control @error('customer.deposit_amount') is-invalid @enderror">
                                     @error('customer.deposit_amount')
                                     <div class="invalid-feedback">

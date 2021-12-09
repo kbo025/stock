@@ -4,7 +4,7 @@
 
 <section class="section">
     <div class="section-header">
-        <h1>{{ __('levels.Products') }}</h1>
+        <h1>{{ __('levels.products') }}</h1>
         {{ Breadcrumbs::render('products') }}
     </div>
 
@@ -16,7 +16,7 @@
                     @can('products_create')
                         <div class="card-header">
                             <a href="{{ route('admin.products.create') }}" class="btn btn-icon icon-left btn-primary"><i
-                                    class="fas fa-plus"></i> {{ __('levels.Add Product') }}</a>
+                                    class="fas fa-plus"></i> {{ __('levels.add_product') }}</a>
                         </div>
                     @endcan
 
@@ -25,7 +25,7 @@
                             <div class="col-sm-6 offset-sm-3">
                                 <div class="input-group input-daterange" id="date-picker">
                                     <select class="form-control" id="status" name="status" >
-                                       <option value="">{{ __('levels.Select Status') }}</option>
+                                       <option value="">{{ __('levels.select_status') }}</option>
                                         @foreach(trans('statuses') as $key => $status)
                                         <option value="{{ $key }}">{{ $status }}</option>
                                         @endforeach
@@ -50,10 +50,10 @@
                                     <tr>
                                         <th>{{ __('levels.id') }}</th>
                                         <th>{{ __('levels.name') }}</th>
-                                        <th>{{ __('levels.Unit') }}</th>
+                                        <th>{{ __('levels.unit') }}</th>
                                         <th>{{ __('levels.categories') }}</th>
-                                        <th>{{ __('levels.Cost') }}</th>
-                                        <th>{{ __('levels.Price') }}</th>
+                                        <th>{{ __('levels.cost') }}</th>
+                                        <th>{{ __('levels.price') }}</th>
                                         <th>{{ __('levels.status') }}</th>
                                         <th>{{ __('levels.actions') }}</th>
                                     </tr>

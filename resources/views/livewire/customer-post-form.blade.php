@@ -51,7 +51,7 @@
         <div class="card-footer">
 
             @if($updateMode)
-                <button wire:click.prevent="update({{$user}})" class="btn btn-primary mr-1">{{ __('levels.Update') }}</button>
+                <button wire:click.prevent="update({{$user}})" class="btn btn-primary mr-1">{{ __('levels.update') }}</button>
                 @else
                 <button wire:click.prevent="store()" class="btn btn-primary mr-1">{{ __('levels.submit') }}</button>
             @endif

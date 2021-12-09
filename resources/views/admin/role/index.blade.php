@@ -4,7 +4,7 @@
   
   <section class="section">
         <div class="section-header">
-            <h1>{{ __('levels.Roles') }}</h1>
+            <h1>{{ __('levels.roles') }}</h1>
             {{ Breadcrumbs::render('roles') }}
         </div>
 
@@ -15,7 +15,7 @@
                         
                         @can('role_create')
                             <div class="card-header">
-                                <a href="{{ route('admin.role.create') }}" class="btn btn-icon icon-left btn-primary"><i class="fas fa-plus"></i> {{ __('levels.Add Role') }}</a>
+                                <a href="{{ route('admin.role.create') }}" class="btn btn-icon icon-left btn-primary"><i class="fas fa-plus"></i> {{ __('levels.add_role') }}</a>
                             </div>
                         @endcan
 

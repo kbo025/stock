@@ -110,8 +110,8 @@
 		                            <th>{{ __('levels.invoice_id') }}</th>
 		                            <th>{{ __('levels.customer') }}</th>
 		                            <th>{{ __('levels.date') }}</th>
-		                            <th>{{ __('levels.Total') }}</th>
-		                            <th>{{ __('levels.Action') }}</th>
+		                            <th>{{ __('levels.total') }}</th>
+		                            <th>{{ __('levels.action') }}</th>
 		                        </tr>
 		                        @if(!blank($todaySale))
 		                        	@foreach($todaySale as $sale)

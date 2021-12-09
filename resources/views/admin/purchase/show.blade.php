@@ -3,12 +3,12 @@
 @section('main-content')
     <section class="section">
         <div class="section-header">
-            <h1>{{ __('levels.Purchases View') }}</h1>
+            <h1>{{ __('levels.purchases_view') }}</h1>
             {{ Breadcrumbs::render('purchase/view') }}
         </div>
         <div class="section-body">
             <div class="card-header">
-                <a href="#" class="btn btn-icon icon-left btn-primary" onclick="printDiv('printablediv')"><i class="fas fa-print"></i> {{ __('levels.Print') }}
+                <a href="#" class="btn btn-icon icon-left btn-primary" onclick="printDiv('printablediv')"><i class="fas fa-print"></i> {{ __('levels.print') }}
                 </a>
             </div>
             <div class="card">
@@ -56,10 +56,10 @@
                                     <tr>
                                         <th class="row-cols-sm-1">{{__('levels.#')}}</th>
                                         <th class="row-cols-sm-3">{{__('levels.product')}}</th>
-                                        <th class="row-cols-sm-1">{{__('levels.Unit')}}</th>
-                                        <th class="row-cols-sm-1" >{{__('levels.Unit Price')}}</th>
-                                        <th class="row-cols-sm-1">{{__('levels.Quantity')}}</th>
-                                        <th class="row-cols-sm-2">{{__('levels.Subtotal')}}</th>
+                                        <th class="row-cols-sm-1">{{__('levels.unit')}}</th>
+                                        <th class="row-cols-sm-1" >{{__('levels.unit_price')}}</th>
+                                        <th class="row-cols-sm-1">{{__('levels.quantity')}}</th>
+                                        <th class="row-cols-sm-2">{{__('levels.subtotal')}}</th>
                                     </tr>
                                     </thead>
                                     <tbody>
@@ -112,7 +112,7 @@
                             <div class="well well-sm">
 
                                 <p>
-                                    {{__('levels.Create by')}} : {{optional($purchase->creator)->name}}
+                                    {{__('levels.create_by')}} : {{optional($purchase->creator)->name}}
                                     <br>
                                     {{__('levels.date')}}:{{\Carbon\Carbon::parse($purchase->created_at)->format('d M Y, h:i A') }}
                                 </p>

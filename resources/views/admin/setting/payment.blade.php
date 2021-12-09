@@ -10,16 +10,16 @@
             <div class="card-body">
                 <div class="row">
                     <div class="col-md-4">
-                        <h4 class="paymentheader text-center">{{ __('levels.Payment Type') }}</h4>
+                        <h4 class="paymentheader text-center">{{ __('levels.payment_type') }}</h4>
                         <hr>
                         <ul class="nav nav-pills flex-column">
                             <li class="nav-item">
                                 <a class="nav-link {{ ((old('settingtypepayment', setting('settingtypepayment')) == 'stripe') || (old('settingtypepayment', setting('settingtypepayment')) == '')) ? 'active' : '' }}"
                                     id="stripe" data-toggle="pill" href="#stripetab" role="tab" aria-controls="stripetab"
-                                    aria-selected="true">{{ __('levels.Stripe') }}</a>
+                                    aria-selected="true">{{ __('levels.stripe') }}</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link {{ (old('settingtypepayment', setting('settingtypepayment')) == 'razorpay') ? 'active' : '' }}" id="razorpay" data-toggle="pill" href="#razorpaytab" role="tab" aria-controls="razorpaytab" aria-selected="false">{{ __('levels.Razorpay') }}</a>
+                                <a class="nav-link {{ (old('settingtypepayment', setting('settingtypepayment')) == 'razorpay') ? 'active' : '' }}" id="razorpay" data-toggle="pill" href="#razorpaytab" role="tab" aria-controls="razorpaytab" aria-selected="false">{{ __('levels.razorpay') }}</a>
                             </li>
                         </ul>
                     </div>
@@ -31,7 +31,7 @@
                                     action="{{ route('admin.setting.payment-update') }}">
                                     @csrf
                                     <fieldset class="setting-fieldset">
-                                        <legend class="setting-legend">{{ __('levels.Stripe Setting') }}</legend>
+                                        <legend class="setting-legend">{{ __('levels.stripe_setting') }}</legend>
                                         <input type="hidden" name="settingtypepayment" value="stripe">
                                         <div class="row">
                                             <div class="col-sm-12">
@@ -64,8 +64,8 @@
                                                     <label>{{ __('levels.status') }}</label> <span class="text-danger">*</span>
                                                     <select name="stripe_disabled" id="stripe_disabled"
                                                             class="form-control @error('stripe_disabled') is-invalid @enderror">
-                                                        <option value="1" {{ (old('stripe_disabled', setting('stripe_disabled')) == 1) ? 'selected' : '' }}> {{ __('levels.Enable') }}</option>
-                                                        <option value="0" {{ (old('stripe_disabled', setting('stripe_disabled')) == 0) ? 'selected' : '' }}> {{ __('levels.Disable') }}</option>
+                                                        <option value="1" {{ (old('stripe_disabled', setting('stripe_disabled')) == 1) ? 'selected' : '' }}> {{ __('levels.enable') }}</option>
+                                                        <option value="0" {{ (old('stripe_disabled', setting('stripe_disabled')) == 0) ? 'selected' : '' }}> {{ __('levels.disable') }}</option>
                                                     </select>
                                                     @error('stripe_disabled')
                                                     <div class="invalid-feedback">
@@ -79,7 +79,7 @@
                                     </fieldset>
                                     <div class="form-group">
                                         <button class="btn btn-primary">
-                                            <span>{{ __('levels.Update Stripe Setting') }}</span>
+                                            <span>{{ __('levels.update_stripe_setting') }}</span>
                                         </button>
                                     </div>
                                 </form>
@@ -91,7 +91,7 @@
                                     action="{{ route('admin.setting.payment-update') }}">
                                     @csrf
                                     <fieldset class="setting-fieldset">
-                                        <legend class="setting-legend">{{ __('levels.Razorpay Setting') }}</legend>
+                                        <legend class="setting-legend">{{ __('levels.razorpay_setting') }}</legend>
                                         <input type="hidden" name="settingtypepayment" value="razorpay">
                                         <div class="row">
                                             <div class="col-sm-12">
@@ -125,8 +125,8 @@
                                                     <label>{{ __('levels.status') }}</label> <span class="text-danger">*</span>
                                                     <select name="razorpay_disabled" id="razorpay_disabled"
                                                             class="form-control @error('razorpay_disabled') is-invalid @enderror">
-                                                        <option value="1" {{ (old('razorpay_disabled', setting('razorpay_disabled')) == 1) ? 'selected' : '' }}> {{ __('levels.Enable') }}</option>
-                                                        <option value="0" {{ (old('razorpay_disabled', setting('razorpay_disabled')) == 0) ? 'selected' : '' }}> {{ __('levels.Disable') }}</option>
+                                                        <option value="1" {{ (old('razorpay_disabled', setting('razorpay_disabled')) == 1) ? 'selected' : '' }}> {{ __('levels.enable') }}</option>
+                                                        <option value="0" {{ (old('razorpay_disabled', setting('razorpay_disabled')) == 0) ? 'selected' : '' }}> {{ __('levels.disable') }}</option>
                                                     </select>
                                                     @error('razorpay_disabled')
                                                     <div class="invalid-feedback">
@@ -140,7 +140,7 @@
                                     </fieldset>
                                     <div class="form-group">
                                         <button class="btn btn-primary">
-                                            <span>{{ __('levels.Update Razorpay  Setting') }}</span>
+                                            <span>{{ __('levels.update_razorpay_ setting') }}</span>
                                         </button>
                                     </div>
                                 </form>

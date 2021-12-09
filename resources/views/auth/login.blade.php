@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" name="viewport">
-    <title>{{ setting('site_name'). ' - ' . __('levels.Login') }}</title>
+    <title>{{ setting('site_name'). ' - ' . __('levels.login') }}</title>
     <!-- General CSS Files -->
     <link rel="stylesheet" href="{{ asset('assets/modules/bootstrap/dist/css/bootstrap.min.css') }}">
     <!-- CSS Libraries -->
@@ -29,7 +29,7 @@
 
                     <div class="card card-primary">
                         <div class="card-header">
-                            <h4>{{ __('levels.Login') }}</h4>
+                            <h4>{{ __('levels.login') }}</h4>
                         </div>
 
                         <div class="card-body">
@@ -47,7 +47,7 @@
 
                                 <div class="form-group">
                                     <div class="d-block">
-                                        <label for="demopassword" class="control-label">{{ __('levels.Password') }}</label><span class="text-danger"> *</span>
+                                        <label for="demopassword" class="control-label">{{ __('levels.password') }}</label><span class="text-danger"> *</span>
                                     </div>
                                     <input id="demopassword" type="password" class="form-control @error('password') is-invalid @enderror" name="password"/>
                                     @error('password')
@@ -62,14 +62,14 @@
                                         <input class="custom-control-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
 
                                         <label class="custom-control-label" for="remember">
-                                            {{ __('levels.Remember Me') }}
+                                            {{ __('levels.remember_me') }}
                                         </label>
                                     </div>
                                 </div>
 
                                 <div class="form-group">
                                     <button type="submit" class="btn btn-primary btn-lg btn-block" tabindex="4">
-                                        {{ __('levels.Login') }}
+                                        {{ __('levels.login') }}
                                     </button>
                                 </div>
                             </form>
@@ -80,11 +80,11 @@
             @if(env('DEMO'))
                 <div class="card mx-auto text-center col-md-6">
                     <div class="card-header">
-                        <h4 class="mb-0">{{ __('levels.For Quick Demo Login Click Below...') }}</h4>
+                        <h4 class="mb-0">{{ __('levels.for_quick_demo_login_click_below') }}</h4>
                     </div>
                     <div class="card-body">
                         <div class="buttons">
-                            <button id="demoadmin" class="btn btn-primary">{{ __('levels.Admin') }}</button>
+                            <button id="demoadmin" class="btn btn-primary">{{ __('levels.admin') }}</button>
                             <button id="demoshopowner" class="btn btn-success">{{ __('levels.shop Owner') }}</button>
                             <button id="demoshopowner2" class="btn btn-info">{{ __('levels.shop Owner Two') }}</button>
                         </div>

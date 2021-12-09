@@ -32,7 +32,7 @@
                             {{__('levels.Phone : ')}} {{optional($sale->shop->user)->phone}}<br>
                             {{__('levels.Email : ')}} {{optional($sale->shop->user)->email}}<br>
                             {{optional($sale->shop)->address}}<br>
-                            {{__('levels.Sales Person: ')}}{{optional($sale->creator)->name}}
+                            {{__('levels.sales_person')}}{{optional($sale->creator)->name}}
                         </address>
                     </div>
 
@@ -43,7 +43,7 @@
                             <b class="pull-right">{{__('levels.Date : ')}} {{ \Carbon\Carbon::parse($sale->created_at)->format('d M Y')}}</b><br>
                             <b class="pull-right">{{__('levels.Customer : ')}} {{$sale->user->name}}</b><br>
                             <b class="pull-right">{{__('levels.Phone : ')}} {{$sale->user->phone}}</b><br>
-                            <b class="pull-right">{{__('levels.Paid by : ')}} {{__('levels.Cash/Credit')}}</b><br>
+                            <b class="pull-right">{{__('levels.Paid by : ')}} {{__('levels.cash_credit')}}</b><br>
                         </address>
                     </div>
                 </div>
@@ -51,12 +51,12 @@
                 <table class="table table-striped table-condensed">
                     <thead>
                     <tr>
-                        <th class="text-center pos-print-th50" >{{__('levels.Description')}}</th>
-                        <th class="text-center pos-print-th10" >{{__('levels.Unit')}}</th>
-                        <th class="text-center pos-print-th10" >{{__('levels.Quantity')}}</th>
-                        <th class="text-center pos-print-th24" >{{__('levels.Price')}}</th>
-                        <th class="text-center pos-print-th20" >{{__('levels.Tax')}}</th>
-                        <th class="text-center pos-print-th26" >{{__('levels.Subtotal')}}</th>
+                        <th class="text-center pos-print-th50" >{{__('levels.description')}}</th>
+                        <th class="text-center pos-print-th10" >{{__('levels.unit')}}</th>
+                        <th class="text-center pos-print-th10" >{{__('levels.quantity')}}</th>
+                        <th class="text-center pos-print-th24" >{{__('levels.price')}}</th>
+                        <th class="text-center pos-print-th20" >{{__('levels.tax')}}</th>
+                        <th class="text-center pos-print-th26" >{{__('levels.subtotal')}}</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -82,23 +82,23 @@
                     </tbody>
                     <tfoot>
                     <tr>
-                        <th class="text-left" colspan="3">{{__('levels.Total Order Tax')}}</th>
+                        <th class="text-left" colspan="3">{{__('levels.total_order_tax')}}</th>
                         <th colspan="3" class="text-right">{{currencyFormat($sale->tax_amount)}}</th>
                     </tr>
                     <tr>
-                        <th class="text-left" colspan="3">{{__('levels.Total Amount')}}</th>
+                        <th class="text-left" colspan="3">{{__('levels.total_amount')}}</th>
                         <th colspan="3" class="text-right">{{currencyFormat($totalsubtotal+$sale->tax_amount)}}</th>
                     </tr>
                     <tr>
-                        <th class="text-left" colspan="3">{{__('levels.Credit Amount')}}</th>
+                        <th class="text-left" colspan="3">{{__('levels.credit_amount')}}</th>
                         <th colspan="3" class="text-right">{{currencyFormat($sale->paid_credit_amount)}}</th>
                     </tr>
                     <tr>
-                        <th class="text-left" colspan="3">{{__('levels.Cash Amount')}}</th>
+                        <th class="text-left" colspan="3">{{__('levels.cash_amount')}}</th>
                         <th colspan="3" class="text-right">{{currencyFormat($sale->paid_cash_amount)}}</th>
                     </tr>
                     <tr>
-                        <th class="text-left" colspan="3">{{__('levels.Paid Amount')}}</th>
+                        <th class="text-left" colspan="3">{{__('levels.paid_amount')}}</th>
                         <th colspan="3" class="text-right">{{currencyFormat($sale->paid_amount)}}</th>
                     </tr>
 
@@ -117,13 +117,13 @@
         <div id="buttons" class="no-print pos-print-no-css">
             <hr class="mb-2">
             <span class=" col-xs-12">
-                <button onclick="window.print();" class="btn  btn-primary">{{__('levels.Print')}}</button>
+                <button onclick="window.print();" class="btn  btn-primary">{{__('levels.print')}}</button>
             </span>
             <span class="pull-left col-xs-12">
-                <a class="btn  btn-success" target="_blank" href="https://api.whatsapp.com/send?phone={{$sale->user->phone}}?text={{$sale->generateSaleMsg}}" id="whatsapp">{{__('levels.WhatsApp')}}</a>
+                <a class="btn  btn-success" target="_blank" href="https://api.whatsapp.com/send?phone={{$sale->user->phone}}?text={{$sale->generateSaleMsg}}" id="whatsapp">{{__('levels.whatsapp')}}</a>
             </span>
             <span class="col-xs-12">
-                <a class="btn  btn-warning" href="{{route('admin.pos')}}">{{__('levels.Back to POS')}}</a>
+                <a class="btn  btn-warning" href="{{route('admin.pos')}}">{{__('levels.back_to_pos')}}</a>
              </span>
             <div class="clear-both-css"></div>
         </div>

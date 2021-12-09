@@ -36,7 +36,7 @@
                     <div class="input-group"  wire:key="customer_id" >
                         <select data-placeholder="Select Customer" required="required" class="form-control  @error('customer_id') is-invalid @enderror" tabindex="-1" aria-hidden="true" id="customerID"  wire:model="customer_id">
                             @if(!blank($users))
-                                <option value="1">{{__('levels.Select Customer')}}</option>
+                                <option value="1">{{__('levels.select_customer')}}</option>
                                 @foreach($users as $user)
                                     <option value="{{ $user->id }}"
                                         {{ old('attribute') == $user->id ? 'selected' : '' }}>{{ $user->name }}
@@ -74,10 +74,10 @@
                             <thead>
                             <tr class="success">
                                 <th>Product</th>
-                                <th class="pos-tr-th-css">{{__('levels.Price')}}</th>
-                                <th class="pos-tr-th-css">{{__('levels.Tax')}}</th>
-                                <th class="pos-tr-th-cssone">{{__('levels.Qty')}}</th>
-                                <th class="pos-tr-th-csstwo">{{__('levels.Subtotal')}}</th>
+                                <th class="pos-tr-th-css">{{__('levels.price')}}</th>
+                                <th class="pos-tr-th-css">{{__('levels.tax')}}</th>
+                                <th class="pos-tr-th-cssone">{{__('levels.qty')}}</th>
+                                <th class="pos-tr-th-csstwo">{{__('levels.subtotal')}}</th>
                                 <th wire:click.prevent="delAllItem()" class="pos-th-i"><i class="fas fa-trash"></i></th>
                             </tr>
                             </thead>
@@ -121,9 +121,9 @@
                     <table class="table table-condensed totals pos-table-css">
                         <tbody>
                         <tr class="info">
-                            <td width="25%">{{__('levels.Total Items')}}</td>
+                            <td width="25%">{{__('levels.total_items')}}</td>
                             <td class="text-right pos-tabel-th-css"><span id="count">{{number_format($totalItem)}} ({{$totalQty}})</span></td>
-                            <td width="25%">{{__('levels.Total')}}</td>
+                            <td width="25%">{{__('levels.total')}}</td>
                             <td class="text-right" colspan="2"><span id="total">{{currencyFormat($totalAmount)}}</span></td>
                         </tr>
                         <tr>

@@ -24,8 +24,8 @@
                                 <li class="list-group-item profile-list-group-item"><span class="float-left font-weight-bold">{{ __('levels.phone') }}</span> <span class="float-right">{{ $user->phone }}</span></li>
                                 <li class="list-group-item profile-list-group-item"><span class="float-left font-weight-bold">{{ __('levels.email') }}</span> <span class="float-right">{{ $user->email }}</span></li>
                                 <li class="list-group-item profile-list-group-item"><span class="float-left font-weight-bold">{{ __('levels.address') }}</span> <span class="float-right profile-list-group-item-addresss">{{ $user->address }}</span></li>
-                                <li class="list-group-item profile-list-group-item"><span class="float-left font-weight-bold">{{ __('levels.Deposit Amount') }}</span> <span class="float-right profile-list-group-item-addresss">{{ isset($user->deposit->deposit_amount) ? currencyFormat($user->deposit->deposit_amount) : '' }}</span></li>
-                                <li class="list-group-item profile-list-group-item"><span class="float-left font-weight-bold">{{ __('levels.Limit Amount') }}</span> <span class="float-right profile-list-group-item-addresss">{{ isset($user->deposit->limit_amount) ? currencyFormat($user->deposit->limit_amount) : '' }}</span></li>
+                                <li class="list-group-item profile-list-group-item"><span class="float-left font-weight-bold">{{ __('levels.deposit_amount') }}</span> <span class="float-right profile-list-group-item-addresss">{{ isset($user->deposit->deposit_amount) ? currencyFormat($user->deposit->deposit_amount) : '' }}</span></li>
+                                <li class="list-group-item profile-list-group-item"><span class="float-left font-weight-bold">{{ __('levels.limit_amount') }}</span> <span class="float-right profile-list-group-item-addresss">{{ isset($user->deposit->limit_amount) ? currencyFormat($user->deposit->limit_amount) : '' }}</span></li>
                                 <li class="list-group-item profile-list-group-item"><span class="float-left font-weight-bold">{{ __('levels.credit') }}</span> <span class="float-right profile-list-group-item-addresss">{{ currencyFormat($user->balance->balance > 0 ? $user->balance->balance : 0 ) }}</span></li>
                                 <li class="list-group-item profile-list-group-item"><span class="float-left font-weight-bold">{{ __('levels.status') }}</span> <span class="float-right profile-list-group-item-addresss">{{ $user->mystatus }}</span></li>
                             </ul>
@@ -60,7 +60,7 @@
                                     <p><b>{{ __('levels.address') }}: </b> {{ $shop->address}}</p>
                                 </div>
                                 <div class="single-full-profile">
-                                    <p><b>{{ __('levels.Description') }}: </b> {!! $shop->description !!}</p>
+                                    <p><b>{{ __('levels.description') }}: </b> {!! $shop->description !!}</p>
                                 </div>
                             </div>
                         </div>

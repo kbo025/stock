@@ -32,7 +32,7 @@
                                     </li>
                                     @if(auth()->user())
                                         <li class="nav-item">
-                                            <a class="nav-link" href="{{ route('admin.dashboard.index') }}">{{__('levels.Dashboard')}}</a>
+                                            <a class="nav-link" href="{{ route('admin.dashboard.index') }}">{{__('levels.dashboard')}}</a>
                                         </li>
                                         <li class="nav-item">
                                             <a class="nav-link" href="{{ route('logout') }}"

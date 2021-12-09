@@ -10,7 +10,7 @@
 
     <section class="section">
         <div class="section-header">
-            <h1>{{ __('levels.Products') }}</h1>
+            <h1>{{ __('levels.products') }}</h1>
             {{ Breadcrumbs::render('products/edit') }}
         </div>
 
@@ -115,7 +115,7 @@
                             </div>
 
                             <div class="card-footer ">
-                                <button class="btn btn-primary mr-1" type="submit">{{ __('levels.Update') }}</button>
+                                <button class="btn btn-primary mr-1" type="submit">{{ __('levels.update') }}</button>
                             </div>
                         </form>
                     </div>

@@ -24,14 +24,14 @@
 
             <!-- Password -->
             <div class="mt-4">
-                <x-label for="password" :value="__('levels.Password')" />
+                <x-label for="password" :value="__('levels.password')" />
 
                 <x-input id="password" class="block mt-1 w-full" type="password" name="password" required />
             </div>
 
             <!-- Confirm Password -->
             <div class="mt-4">
-                <x-label for="password_confirmation" :value="__('levels.Confirm Password')" />
+                <x-label for="password_confirmation" :value="__('levels.confirm_password')" />
 
                 <x-input id="password_confirmation" class="block mt-1 w-full"
                                     type="password"
@@ -40,7 +40,7 @@
 
             <div class="flex items-center justify-end mt-4">
                 <x-button>
-                    {{ __('levels.Reset Password') }}
+                    {{ __('levels.reset_password') }}
                 </x-button>
             </div>
         </form>

@@ -4,7 +4,7 @@
 
     <section class="section">
         <div class="section-header">
-            <h1>{{ __('levels.Purchases') }}</h1>
+            <h1>{{ __('levels.purchases') }}</h1>
             {{ Breadcrumbs::render('purchase') }}
         </div>
 
@@ -14,7 +14,7 @@
                     <div class="card">
                         @if(auth()->user()->can('purchase_create'))
                         <div class="card-header">
-                            <a href="{{ route('admin.purchase.create') }}" class="btn btn-icon icon-left btn-primary"><i class="fas fa-plus"></i> {{ __('levels.Add Purchase') }}
+                            <a href="{{ route('admin.purchase.create') }}" class="btn btn-icon icon-left btn-primary"><i class="fas fa-plus"></i> {{ __('levels.add_purchase') }}
                             </a>
                         </div>
                         @endif
@@ -25,10 +25,10 @@
                                     <tr>
                                         <th>{{ __('levels.ID') }}</th>
                                         <th>{{ __('levels.shop') }}</th>
-                                        <th>{{ __('levels.Purchases No') }}</th>
+                                        <th>{{ __('levels.purchases_no') }}</th>
                                         <th>{{ __('levels.date') }}</th>
                                         <th>{{ __('levels.status') }}</th>
-                                        <th>{{ __('levels.Amount') }}</th>
+                                        <th>{{ __('levels.amount') }}</th>
                                         <th>{{ __('levels.actions') }}</th>
                                     </tr>
                                     </thead>

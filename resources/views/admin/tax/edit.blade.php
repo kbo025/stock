@@ -4,7 +4,7 @@
 
 	<section class="section">
         <div class="section-header">
-            <h1>{{ __('levels.Tax Rates') }}</h1>
+            <h1>{{ __('levels.tax_rates') }}</h1>
             {{ Breadcrumbs::render('tax/edit') }}
         </div>
 
@@ -52,7 +52,7 @@
 			                    </div>
 
                                 <div class="form-group">
-                                    <label>{{ __('levels.Code') }}</label> <span class="text-danger">*</span>
+                                    <label>{{ __('levels.code') }}</label> <span class="text-danger">*</span>
                                     <input type="text" name="code" class="form-control @error('code') is-invalid @enderror" value="{{ old('code',$tax->code) }}">
                                     @error('code')
                                     <div class="invalid-feedback">
@@ -62,7 +62,7 @@
                                 </div>
 
                                 <div class="form-group">
-                                    <label for="tax_rate">{{ __('levels.Tax Rate') }}</label> <span class="text-danger">*</span>
+                                    <label for="tax_rate">{{ __('levels.tax_rate') }}</label> <span class="text-danger">*</span>
                                     <input id="tax_rate" type="number" step="0.01"  name="tax_rate" class="form-control {{ $errors->has('tax_rate') ? " is-invalid " : '' }}" value="{{ old('tax_rate',$tax->tax_rate) }}">
                                     @error('tax_rate')
                                     <div class="invalid-feedback">
@@ -72,7 +72,7 @@
                                 </div>
 
                                 <div class="form-group">
-                                    <label>{{ __('levels.Type') }}</label> <span class="text-danger">*</span>
+                                    <label>{{ __('levels.type') }}</label> <span class="text-danger">*</span>
                                     <select name="type" class="form-control @error('type') is-invalid @enderror">
                                         @foreach(trans('taxtype') as $key => $type)
                                             <option value="{{ $key }}" {{ (old('type',$tax->type) == $key) ? 'selected' : '' }}>{{ $type }}</option>

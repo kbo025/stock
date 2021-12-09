@@ -23,10 +23,10 @@
         <div class="modal-dialog modal-sm">
             <div class="modal-content">
                 <div class="modal-body">
-                    <div>{{__('levels.Please add product')}}</div>
+                    <div>{{__('levels.please_add_product')}}</div>
                 </div>
                 <div class="modal-footer">
-                    <button data-dismiss="modal" aria-hidden="true" type="button" class="btn btn-sm btn-primary">{{__('levels.OK')}}</button>
+                    <button data-dismiss="modal" aria-hidden="true" type="button" class="btn btn-sm btn-primary">{{__('levels.ok')}}</button>
                 </div>
             </div>
         </div>
@@ -42,10 +42,10 @@
                         <span aria-hidden="true">×</span>
                     </button>
                 </div>
-                <div class="modal-body">{{__('levels.Do you want to continue?')}}</div>
+                <div class="modal-body">{{__('levels.do_you_want_to_continue?')}}</div>
                 <div class="modal-footer">
-                    <a type="button" class="btn btn-danger btn-shadow" href="{{route('admin.pos')}}">{{__('levels.Yes')}}</a>
-                    <button type="button" data-dismiss="modal" class="btn btn-secondary" id="" >{{__('levels.Cancel')}}</button>
+                    <a type="button" class="btn btn-danger btn-shadow" href="{{route('admin.pos')}}">{{__('levels.yes')}}</a>
+                    <button type="button" data-dismiss="modal" class="btn btn-secondary" id="" >{{__('levels.cancel')}}</button>
                 </div>
             </div>
         </div>

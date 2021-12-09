@@ -24,7 +24,7 @@
                         <div class="row">
                             <div class="col-lg-6">
                                 <div class="article-header">
-                                    <h5>{{ __('levels.General') }}</h5>
+                                    <h5>{{ __('levels.general') }}</h5>
                                 </div>
                                 <div class="form-row">
                                     <div class="form-group col">

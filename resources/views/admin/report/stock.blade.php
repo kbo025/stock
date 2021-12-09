@@ -4,7 +4,7 @@
 
     <section class="section">
         <div class="section-header">
-            <h1>{{ __('levels.Stock Report') }}</h1>
+            <h1>{{ __('levels.stock_report') }}</h1>
             {{ Breadcrumbs::render('stock-report') }}
         </div>
 
@@ -60,7 +60,7 @@
 
                             <div class="col-sm-4">
                                 <div class="form-group">
-                                    <label>{{ __('levels.From Date') }}</label>
+                                    <label>{{ __('levels.from_date') }}</label>
                                     <input type="text" name="from_date" class="form-control @error('from_date') is-invalid @enderror datepicker" value="{{ old('from_date', $set_from_date) }}">
                                     @error('from_date')
                                         <div class="invalid-feedback">
@@ -71,7 +71,7 @@
                             </div>
                             <div class="col-sm-4">
                                 <div class="form-group">
-                                    <label>{{ __('levels.To Date') }}</label>
+                                    <label>{{ __('levels.to_date') }}</label>
                                     <input type="text" name="to_date" class="form-control @error('to_date') is-invalid @enderror datepicker" value="{{ old('to_date', $set_to_date) }}">
                                     @error('to_date')
                                         <div class="invalid-feedback">
@@ -93,8 +93,8 @@
             @if($showView)
                 <div class="card">
                     <div class="card-header">
-                        <h5>{{ __('levels.Stock Report ') }} </h5>
-                        <button class="btn btn-success btn-sm report-print-button" onclick="printDiv('printablediv')">{{ __('levels.Print') }}</button>
+                        <h5>{{ __('levels.stock_report') }} </h5>
+                        <button class="btn btn-success btn-sm report-print-button" onclick="printDiv('printablediv')">{{ __('levels.print') }}</button>
                     </div>
                     <div class="card-body" id="printablediv">
                         @if(!blank($stockProducts))
@@ -107,12 +107,12 @@
                                                 <th>{{ __('levels.shop') }}</th>
                                             @endif
                                             <th>{{ __('levels.product') }}</th>
-                                            <th>{{ __('levels.Unit') }}</th>
-                                            <th>{{ __('levels.Cost') }}</th>
-                                            <th>{{ __('levels.Sale Qty') }}</th>
-                                            <th>{{ __('levels.Total Qty') }}</th>
-                                            <th>{{ __('levels.Stock Qty') }}</th>
-                                            <th>{{ __('levels.Income') }}</th>
+                                            <th>{{ __('levels.unit') }}</th>
+                                            <th>{{ __('levels.cost') }}</th>
+                                            <th>{{ __('levels.sale_qty') }}</th>
+                                            <th>{{ __('levels.total_qty') }}</th>
+                                            <th>{{ __('levels.stock_qty') }}</th>
+                                            <th>{{ __('levels.income') }}</th>
 
                                         </tr>
                                         @php($i=0)
@@ -135,7 +135,7 @@
                                 </table>
                             </div>
                         @else
-                            <h4 class="text-danger">{{ __('levels.The stock data not found') }}</h4>
+                            <h4 class="text-danger">{{ __('levels.the_stock_data_not_found') }}</h4>
                         @endif
                     </div>
                 </div>

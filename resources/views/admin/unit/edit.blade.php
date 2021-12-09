@@ -4,7 +4,7 @@
 
 	<section class="section">
         <div class="section-header">
-            <h1>{{ __('levels.Units') }}</h1>
+            <h1>{{ __('levels.units') }}</h1>
             {{ Breadcrumbs::render('unit/edit') }}
         </div>
 

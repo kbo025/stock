@@ -4,7 +4,7 @@
 
     <section class="section">
         <div class="section-header">
-            <h1>{{ __('levels.Tax Rates') }}</h1>
+            <h1>{{ __('levels.tax_rates') }}</h1>
             {{ Breadcrumbs::render('taxs') }}
         </div>
 
@@ -14,7 +14,7 @@
                     <div class="card">
                         @if(auth()->user()->can('tax_create'))
                         <div class="card-header">
-                            <a href="{{ route('admin.tax.create') }}" class="btn btn-icon icon-left btn-primary"><i class="fas fa-plus"></i> {{ __('levels.Add Tax') }}
+                            <a href="{{ route('admin.tax.create') }}" class="btn btn-icon icon-left btn-primary"><i class="fas fa-plus"></i> {{ __('levels.add_tax') }}
                             </a>
                         </div>
                         @endif
@@ -43,9 +43,9 @@
                                     <tr>
                                         <th>{{ __('levels.ID') }}</th>
                                         <th>{{ __('levels.name') }}</th>
-                                        <th>{{ __('levels.Code') }}</th>
-                                        <th>{{ __('levels.Tax Rate') }}</th>
-                                        <th>{{ __('levels.Type') }}</th>
+                                        <th>{{ __('levels.code') }}</th>
+                                        <th>{{ __('levels.tax_rate') }}</th>
+                                        <th>{{ __('levels.type') }}</th>
                                         <th>{{ __('levels.status') }}</th>
                                         <th>{{ __('levels.actions') }}</th>
                                     </tr>

@@ -10,7 +10,7 @@
 
     <section class="section">
         <div class="section-header">
-            <h1>{{ __('levels.Deposit Update') }}</h1>
+            <h1>{{ __('levels.deposit_update') }}</h1>
             {{ Breadcrumbs::render('deposit/edit') }}
         </div>
 
@@ -28,7 +28,7 @@
                                         <label for="user_id">{{ __('levels.customer') }}</label> <span class="text-danger">*</span>
                                         <select name="user_id" id="user_id"
                                                 class="select2 form-control @error('user_id') is-invalid red-border @enderror">
-                                            <option value="">{{ __('levels.Select Customer') }}</option>
+                                            <option value="">{{ __('levels.select_customer') }}</option>
                                             @if(!blank($users))
                                                 @foreach($users as $user)
                                                     <option value="{{ $user->id }}"
@@ -46,7 +46,7 @@
                                 </div>
                                 <div class="form-row">
                                     <div class="form-group col-6">
-                                        <label for="amount">{{ __('levels.Amount') }}</label> <span class="text-danger">*</span>
+                                        <label for="amount">{{ __('levels.amount') }}</label> <span class="text-danger">*</span>
                                         <input id="amount" type="number" step="0.01"  name="amount" class="form-control {{ $errors->has('amount') ? " is-invalid " : '' }}" value="{{ old('amount',$deposit->amount) }}">
                                         @error('amount')
                                         <div class="invalid-feedback">
@@ -57,7 +57,7 @@
                                 </div>
                             </div>
                             <div class="card-footer ">
-                                <button class="btn btn-primary mr-1" type="submit">{{ __('levels.Update Deposit') }}</button>
+                                <button class="btn btn-primary mr-1" type="submit">{{ __('levels.update_deposit') }}</button>
                             </div>
                         </div>
                     </div>

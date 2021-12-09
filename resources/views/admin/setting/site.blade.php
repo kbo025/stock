@@ -12,7 +12,7 @@
                 enctype="multipart/form-data">
                 @csrf
                 <fieldset class="setting-fieldset">
-                    <legend class="setting-legend">{{ __('levels.General Setting') }}</legend>
+                    <legend class="setting-legend">{{ __('levels.general_setting') }}</legend>
                     <div class="row">
                         <div class="col-sm-6">
                             <div class="form-group">
@@ -30,7 +30,7 @@
 
                             <div class="form-group">
                                 <label
-                                    for="site_phone_number">{{ __('levels.Site Phone Number') }}</label>
+                                    for="site_phone_number">{{ __('levels.site_phone_number') }}</label>
                                 <span class="text-danger">*</span>
                                 <input name="site_phone_number" id="site_phone_number" type="number" pattern="+[7-9]{2}-[0-9]{3}-[0-9]{4}"
                                     class="form-control @error('site_phone_number') is-invalid @enderror"
@@ -86,10 +86,10 @@
                                 @if(setting('site_logo'))
                                 <img class="img-thumbnail image-width mt-4 mb-3" id="previewImage"
                                     src="{{ asset('images/'.setting('site_logo')) }}"
-                                    alt="{{ __('levels.Food Express Logo') }}" />
+                                    alt="{{ __('levels.food_express_logo') }}" />
                                 @else
                                 <img class="img-thumbnail image-width mt-4 mb-3" id="previewImage"
-                                    src="{{ asset('images/logo.png') }}" alt="{{ __('levels.Food Express Logo') }}" />
+                                    src="{{ asset('images/logo.png') }}" alt="{{ __('levels.food_express_logo') }}" />
                                 @endif
                             </div>
 
@@ -166,7 +166,7 @@
                 <div class="row">
                     <div class="form-group col-md-6">
                         <button class="btn btn-primary">
-                            <span>{{ __('levels.Update Site Setting') }}</span>
+                            <span>{{ __('levels.update_site_setting') }}</span>
                         </button>
                     </div>
                 </div>

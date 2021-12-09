@@ -65,7 +65,7 @@
                                 <label for="user_id">{{ __('levels.customer') }}</label> <span class="text-danger">*</span>
                                 <select name="user_id" id="user_id"
                                         class="select2 form-control {{ $errors->has('user_id') ? " is-invalid " : '' }}">
-                                    <option value="">{{ __('levels.Select Customer') }}</option>
+                                    <option value="">{{ __('levels.select_customer') }}</option>
                                     @if(Request::is('admin/pos'))
                                         @if(!blank($customers))
                                             @foreach($customers as $customer)
@@ -83,7 +83,7 @@
                                 @enderror
                             </div>
                             <div class="form-group col-12">
-                                <label for="amount">{{ __('levels.Amount') }}</label> <span class="text-danger">*</span>
+                                <label for="amount">{{ __('levels.amount') }}</label> <span class="text-danger">*</span>
                                 <input id="amount" type="text" name="amount" class="form-control {{ $errors->has('amount') ? " is-invalid " : '' }}" value="{{ old('amount') }}">
                                 @error('amount')
                                 <div class="invalid-feedback">
@@ -95,7 +95,7 @@
                 <div class="modal-footer justify-content-between">
                     <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
                     <div>
-                        <button class="btn btn-primary mr-1" onclick="depositFunction()" type="submit">{{ __('levels.Add Deposit') }}</button>
+                        <button class="btn btn-primary mr-1" onclick="depositFunction()" type="submit">{{ __('levels.add_deposit') }}</button>
                     </div>
                 </div>
             </form>

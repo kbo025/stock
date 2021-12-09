@@ -12,7 +12,7 @@
                 <div class="modal-body">
                     @if(!blank($variations))
                             <div class="form-group col-12">
-                                <label for="ProductVariants">{{ __('levels.Product Variants') }}</label>
+                                <label for="ProductVariants">{{ __('levels.product_variants') }}</label>
                                 <select id="ProductVariants"  class="form-control" wire:model="variantID" wire:change="changeEvent">
                                         @foreach($variations as $variation)
                                             <option value="{{ $variation->id }}"
@@ -23,7 +23,7 @@
                             </div>
                     @endif
                         <div class="form-group col-12">
-                            <label for="ProductTax">{{ __('levels.Tax Rates') }}</label>
+                            <label for="ProductTax">{{ __('levels.tax_rates') }}</label>
                             <select id="ProductTax"  class="form-control" wire:model="taxID" wire:change="changeEventTax">
                                 <option value="">{{ __('levels.select Tax Rate') }}</option>
                             @foreach($taxs as $tax)
