@@ -34,7 +34,6 @@ class BackendMenuComposer
                 if (in_array($node['link'], $blockNodes)) {
                     continue;
                 }
-
                 if (($node['link'] != '#') && !blank(auth()->user()) && !auth()->user()->can($node['link'])) {
                     continue;
                 }

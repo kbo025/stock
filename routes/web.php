@@ -70,6 +70,10 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth','installed'], 'namesp
     Route::put('profile/change', 'ProfileController@change')->name('profile.change');
 
 
+    Route::resource('vehicles', 'VehicleController');
+    Route::resource('driver', 'DriverController');
+    Route::resource('parts', 'RawMaterialController');
+
     Route::resource('category', 'CategoryController');
     Route::get('get-category', 'CategoryController@getCategory')->name('category.get-category');
 

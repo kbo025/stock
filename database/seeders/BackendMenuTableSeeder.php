@@ -14,13 +14,60 @@ class BackendMenuTableSeeder extends Seeder
     public function run()
     {
         $parent = [
-            'product' 	=> 4,
-            'customer' 	=> 12,
-            'hrm' 		=> 15,
-            'report'    => 19,
+            'ativos'    => 1,
+            'product'   => 2,
+            'customer'  => 3,
+            'hrm'       => 4,
+            'report'    => 5,
         ];
 
         $menus = [
+
+            [
+                'name'      => 'Ativos',
+                'link'      => '#',
+                'icon'      => 'fas fa-truck',
+                'parent_id' => 0,
+                'priority'  => 460,
+                'status'    => 1,
+            ],
+
+            [
+                'name'      => 'Produtos',
+                'link'      => '#',
+                'icon'      => 'fas fa-gift',
+                'parent_id' => 0,
+                'priority'  => 460,
+                'status'    => 1,
+            ],
+
+            [
+                'name'      => 'Clientes',
+                'link'      => '#',
+                'icon'      => 'fas fa-address-book',
+                'parent_id' => 0,
+                'priority'  => 450,
+                'status'    => 1,
+            ],
+
+            [
+                'name'      => 'HRM',
+                'link'      => '#',
+                'icon'      => 'fas fa-id-card ',
+                'parent_id' => 0,
+                'priority'  => 450,
+                'status'    => 1,
+            ],
+
+            [
+                'name'      => 'Relatorios',
+                'link'      => '#',
+                'icon'      => 'fas fa-archive',
+                'parent_id' => 0,
+                'priority'  => 390,
+                'status'    => 1,
+            ],
+
             [
                 'name'      => 'Dashboard',
                 'link'      => 'dashboard',
@@ -31,7 +78,7 @@ class BackendMenuTableSeeder extends Seeder
             ],
 
             [
-                'name'      => 'Shops',
+                'name'      => 'Lojas',
                 'link'      => 'shop',
                 'icon'      => 'fas fa-university',
                 'parent_id' => 0,
@@ -40,7 +87,7 @@ class BackendMenuTableSeeder extends Seeder
             ],
 
             [
-                'name'      => 'Categories',
+                'name'      => 'Categorias',
                 'link'      => 'category',
                 'icon'      => 'fas fa-list-ul',
                 'parent_id' => 0,
@@ -49,15 +96,25 @@ class BackendMenuTableSeeder extends Seeder
             ],
 
             [
-                'name'      => 'Products',
-                'link'      => '#',
-                'icon'      => 'fas fa-gift',
-                'parent_id' => 0,
+                'name'      => 'Veiculos',
+                'link'      => 'vehicles',
+                'icon'      => 'fas fa-truck',
+                'parent_id' => $parent['ativos'],
                 'priority'  => 460,
                 'status'    => 1,
             ],
+
             [
-                'name'      => 'Units',
+                'name'      => 'Peças',
+                'link'      => 'parts',
+                'icon'      => 'fas fa-cogs',
+                'parent_id' => $parent['ativos'],
+                'priority'  => 460,
+                'status'    => 1,
+            ],
+
+            [
+                'name'      => 'Unidades',
                 'link'      => 'unit',
                 'icon'      => 'fas fa-star',
                 'parent_id' => $parent['product'],
@@ -65,25 +122,25 @@ class BackendMenuTableSeeder extends Seeder
                 'status'    => 1,
             ],
             [
-                'name'      => 'Products',
+                'name'      => 'Produtos',
                 'link'      => 'products',
                 'icon'      => 'fas fa-gift',
                 'parent_id' => $parent['product'],
                 'priority'  => 460,
                 'status'    => 1,
             ],
+
             [
                 'name'      => 'Barcode/Label',
                 'link'      => 'barcode',
                 'icon'      => 'fa fa-barcode',
                 'parent_id' => $parent['product'],
                 'priority'  => 460,
-                'status'    => 1,
+                'status'    => 0,
             ],
 
-
             [
-                'name'      => 'Purchase',
+                'name'      => 'Compras',
                 'link'      => 'purchase',
                 'icon'      => 'fas fa-newspaper',
                 'parent_id' => 0,
@@ -96,15 +153,15 @@ class BackendMenuTableSeeder extends Seeder
                 'icon'      => 'fas fa-th',
                 'parent_id' => 0,
                 'priority'  => 460,
-                'status'    => 1,
+                'status'    => 0,
             ],
             [
-                'name'      => 'Sales',
+                'name'      => 'Vendas',
                 'link'      => 'sale',
                 'icon'      => 'fas fa-newspaper',
                 'parent_id' => 0,
                 'priority'  => 440,
-                'status'    => 1,
+                'status'    => 0,
             ],
             [
                 'name'      => 'Stock',
@@ -116,16 +173,7 @@ class BackendMenuTableSeeder extends Seeder
             ],
 
             [
-                'name'      => 'Customers',
-                'link'      => '#',
-                'icon'      => 'fas fa-address-book',
-                'parent_id' => 0,
-                'priority'  => 450,
-                'status'    => 1,
-            ],
-
-            [
-                'name'      => 'Customers',
+                'name'      => 'Clientes',
                 'link'      => 'customers',
                 'icon'      => 'fas fa-user-secret',
                 'parent_id' => $parent['customer'],
@@ -134,7 +182,7 @@ class BackendMenuTableSeeder extends Seeder
             ],
 
             [
-                'name'      => 'Deposit',
+                'name'      => 'Depósitos dos clientes',
                 'link'      => 'deposit',
                 'icon'      => 'fas fa-dollar-sign',
                 'parent_id' => $parent['customer'],
@@ -143,15 +191,7 @@ class BackendMenuTableSeeder extends Seeder
             ],
 
             [
-                'name'      => 'HRM',
-                'link'      => '#',
-                'icon'      => 'fas fa-id-card ',
-                'parent_id' => 0,
-                'priority'  => 450,
-                'status'    => 1,
-            ],
-            [
-                'name'      => 'Administrators',
+                'name'      => 'Administradores',
                 'link'      => 'administrators',
                 'icon'      => 'fas fa-users',
                 'parent_id' => $parent['hrm'],
@@ -160,7 +200,16 @@ class BackendMenuTableSeeder extends Seeder
             ],
 
             [
-                'name'      => 'Tax Rates',
+                'name'      => 'Motoristas',
+                'link'      => 'drivers',
+                'icon'      => 'fas fa-user',
+                'parent_id' => $parent['hrm'],
+                'priority'  => 495,
+                'status'    => 1,
+            ],
+
+            [
+                'name'      => 'Taxas de impostos',
                 'link'      => 'tax',
                 'icon'      => 'fas fa-percent',
                 'parent_id' => $parent['hrm'],
@@ -178,17 +227,8 @@ class BackendMenuTableSeeder extends Seeder
                 'status'    => 1,
             ],
 
-
             [
-                'name'      => 'Report',
-                'link'      => '#',
-                'icon'      => 'fas fa-archive',
-                'parent_id' => 0,
-                'priority'  => 390,
-                'status'    => 1,
-            ],
-            [
-                'name'      => 'Sales Report',
+                'name'      => 'Relatorio de Vendas',
                 'link'      => 'sales-report',
                 'icon'      => 'fas fa-list-alt',
                 'parent_id' => $parent['report'],
@@ -196,7 +236,7 @@ class BackendMenuTableSeeder extends Seeder
                 'status'    => 1,
             ],
             [
-                'name'      => 'Purchases Report',
+                'name'      => 'Relatorio de Compras',
                 'link'      => 'purchases-report',
                 'icon'      => 'fas fa-list-alt',
                 'parent_id' => $parent['report'],
@@ -204,7 +244,7 @@ class BackendMenuTableSeeder extends Seeder
                 'status'    => 1,
             ],
             [
-                'name'      => 'Stock Report',
+                'name'      => 'Stock',
                 'link'      => 'stock-report',
                 'icon'      => 'fas fa-list-alt',
                 'parent_id' => $parent['report'],
@@ -214,7 +254,7 @@ class BackendMenuTableSeeder extends Seeder
 
 
             [
-                'name'      => 'Settings',
+                'name'      => 'Configurações',
                 'link'      => 'setting',
                 'icon'      => 'fas fa-cogs',
                 'parent_id' => 0,
