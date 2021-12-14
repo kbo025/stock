@@ -48,7 +48,7 @@
                                     </div>
                                     <div class="form-group col">
                                         <label>{{ __('levels.phone') }}</label> <span class="text-danger">*</span>
-                                        <input type="number" name="phone" pattern="+[7-9]{2}-[0-9]{3}-[0-9]{4}" max="15" class="form-control @error('phone') is-invalid @enderror" value="{{ old('phone') }}">
+                                        <input type="number" name="phone" pattern="+[7-9]{2}-[0-9]{3}-[0-9]{4}" class="form-control @error('phone') is-invalid @enderror" value="{{ old('phone') }}">
                                         @error('phone')
                                         <div class="invalid-feedback">
                                             {{ $message }}

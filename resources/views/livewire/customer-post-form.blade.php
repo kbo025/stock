@@ -26,7 +26,7 @@
             <div class="form-row">
                 <div class="form-group col-6">
                     <label for="phone">{{ __('levels.phone') }}</label> <span class="text-danger">* {{__('levels.( Example of country code phone number : +15129004889 )')}}</span>
-                    <input wire:model="customer.phone" type="number" name="phone" id="phone" pattern="+[7-9]{2}-[0-9]{3}-[0-9]{4}" max="15"  class="form-control @error('customer.phone') is-invalid @enderror">
+                    <input wire:model="customer.phone" type="number" name="phone" id="phone" pattern="+[7-9]{2}-[0-9]{3}-[0-9]{4}" class="form-control @error('customer.phone') is-invalid @enderror">
                     @error('customer.phone')
                     <div class="invalid-feedback">
                         {{ $message }}
