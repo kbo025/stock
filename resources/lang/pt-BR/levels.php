@@ -188,7 +188,7 @@ return [
     'purchases_no' =>  'Não de compras',
     'purchases_view' =>  'Visualização de compras',
     'phone' =>  'Telefone:',
-    'email' =>  'O email:',
+    'email' =>  'E-mail:',
     'reference_no' =>  'Nº de referência:',
     'date' =>  'Encontro:',
     'create_by' =>  'Criado por',
@@ -334,5 +334,6 @@ return [
     'edit_order_tax' =>  'EDITAR IMPOSTO DE PEDIDO',
     'order' =>  'Pedido',
     'bill' =>  'Conta',
-    'merchant_copy' =>  'Cópia do comerciante ',
+    'merchant_copy' =>  'Cópia do comerciante',
+    'shop_owner' =>  'Proprietario',
 ];

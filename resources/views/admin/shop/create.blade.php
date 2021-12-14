@@ -95,7 +95,7 @@
                         </div>
                         <div class="col-lg-6">
                             <div class="article-header">
-                                <h5>{{ __('levels.shop Owner') }}</h5>
+                                <h5>{{ __('levels.shop_owner') }}</h5>
                             </div>
                             <div class="form-row">
                                 <div class="form-group col">
@@ -165,7 +165,7 @@
                                 </div>
                                 <div class="form-group col">
                                     <label for="phone">{{ __('levels.phone') }}</label><span class="text-danger">*</span>
-                                    <input id="phone" type="number" name="phone" pattern="+[7-9]{2}-[0-9]{3}-[0-9]{4}" max="15"
+                                    <input id="phone" type="number" name="phone" pattern="+[7-9]{2}-[0-9]{3}-[0-9]{4}"
                                         class="form-control @error('phone') is-invalid @enderror"
                                         value="{{ old('phone') }}">
                                     @error('phone')
