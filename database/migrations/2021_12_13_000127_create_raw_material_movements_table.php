@@ -15,13 +15,13 @@ class CreateRawMaterialMovementsTable extends Migration
     {
         Schema::create('raw_material_movements', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
             $table->date('date');
             $table->decimal('quantity');
             $table->string('description', 1000);
             $table->unsignedTinyInteger('type');
-            
-            $table->unsignedInteger('raw_material_id');
+
+            $table->unsignedBigInteger('raw_material_id');
+            $table->foreign('raw_material_id')->references('id')->on('raw_materials')->onDelete('cascade');
 
             $table->timestamps();
             $table->auditColumn();

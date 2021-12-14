@@ -20,10 +20,13 @@ class CreateVehiclesTable extends Migration
             $table->string('color');
             $table->unsignedInteger('year');
             $table->string('plate');
+            $table->unsignedBigInteger('status_id')->default(\App\Enums\VehicleStatus::ACTIVE);
 
-            $table->unsignedBigInteger('status_id');
             $table->unsignedBigInteger('shop_id');
-            $table->unsignedBigInteger('driver_id');
+            $table->foreign('shop_id')->references('id')->on('shops')->onDelete('cascade');
+
+            $table->unsignedBigInteger('driver_id')->nullable();
+            $table->foreign('driver_id')->references('id')->on('drivers')->onDelete('cascade');
             
             $table->timestamps();
         });

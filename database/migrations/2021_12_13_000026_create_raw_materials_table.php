@@ -18,7 +18,7 @@ class CreateRawMaterialsTable extends Migration
             $table->string('name');
             $table->string('slug');
             $table->longText('description')->nullable();
-            $table->decimal('quantity', 13, 2);
+            $table->decimal('stock', 13, 2);
             // $table->decimal('cost', 13, 2);
             // $table->decimal('price', 13, 2);
             // $table->string('barcode_type')->nullable();
@@ -26,8 +26,11 @@ class CreateRawMaterialsTable extends Migration
             $table->unsignedInteger('type');
             $table->unsignedTinyInteger('status');
 
-            $table->unsignedInteger('unit_id');
+            $table->unsignedBigInteger('unit_id');
+            $table->foreign('unit_id')->references('id')->on('units')->onDelete('cascade');
+            
             $table->unsignedBigInteger('shop_id');
+            $table->foreign('shop_id')->references('id')->on('shops')->onDelete('cascade');
             
             $table->timestamps();
             $table->auditColumn();

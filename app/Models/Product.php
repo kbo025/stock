@@ -79,9 +79,6 @@ class Product extends BaseModel implements HasMedia
         return 'data:image/png;base64,' .DNS2D::getBarcodePNG($this->barcode, 'QRCODE',20,20,array(1,1,1),true);
     }
 
-
-
-
     public function variations()
     {
         return $this->hasMany(ProductItem::class);
