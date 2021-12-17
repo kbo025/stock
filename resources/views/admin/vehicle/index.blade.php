@@ -4,7 +4,7 @@
 
     <section class="section">
         <div class="section-header">
-            <h1>Motoristas</h1>
+            <h1>Veiculos</h1>
             {{ Breadcrumbs::render('vehicles') }}
         </div>
 
@@ -12,9 +12,9 @@
             <div class="row">
                 <div class="col-12">
                     <div class="card">
-                        @if(auth()->user()->can('vehicle_create'))
+                        @if(auth()->user()->can('vehicles_create'))
                         <div class="card-header">
-                            <a href="{{ route('admin.vehicle.create') }}" class="btn btn-icon icon-left btn-primary"><i class="fas fa-plus"></i> {{ __('levels.add_vehicle') }}
+                            <a href="{{ route('admin.vehicles.create') }}" class="btn btn-icon icon-left btn-primary"><i class="fas fa-plus"></i> {{ 'Agregar Veiculo' }}
                             </a>
                         </div>
                         @endif
@@ -38,7 +38,7 @@
                             </div>
                             <br>
                             <div class="table-responsive">
-                                <table class="table table-striped" id="maintable" data-url="{{ route('admin.vehicle.get-vehicle') }}" data-status="{{ \App\Enums\Status::ACTIVE }}">
+                                <table class="table table-striped" id="maintable" data-url="{{ route('admin.vehicle.get-vehicles') }}" data-status="{{ \App\Enums\Status::ACTIVE }}">
                                     <thead>
                                     <tr>
                                     </tr>

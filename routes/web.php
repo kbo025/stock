@@ -71,8 +71,13 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth','installed'], 'namesp
 
 
     Route::resource('vehicles', 'VehicleController');
-    Route::resource('driver', 'DriverController');
-    Route::resource('parts', 'RawMaterialController');
+    Route::get('vehicles.get-vehicles', 'VehicleController@getVehicles')->name('vehicle.get-vehicles');
+
+    Route::resource('drivers', 'DriverController');
+    Route::get('drivers.get-drivers', 'DriverController@getDrivers')->name('drivers.get-drivers');
+
+    Route::resource('materials', 'RawMaterialController');
+    Route::get('materials.get-materials', 'RawMaterialController@getMaterials')->name('materials.get-materials');
 
     Route::resource('category', 'CategoryController');
     Route::get('get-category', 'CategoryController@getCategory')->name('category.get-category');
@@ -139,7 +144,7 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth','installed'], 'namesp
     Route::post('stock-report', 'ReportController@stockReport')->name('stock-report.index');
 
     Route::resource('role', 'RoleController');
-    Route::post('get-role-user', 'CreditBalanceReportController@getUsers')->name('get-role-user');
+    // Route::post('get-role-user', 'CreditBalanceReportController@getUsers')->name('get-role-user');
     Route::post('role/save-permission/{id}', 'RoleController@savePermission')->name('role.save-permission');
 
     Route::group(['prefix' => 'setting', 'as' => 'setting.'], function () {

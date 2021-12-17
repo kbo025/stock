@@ -352,3 +352,45 @@ Breadcrumbs::for ('tax/edit', function ($trail) {
     $trail->parent('taxs');
     $trail->push(trans('validation.attributes.edit'));
 });
+
+Breadcrumbs::for('vehicles', function ($trail) {
+    $trail->push('Veiculos', route('admin.vehicles.index'));
+});
+
+Breadcrumbs::for('vehicles/add', function ($trail) {
+    $trail->parent('vehicles');
+    $trail->push('Agregar Veiculo', route('admin.vehicles.create'));
+});
+
+Breadcrumbs::for('vehicles/edit', function ($trail) {
+    $trail->parent('vehicles');
+    $trail->push('Atualizar Veiculo', route('admin.vehicles.edit'));
+});
+
+Breadcrumbs::for('drivers', function ($trail) {
+    $trail->push('Motoristas', route('admin.drivers.index'));
+});
+
+Breadcrumbs::for('drivers/add', function ($trail) {
+    $trail->parent('drivers');
+    $trail->push('Agregar Motorista', route('admin.drivers.create'));
+});
+
+Breadcrumbs::for('drivers/edit', function ($trail) {
+    $trail->parent('drivers');
+    $trail->push('Atualizar Motorista', route('admin.drivers.edit'));
+});
+
+Breadcrumbs::for('materials', function ($trail) {
+    $trail->push('Peças e Materiais', route('admin.materials.index'));
+});
+
+Breadcrumbs::for('materials/add', function ($trail) {
+    $trail->parent('materials');
+    $trail->push('Agregar Peças/Material', route('admin.materials.create'));
+});
+
+Breadcrumbs::for('materials/edit', function ($trail) {
+    $trail->parent('materials');
+    $trail->push('Atualizar Agregar Peças/Material', route('admin.materials.edit'));
+});

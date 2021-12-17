@@ -5,7 +5,7 @@
 	<section class="section">
         <div class="section-header">
             <h1>Peças e Materiais</h1>
-            {{ Breadcrumbs::render('raw-materials/edit') }}
+            {{ Breadcrumbs::render('materials/edit') }}
         </div>
 
         <div class="section-body">

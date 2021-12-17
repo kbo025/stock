@@ -4,8 +4,8 @@
 
 	<section class="section">
         <div class="section-header">
-            <h1>Veiculo</h1>
-            {{ Breadcrumbs::render('vehicle/add') }}
+            <h1>Veiculos</h1>
+            {{ Breadcrumbs::render('vehicles/add') }}
         </div>
 
         <div class="section-body">

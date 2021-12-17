@@ -4,17 +4,17 @@
 
     <section class="section">
         <div class="section-header">
-            <h1>Peças e Materiais</h1>
-            {{ Breadcrumbs::render('raw-materials') }}
+            <h1>Motoristas</h1>
+            {{ Breadcrumbs::render('drivers') }}
         </div>
 
         <div class="section-body">
             <div class="row">
                 <div class="col-12">
                     <div class="card">
-                        @if(auth()->user()->can('driver_create'))
+                        @if(auth()->user()->can('drivers_create'))
                         <div class="card-header">
-                            <a href="{{ route('admin.driver.create') }}" class="btn btn-icon icon-left btn-primary"><i class="fas fa-plus"></i> {{ __('levels.add_driver') }}
+                            <a href="{{ route('admin.drivers.create') }}" class="btn btn-icon icon-left btn-primary"><i class="fas fa-plus"></i> {{ 'Agregar Motorista' }}
                             </a>
                         </div>
                         @endif
@@ -38,7 +38,7 @@
                             </div>
                             <br>
                             <div class="table-responsive">
-                                <table class="table table-striped" id="maintable" data-url="{{ route('admin.driver.get-driver') }}" data-status="{{ \App\Enums\Status::ACTIVE }}">
+                                <table class="table table-striped" id="maintable" data-url="{{ route('admin.drivers.get-drivers') }}" data-status="{{ \App\Enums\Status::ACTIVE }}">
                                     <thead>
                                     <tr>
                                     </tr>
