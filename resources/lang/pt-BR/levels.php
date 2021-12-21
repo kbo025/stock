@@ -336,4 +336,6 @@ return [
     'bill' =>  'Conta',
     'merchant_copy' =>  'Cópia do comerciante',
     'shop_owner' =>  'Proprietario',
+    'cpf' => 'CPF',
+    'rg' => 'RG',
 ];

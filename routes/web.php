@@ -59,8 +59,8 @@ Route::get('/home', [DashboardController::class, 'index'])
 
 
 Route::group(['prefix' => 'admin', 'middleware' => ['auth','installed'], 'namespace' => 'Admin', 'as' => 'admin.'], function () {
-    Route::get('/', 'DashboardController@index')->name('home');
-    Route::get('/home', 'DashboardController@index')->name('home');
+    Route::get('/', 'DashboardController@index')->name('root');
+    Route::get('/home', 'DashboardController@index')->name('dashboard.home');
 
     Route::get('dashboard', 'DashboardController@index')->name('dashboard.index');
     Route::post('day-wise-income-sale', 'DashboardController@dayWiseIncomeSale')->name('dashboard.day-wise-income-sale');

@@ -49,16 +49,15 @@ class DriverController extends BackendController
     public function store( DriverRequest $request)
     {
         $driver             = new Driver;
-        // $user->first_name = strip_tags($request->first_name);
-        // $user->last_name  = strip_tags($request->last_name);
-        // $user->email      =strip_tags( $request->email);
-        // $user->username   =strip_tags( $request->username ?? $this->username($request->email));
-        // $user->password   = Hash::make(strip_tags(request('password')));
-        // $user->phone      = strip_tags($request->phone);
-        // $user->address    = strip_tags($request->address);
-        // $user->status     = $request->status;
+        $driver->rg         = strip_tags($request->rg);
+        $driver->cpf        = strip_tags($request->cpf);
+        $driver->first_name = strip_tags($request->first_name);
+        $driver->last_name  = strip_tags($request->last_name);
+        $driver->phone      = strip_tags($request->phone);
+        $driver->address    = strip_tags($request->address);
+        $driver->status_id     = $request->status_id;
+        $driver->shop_id     = 1;
         $driver->save();
-
 
         return redirect(route('admin.drivers.index'))->withSuccess('Motorista registrado com sucesso');
     }

@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Driver extends Model
 {
-    protected $fillable = ['rg', 'cpf', 'first_name', 'last_name', 'phone', 'address', 'status_id'];
+    protected $fillable = ['rg', 'cpf', 'first_name', 'last_name', 'password', 'phone', 'address', 'status_id'];
 
     public function getNameAttribute()
     {

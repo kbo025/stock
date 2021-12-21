@@ -25,12 +25,30 @@ class RawMaterialRequest extends FormRequest
     public function rules()
     {
         return [
-        ];
+            'name' => ['required', 'string', 'max:128'],
+            'slug' => ['required', 'string', 'max:128'],
+            'description' => ['required', 'string'],
+            'stock' => ['required', 'numeric'],
+            'barcode' => ['nullable', 'string'],
+            'type' => ['nullable', 'numeric'],
+            'status' => ['required', 'numeric'],
+            'unit_id' => ['required', 'numeric'],
+            'shop_id' => ['required', 'numeric'],
+        ];;
     }
 
     public function attributes()
     {
         return [
+            'name' => 'Nome',
+            'slug' => 'Slug',
+            'description' => 'Descrição',
+            'stock' => 'Stock',
+            'barcode' => 'Codigo de barras',
+            'type' => 'Tipo',
+            'status' => 'Status',
+            'unit_id' => 'Unidad',
+            'shop_id' => 'Loja',
         ];
     }
 }
