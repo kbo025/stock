@@ -47,17 +47,18 @@ class RawMaterialController extends BackendController
      */
     public function store( RawMaterialRequest $request)
     {
-        $rawMaterial             = new RawMaterial;
-        // $user->first_name = strip_tags($request->first_name);
-        // $user->last_name  = strip_tags($request->last_name);
-        // $user->email      =strip_tags( $request->email);
-        // $user->username   =strip_tags( $request->username ?? $this->username($request->email));
-        // $user->password   = Hash::make(strip_tags(request('password')));
-        // $user->phone      = strip_tags($request->phone);
-        // $user->address    = strip_tags($request->address);
-        // $user->status     = $request->status;
-        $rawMaterial->save();
+        $rawMaterial              = new RawMaterial;
+        $rawMaterial->name        = strip_tags($request->name);
+        $rawMaterial->slug        = strip_tags($request->slug);
+        $rawMaterial->description = strip_tags($request->description);
+        $rawMaterial->stock       = strip_tags($request->stock);
+        $rawMaterial->barcode     = strip_tags($request->barcode);
+        $rawMaterial->type        = strip_tags($request->type);
+        $rawMaterial->status      = strip_tags($request->status);
+        $rawMaterial->unit_id     = strip_tags($request->unit_id);
+        $rawMaterial->shop_id     = strip_tags($request->shop_id);
 
+        $rawMaterial->save();
 
         return redirect(route('admin.materials.index'))->withSuccess('Registro criado com sucesso');
     }
@@ -96,14 +97,16 @@ class RawMaterialController extends BackendController
     public function update( RawMaterialRequest $request, $id)
     {
         $rawMaterial             = new RawMaterial;
-        // $user->first_name = strip_tags($request->first_name);
-        // $user->last_name  = strip_tags($request->last_name);
-        // $user->email      =strip_tags( $request->email);
-        // $user->username   =strip_tags( $request->username ?? $this->username($request->email));
-        // $user->password   = Hash::make(strip_tags(request('password')));
-        // $user->phone      = strip_tags($request->phone);
-        // $user->address    = strip_tags($request->address);
-        // $user->status     = $request->status;
+        $rawMaterial->name        = strip_tags($request->name);
+        $rawMaterial->slug        = strip_tags($request->slug);
+        $rawMaterial->description = strip_tags($request->description);
+        $rawMaterial->stock       = strip_tags($request->stock);
+        $rawMaterial->barcode     = strip_tags($request->barcode);
+        $rawMaterial->type        = strip_tags($request->type);
+        $rawMaterial->status      = strip_tags($request->status);
+        $rawMaterial->unit_id     = strip_tags($request->unit_id);
+        $rawMaterial->shop_id     = strip_tags($request->shop_id);
+
         $rawMaterial->save();
 
         return redirect(route('admin.materials.index'))->withSuccess('Registro atualizado com sucesso');
@@ -118,9 +121,9 @@ class RawMaterialController extends BackendController
      */
     public function destroy($id)
     {
-        $driver = RawMaterial::findOrFail($id);
+        $material = RawMaterial::findOrFail($id);
         if ((auth()->id() == 1)) {
-            $driver->delete();
+            $material->delete();
             return redirect(route('admin.materials.index'))->withSuccess('Registro removido com sucesso');
         }
     }

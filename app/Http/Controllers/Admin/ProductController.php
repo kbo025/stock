@@ -397,9 +397,4 @@ class ProductController extends BackendController
             }
         }
     }
-
-
-
-
-
 }

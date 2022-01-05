@@ -29,13 +29,13 @@ class VehicleRequest extends FormRequest
             'model' => ['required', 'string', 'max:56'],
             'color' => ['required', 'string', 'max:56'],
             'year' => ['required', 'string', 'max:4'],
-            'plate' => ['required', 'string', 'max:8'],
-            'status_id' => ['required', 'numeric'],
-            'driver_id' => ['nullable', 'numeric'],
-            'renavam' => ['nullanbe', 'string'],
-            'chassi' => ['nullanbe', 'string'],
-            'motor' => ['nullanbe', 'string'],
-            'fuel_type_id' => ['nullanbe', 'numeric'],
+            'plate' => ['required', 'unique:vehicles', 'string', 'max:8'],
+            'status_id' => ['required', 'integer'],
+            'driver_id' => ['nullable', 'integer'],
+            'renavam' => ['nullanbe', 'unique:vehicles', 'string'],
+            'chassi' => ['nullanbe', 'unique:vehicles', 'string'],
+            'motor' => ['nullanbe', 'unique:vehicles', 'string'],
+            'fuel_type_id' => ['nullanbe', 'integer'],
         ];
     }
 
@@ -51,7 +51,7 @@ class VehicleRequest extends FormRequest
             'driver_id' => 'Motorista',
             'renavam' => 'RENAVAM',
             'chassi' => 'Chassi',
-            'motor' => 'N Motor',
+            'motor' => 'Número Motor',
             'fuel_type_id' => 'Combustivel',
         ];
     }

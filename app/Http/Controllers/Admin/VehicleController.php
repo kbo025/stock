@@ -48,16 +48,20 @@ class VehicleController extends BackendController
     public function store( VehicleRequest $request)
     {
         $vehicle             = new Vehicle;
-        // $user->first_name = strip_tags($request->first_name);
-        // $user->last_name  = strip_tags($request->last_name);
-        // $user->email      =strip_tags( $request->email);
-        // $user->username   =strip_tags( $request->username ?? $this->username($request->email));
-        // $user->password   = Hash::make(strip_tags(request('password')));
-        // $user->phone      = strip_tags($request->phone);
-        // $user->address    = strip_tags($request->address);
-        // $user->status     = $request->status;
-        $vehicle->save();
 
+        $vehicle->brand        = strip_tags($request->brand);
+        $vehicle->model        = strip_tags($request->model);
+        $vehicle->color        = strip_tags($request->color);
+        $vehicle->year         = strip_tags($request->year);
+        $vehicle->plate        = strip_tags($request->plate);
+        $vehicle->status_id    = strip_tags($request->status_id);
+        $vehicle->driver_id    = strip_tags($request->driver_id);
+        $vehicle->renavam      = strip_tags($request->renavam);
+        $vehicle->chassi       = strip_tags($request->chassi);
+        $vehicle->motor        = strip_tags($request->motor);
+        $vehicle->fuel_type_id = strip_tags($request->fuel_type_id);
+
+        $vehicle->save();
 
         return redirect(route('admin.vehicle.index'))->withSuccess('Veiculo registrado com sucesso');
     }
@@ -96,12 +100,19 @@ class VehicleController extends BackendController
     public function update( VehicleRequest $request, $id)
     {
         $vehicle = Vehicle::findOrFail($id);
-        // $vehicle->first_name = strip_tags($request->first_name);
-        // $vehicle->last_name  = strip_tags($request->last_name);
-        // $vehicle->email      = strip_tags($request->email);
-        // $vehicle->username   = strip_tags($request->username ?? $this->username($request->email));
-        // $vehicle->phone      = strip_tags($request->phone);
-        // $vehicle->address    = strip_tags($request->address);
+
+        $vehicle->brand        = strip_tags($request->brand);
+        $vehicle->model        = strip_tags($request->model);
+        $vehicle->color        = strip_tags($request->color);
+        $vehicle->year         = strip_tags($request->year);
+        $vehicle->plate        = strip_tags($request->plate);
+        $vehicle->status_id    = strip_tags($request->status_id);
+        $vehicle->driver_id    = strip_tags($request->driver_id);
+        $vehicle->renavam      = strip_tags($request->renavam);
+        $vehicle->chassi       = strip_tags($request->chassi);
+        $vehicle->motor        = strip_tags($request->motor);
+        $vehicle->fuel_type_id = strip_tags($request->fuel_type_id);
+
         $vehicle->save();
 
         return redirect(route('admin.vehicle.index'))->withSuccess('Dados atualizados com sucesso');
@@ -119,78 +130,77 @@ class VehicleController extends BackendController
         $vehicle = Vehicle::findOrFail($id);
         if ((auth()->id() == 1)) {
             $vehicle->delete();
-            return redirect(route('admin.vehicle.index'))->withSuccess('Registro eliminado com sucesso');
+            return redirect(route('admin.vehicle.index'))->withSuccess('Registro removido com sucesso');
         }
     }
 
     public function getVehicles()
     {
-        // $modles     = Vehicle::role([$role->name,$roleTow->name])->latest()->get();
+        $models     = Vehicle::latest()->get();
         $modelArray = [];
 
-        // $i = 1;
-        // if (!blank($users)) {
-        //     foreach ($users as $user) {
-        //         $userArray[$i]          = $user;
-        //         $userArray[$i]['setID'] = $i;
-        //         $i++;
-        //     }
-        // }
+        if (!blank($models)) {
+            foreach ($models as $i => $model) {
+                $modelArray[$i + 1]          = $model;
+                $modelArray[$i + 1]['setID'] = $i + 1;
+            }
+        }
+
         return Datatables::of($modelArray)
+            ->addColumn('action', function ($model) {
+                $retAction ='';
+
+                if(auth()->user()->can('vehicles_show')) {
+                    $retAction .= '<a href="' . route('admin.vehicles.show', $product) . '" class="btn btn-sm btn-icon mr-2  float-left btn-info" data-toggle="tooltip" data-placement="top" title="View"><i class="far fa-eye"></i></a>';
+                }
+
+                if(auth()->user()->can('vehicles_edit')) {
+                    $retAction .= '<a href="' . route('admin.vehicles.edit', $product) . '" class="btn btn-sm btn-icon float-left btn-primary" data-toggle="tooltip" data-placement="top" title="Edit"> <i class="far fa-edit"></i></a>';
+                }
+
+                if(auth()->user()->can('vehicles_delete')) {
+                    $retAction .= '<form class="float-left pl-2" action="' . route('admin.vehicles.destroy', $product). '" method="POST">' . method_field('DELETE') . csrf_field() . '<button class="btn btn-sm btn-icon btn-danger" data-toggle="tooltip" data-placement="top" title="Delete"> <i class="fa fa-trash"></i></button></form>';
+                }
+
+                return $retAction;
+            })
+            ->editColumn('brand', function ($model) {
+                return $model->brand;
+            })
+            ->editColumn('model', function ($model) {
+                return $model->model;
+            })
+            ->editColumn('color', function ($model) {
+                return $model->color;
+            })
+            ->editColumn('year', function ($model) {
+                return $model->year;
+            })
+            ->editColumn('plate', function ($model) {
+                return $model->plate;
+            })
+            ->editColumn('status_id', function ($model) {
+                return $model->status_id;
+            })
+            ->editColumn('driver_id', function ($model) {
+                return $model->driver_id;
+            })
+            ->editColumn('renavam', function ($model) {
+                return $model->renavam;
+            })
+            ->editColumn('chassi', function ($model) {
+                return $model->chassi;
+            })
+            ->editColumn('motor', function ($model) {
+                return $model->motor;
+            })
+            ->editColumn('fuel_type_id', function ($model) {
+                return $model->fuel_type_id;
+            })
+            ->editColumn('id', function ($model) {
+                return $model->setID;
+            })
             ->escapeColumns([])
             ->make(true);
-
-            // ->addColumn('action', function ($user) {
-            //     $retAction = '';
-            //     if (($user->id == auth()->id()) && (auth()->id() == 1)) {
-            //         if (auth()->user()->can('vehicles_show')) {
-            //             $retAction .= '<a href="' . route('admin.vehicles.show', $user) . '" class="btn btn-sm btn-icon float-left btn-info" data-toggle="tooltip" data-placement="top" title="View"><i class="far fa-eye"></i></a>';
-            //         }
-
-            //         if (auth()->user()->can('vehicles_edit')) {
-            //             $retAction .= '<a href="' . route('admin.vehicles.edit', $user) . '" class="btn btn-sm btn-icon float-left btn-primary ml-2" data-toggle="tooltip" data-placement="top" title="Edit"><i class="far fa-edit"></i></a>';
-            //         }
-            //     } else if (auth()->id() == 1) {
-            //         if (auth()->user()->can('vehicles_show')) {
-            //             $retAction .= '<a href="' . route('admin.vehicles.show', $user) . '" class="btn btn-sm btn-icon float-left btn-info" data-toggle="tooltip" data-placement="top" title="View"><i class="far fa-eye"></i></a>';
-            //         }
-
-            //         if (auth()->user()->can('vehicles_edit')) {
-            //             $retAction .= '<a href="' . route('admin.vehicles.edit', $user) . '" class="btn btn-sm btn-icon float-left btn-primary ml-2" data-toggle="tooltip" data-placement="top" title="Edit"><i class="far fa-edit"></i></a>';
-            //         }
-
-            //         if (auth()->user()->can('vehicles_delete')) {
-            //             $retAction .= '<form class="float-left pl-2" action="' . route('admin.vehicles.destroy', $user) . '" method="POST">' . method_field('DELETE') . csrf_field() . '<button class="btn btn-sm btn-icon btn-danger" data-toggle="tooltip" data-placement="top" title="Delete"><i class="fa fa-trash"></i></button></form>';
-            //         }
-            //     } else {
-            //         if ($user->id == 1) {
-            //             if (auth()->user()->can('vehicles_show')) {
-            //                 $retAction .= '<a href="' . route('admin.vehicles.show', $user) . '" class="btn btn-sm btn-icon float-left btn-info" data-toggle="tooltip" data-placement="top" title="View"><i class="far fa-eye"></i></a>';
-            //             }
-            //         } else {
-            //             if (auth()->user()->can('vehicles_show')) {
-            //                 $retAction .= '<a href="' . route('admin.vehicles.show', $user) . '" class="btn btn-sm btn-icon float-left btn-info" data-toggle="tooltip" data-placement="top" title="View"><i class="far fa-eye"></i></a>';
-            //             }
-
-            //             if (auth()->user()->can('vehicles_edit')) {
-            //                 $retAction .= '<a href="' . route('admin.vehicles.edit', $user) . '" class="btn btn-sm btn-icon float-left btn-primary ml-2"><i class="far fa-edit"></i></a>';
-            //             }
-            //         }
-            //     }
-
-            //     return $retAction;
-            // })
-            // ->addColumn('image', function ($user) {
-            //     return '<figure class="avatar mr-2"><img src="' . $user->images . '" alt=""></figure>';
-            // })
-            // ->addColumn('name', function ($user) {
-            //     return $user->name;
-            // })
-            // ->addColumn('role', function ($user) {
-            //     return $user->getrole->name;
-            // })
-            // ->editColumn('id', function ($user) {
-            //     return $user->setID;
-            // })
     }
 }
